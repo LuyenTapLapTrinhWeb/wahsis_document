@@ -1,0 +1,41 @@
+﻿to: Nhan@wahsis.com
+cc: Hoang.Phan@wahsis.com,Hoa@wahsis.com, khiem.nguyen@wahsis.com, Larry@wahsis.com, Diep.thai@wahsis.com
+vv: Sok Kim Thanh báo cáo công việc ngày dd/MM/yyyy
+
+
+Kính gởi Anh/Chị
+Em xin báo công việc ngày  27-09-2017
+
+Trân trọng,
+Sok Kim Thanh
+
+Kính gởi Anh/Chị
+Em xin báo công việc ngày  27-09-2017
+
+#Tổng hợp kiến thức từ hai tính năng quản lý sự việc và báo cáo sự việc
+     ##Quản lý sự việc
+     +Thêm xoá sửa tìm kiếm
+     **Cách copy code.
+          -Cài đặt danh sách các đối tượng từ câu API thông qua hàm getListObjectWithParams
+               *Hiển thị lên các component select options
+          -Cài đặt danh sách thay đổi API theo API thông qua ng-change
+               *Hiển thị ds cư dân theo ds căn hộ, hiển thị số điện thoại theo 1 cư dân
+         -Cài đặt định dạng, canh chỉnh vị trí chuỗi, số, ngày tháng. 
+               *Trình tự và thứ tự các cột, các nút điều khiển trên xuống dưới, trái qua phải.
+
+     ##Báo cáo sự việc
+     +Cây danh sách toà nhà hiển thị căn hộ
+          **Cách copy code
+               -Hiển thị danh sách căn hộ theo cây danh sách toà nhà.
+     +Danh sách tìm kiếm xuất PDF
+          **Cách Copy code
+               -Hiển thị danh sách tổng kết quản lý sự việc theo danh sách tìm kiếm sự việc
+
+#Fix bugs định dạng ngày(Chuỗi thì canh trái)
+     +Định dạng ngày trên column/form search
+     +Định dạng ngày trên input add/edit
+     
+Trân trọng,
+Sok Kim Thanh
+
+

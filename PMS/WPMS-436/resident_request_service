@@ -1,0 +1,73 @@
+http://team.wahsis.net/browse/WPMS-436
+resident_request_service
+Quản lý sử dụng biểu mẫu
+Due:	07/Oct/17
+Created:	05/Oct/17 12:06 PM
+Updated:	1 hour ago
+Resolved:	14/Oct/17 10:08 AM
+
+Hi Thanh,
+Em thêm tính năng quản lý chức năng cư dân sử dụng các biểu mẫu
+1/ Tìm kiếm hiển thị danh sách căn hộ đã sử dụng biểu mẫu
+ 
+2/ Thêm mới thông tin căn hộ có sử dụng biểu mẫu
+B1 : Tạo màn hình thêm mới cho phép chọn biểu mẫu, chọn căn hộ cư dân căn hộ yêu cầu biểu mẫu
+B2 : Sau khi chọn xong gọi API request biểu mẫu file word. 
+ 
+B3 : Sau khi gọi API nhân kết quả trả về B2 và lấy link bên trong gọi tính năng download về cho người dùng tiếp tục chỉnh sửa
+B4 : Cho phép người dùng upload lại file đã chỉnh sửa .sau khi upload thì mới hiện nút save.
+
+ 
+ 
+Attachments
+Drop files to attach, or browse.
+image-2017-10-05-12-02-01-871.png
+image-2017-10-05-12-02-01-871.png
+18 kB05/Oct/17 12:02 PM
+Activity
+All
+Comments
+Work Log
+History
+Activity
+Ascending order - Click to sort in descending order
+5 older comments
+Permalink
+nam.liu Nam, Liu added a comment - 1 week ago
+Hi Thảo,
+Em check giúp anh task này nhé.
+Nếu có feedback gì em assign lại anh Thanh để sửa giúp anh.
+Thanks em.
+Permalink
+thao.dang Thao, Dang added a comment - 6 days ago
+Hi Anh Thanh,
+Anh check lại giúp em một số feedback dưới đây nhé.
+Vẽ thêm khung cho 3 field: SDT, email, mối quan hệ
+Form Thêm mới:
+Yêu cầu: "Cho phép người dùng upload lại file đã chỉnh sửa .sau khi upload thì mới hiện nút save"=> Người dùng chưa upload file biểu mẫu đã chỉnh sửa, nút Lưu hiện và vẫn cho lưu thành công 
+Field Biểu mẫu: thay "–tất cả–" thành "--- Chọn Biểu Mẫu—", chỉnh cả 2 ngôn ngữ.
+Field Người liên hệ chỉnh tương tự hoặc load trực tiếp tên người liên hệ trên đầu danh sách.
+Khi nhấn nút Tạo biểu mẫu, sẽ tải được đồng thời biểu mẫu để chỉnh sửa. người dùng ko phải thao tác thêm 1 bước dowload biểu mẫu về. 
+Form Chỉnh sửa:
+Các fleid thông tin load ra ko giống như những thông tin đã được lưu.(vd: Loại biểu mẫu khi được lưu là Cư dân nhưng hiển thị bên trong là "Tất cả")
+Các nội dung field: Biểu mẫu, Căn hộ, Người liên hệ không cho phép người dùng chỉnh sửa, để chế độ read-only. 
+Cho hiển thị các file biểu mẫu người dùng đã upload và lưu trước đó.
+Sau khi chỉnh sửa và lưu lại, bị nhảy thứ tự trên danh sách bên ngoài (VD: ban đầu đang ở STT: 1 , sau khi chỉnh sửa nhảy xuống STT:3 trên danh sách).
+Permalink Edit Delete
+thanh.sok Thanh, Sok added a comment - 3 days ago
+Hi Thảo,
+Anh đã giúp em check feedback
+ 
+ 
+Permalink
+thao.dang Thao, Dang added a comment - Yesterday - edited
+Trong form add, khi người dung chọn file -> Tải lên-> Thông báo up thành công thì đồng thời cũng phải cho hiển thị file đó lên trong form luôn ( Cho hiển thị giống như bên edit)
+Form edit: thông tin field Mối quan hệ chưa được translate. 
+Check lại các file người dùng upload lên và file khi người dùng "Tải biểu mẫu" ở page ngoài. Cả file hiển thị trong edit.
+Các translate các thông báo ( e đã trao đổi qua skype với a).
+Permalink Edit Delete
+thanh.sok Thanh, Sok added a comment - 1 hour ago
+Hi, Thảo.
+Anh đã fix xong bug ở trên. 
+Cám ơn em đã post bug. Cứ tiếp tục feed back lại nếu có bug.
+Sok Kim Thanh.

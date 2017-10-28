@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#WPMS-436] Quản lý sử dụng biểu mẫu</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('http://team.wahsis.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [WPMS-436]&nbsp;<a href="http://team.wahsis.net/browse/WPMS-436">Quản lý sử dụng biểu mẫu</a>
+            <span class="subText">
+               Created: 05/Oct/17                   &nbsp;Updated: 28/Oct/17
+
+                                    &nbsp;Due: 07/Oct/17
+                                                    &nbsp;Resolved: 14/Oct/17
+                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Resolved</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="http://team.wahsis.net/secure/BrowseProject.jspa?id=10000">WahSiS PMS</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Task
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="khiem.nguyen" id="word_reporter_khiem.nguyen" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=khiem.nguyen">Khiem, Nguyen</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="thanh.sok" id="word_assignee_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                            Done
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-18302-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Attachments:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="http://team.wahsis.net/images/icons/attach/text.gif" height="16" width="16" border="0" alt="Text File">
+                    image-2017-10-05-12-02-01-871.png &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+    
+
+
+
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Hi Thanh,</p>
+
+<p>Em thêm tính năng quản lý chức năng cư dân sử dụng các biểu mẫu</p>
+
+<p>1/ Tìm kiếm hiển thị danh sách căn hộ đã sử dụng biểu mẫu</p>
+
+<p> </p>
+
+<p>2/ Thêm mới thông tin căn hộ có sử dụng biểu mẫu</p>
+
+<p>B1 : Tạo màn hình thêm mới cho phép chọn biểu mẫu, chọn căn hộ cư dân căn hộ yêu cầu biểu mẫu</p>
+
+<p>B2 : Sau khi chọn xong gọi API request biểu mẫu file word. </p>
+
+<p> </p>
+
+<p>B3 : Sau khi gọi API nhân kết quả trả về B2 và lấy link bên trong gọi tính năng download về cho người dùng tiếp tục chỉnh sửa</p>
+
+<p>B4 : Cho phép người dùng upload lại file đã chỉnh sửa .sau khi upload thì mới hiện nút save.</p>
+
+<p><span class="image-wrap" style=""><img src="http://team.wahsis.net/secure/attachment/15700/15700_image-2017-10-05-12-02-01-871.png" style="border: 0px solid black" /></span></p>
+
+<p> </p>
+
+<p> </p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Comments</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="grid" style="margin: 0;">
+                <tr id="comment-header-18700"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">10/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18700"><td bgcolor="#ffffff">
+            <p>Tiến độ: 70%. Khó khăn là đang bị vướng phần download không thể download theo đúng ý anh khiêm.</p>
+        </td></tr>
+                <tr id="comment-header-18702"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">10/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18702"><td bgcolor="#ffffff">
+            <p>Tiến độ 80%. Đang gặp khó khăn vấn đề phân trang.</p>
+        </td></tr>
+                <tr id="comment-header-18706"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18706"><td bgcolor="#ffffff">
+            <p>Tiến độ 95%. Khó khăn là chưa hiểu luồng thao tác người dùng khi cập nhật.</p>
+        </td></tr>
+                <tr id="comment-header-18900"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18900"><td bgcolor="#ffffff">
+            <p>Tiến độ 98%. Đã hiểu được thao tác người dùng. Nhưng vẫn chưa fix được bug chặn nhấn nút save khi chưa có sự cập nhật và hiện danh sách theo loại biểu mẫu.</p>
+        </td></tr>
+                <tr id="comment-header-18902"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18902"><td bgcolor="#ffffff">
+            <p>Tiến độ 99%. Gặp khó khăn khi cập nhật lưu đường dẫn link upload, link download.</p>
+        </td></tr>
+                <tr id="comment-header-18916"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="nam.liu" id="word_commented_nam.liu" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=nam.liu">Nam, Liu</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">20/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-18916"><td bgcolor="#ffffff">
+            <p>Hi Thảo,</p>
+
+<p>Em check giúp anh task này nhé.</p>
+
+<p>Nếu có feedback gì em assign lại anh Thanh để sửa giúp anh.</p>
+
+<p>Thanks em.</p>
+        </td></tr>
+                <tr id="comment-header-19002"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thao.dang" id="word_commented_thao.dang" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thao.dang">Thao, Dang</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">21/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-19002"><td bgcolor="#ffffff">
+            <p>Hi Anh Thanh,</p>
+
+<p>Anh check lại giúp em một số feedback dưới đây nhé.</p>
+
+<ul class="alternate" type="square">
+	<li>Vẽ thêm khung cho 3 field: SDT, email, mối quan hệ</li>
+</ul>
+
+
+<p>Form Thêm mới:</p>
+<ul>
+	<li>Yêu cầu: "<b>Cho phép người dùng upload lại file đã chỉnh sửa .sau khi upload thì mới hiện nút save</b>"=&gt; Người dùng chưa upload file biểu mẫu đã chỉnh sửa, nút Lưu hiện và vẫn cho lưu thành công </li>
+	<li>Field Biểu mẫu: thay "–tất cả–" thành "--- Chọn Biểu Mẫu—", chỉnh cả 2 ngôn ngữ.</li>
+	<li>Field Người liên hệ chỉnh tương tự hoặc load trực tiếp tên người liên hệ trên đầu danh sách.</li>
+	<li>Khi nhấn nút Tạo biểu mẫu, sẽ tải được đồng thời biểu mẫu để chỉnh sửa. người dùng ko phải thao tác thêm 1 bước dowload biểu mẫu về. </li>
+</ul>
+
+
+<p>Form Chỉnh sửa:</p>
+<ul>
+	<li>Các fleid thông tin load ra ko giống như những thông tin đã được lưu.(vd: Loại biểu mẫu khi được lưu là Cư dân nhưng hiển thị bên trong là "Tất cả")</li>
+	<li>Các nội dung field: Biểu mẫu, Căn hộ, Người liên hệ không cho phép người dùng chỉnh sửa, để chế độ read-only. </li>
+	<li>Cho hiển thị các file biểu mẫu người dùng đã upload và lưu trước đó.</li>
+	<li>Sau khi chỉnh sửa và lưu lại, bị nhảy thứ tự trên danh sách bên ngoài (VD: ban đầu đang ở STT: 1 , sau khi chỉnh sửa nhảy xuống STT:3 trên danh sách).</li>
+</ul>
+
+        </td></tr>
+                <tr id="comment-header-19501"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">25/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-19501"><td bgcolor="#ffffff">
+            <p>Hi Thảo,</p>
+
+<p>Anh đã giúp em check feedback</p>
+
+<p> </p>
+
+<p> </p>
+        </td></tr>
+                <tr id="comment-header-19510"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thao.dang" id="word_commented_thao.dang" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thao.dang">Thao, Dang</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-19510"><td bgcolor="#ffffff">
+            <ul>
+	<li>Trong form add, khi người dung chọn file -<del>&gt; Tải lên</del>-&gt; Thông báo up thành công thì đồng thời cũng phải cho hiển thị file đó lên trong form luôn ( Cho hiển thị giống như bên edit)</li>
+	<li>Form edit: thông tin field Mối quan hệ chưa được translate. </li>
+	<li>Check lại các file người dùng upload lên và file khi người dùng "Tải biểu mẫu" ở page ngoài. Cả file hiển thị trong edit.</li>
+	<li>Các translate các thông báo ( e đã trao đổi qua skype với a).</li>
+</ul>
+
+        </td></tr>
+                <tr id="comment-header-19512"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="thanh.sok" id="word_commented_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">28/Oct/17</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-19512"><td bgcolor="#ffffff">
+            <p>Hi, Thảo.</p>
+
+<p>Anh đã fix xong bug ở trên. </p>
+
+<p>Cám ơn em đã post bug. Cứ tiếp tục feed back lại nếu có bug.</p>
+
+<p>Sok Kim Thanh.</p>
+        </td></tr>
+            </table>
+Generated at Sat Oct 28 10:31:12 ICT 2017 by Thanh, Sok using JIRA 7.5.1#75006-sha1:7df2574a6cc842da727f00de4c5ce9ac07701368.
+
+</body>
+</html>
