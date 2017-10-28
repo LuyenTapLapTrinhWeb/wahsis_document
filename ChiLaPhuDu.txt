@@ -1,5 +1,0 @@
-7OT2EB
-admin
-123456
-ChiLaPhuDu
-http://dev.wahsis.net/api/company?cm=get_by_code&dt={%22company%22:{%22company_code%22:%227OT2EB%22}}
