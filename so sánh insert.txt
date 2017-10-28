@@ -1,0 +1,2 @@
+{"company":{"company_id":40743},
+"owner_complain":{"subject":"con ga bi an trom","content":"b5 an trom b6","datefrom":"09/13/2017","dateto":"09/13/2017","locations":"chung cu tang 3","room_id":3,"resident_id":20208,"resident_phone":"33333","process_id":64,"witness_name":"ong gia no en","witness_phone":"222222","remark":"dat nhau len phuong giai quyet"}}
