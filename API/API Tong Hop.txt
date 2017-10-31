@@ -30,8 +30,8 @@ http://pms-dev.wahsis.net/api/resident_request_service?cm=update&dt={
 "email_address":"","created_date":""},
 "company":{"company_id":40743}}
 
-http://pms-dev.wahsis.net/
-api/apartment_fee_skip_calculations?cm=add&dt={
+http://pms-dev.wahsis.net/api/
+apartment_fee_skip_calculations?cm=add&dt={
 "apartment_fee_skip_calculations":{
 	"apartment_fee_skip_calculate_id":0,
 	"apartment_fee_category_id":3,
@@ -82,5 +82,10 @@ relativePath"resource/company_40743/room_service_template/1509070799253.docx"
 Dang ban can ho
 WPMS - 456 room_posted_for_sale
 
-
+http://pms-dev.wahsis.net/api/
+room_posted_for_sale?cm=search&dt={
+"room_posted_for_sale":{"status":-1},
+"page":{"page_index":1,"page_size":10},
+"languages":{"language_id":"vi"},
+"company":{"company_id":40743}}
 
