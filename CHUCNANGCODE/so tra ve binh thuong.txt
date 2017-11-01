@@ -1,1 +1,1 @@
- total_amount: parseFloat(String($scope.it.total_amount).replace([,], '')),
+parseFloat(String($scope.rooms_list[i].quantity).replace(/[,]/g, '')),

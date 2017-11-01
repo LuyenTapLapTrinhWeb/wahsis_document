@@ -14,8 +14,4 @@ $scope.kieu_ngay_gio = function (value) {
             }
         }
 <td>{{kieu_ngay_gio(date_time)}}</td>
-
-// hàm search ngày từ ngày đến
-
-timeout
-id="bill"
+ 
