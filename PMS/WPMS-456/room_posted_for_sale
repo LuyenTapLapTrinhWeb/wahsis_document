@@ -7,18 +7,21 @@ Updated:	Yesterday
 today:281017
 https://github.com/LuyenTapLapTrinhWeb/wahsis_document.git
 
-[1:14:33 PM] Khiêm Nguyễn Văn: Lấy danh sách chủ hộ cho thuê hoặc đăng bán
-[1:14:34 PM] Khiêm Nguyễn Văn: http://pms-dev.wahsis.net/api/
-owners?cm=list_owners_by_room_id&dt={%22rooms%22:{%22room_id%22:9},%22company%22:{%22company_id%22:40743}}
-[1:17:21 PM] Khiêm Nguyễn Văn: Lay thông tin địa chỉ công ty
-http://dev.wahsis.net/api/company?cm=detail&dt={%22company%22:{%22company_id%22:40743}}
-Default lấy đia chỉ công ty cho người ta gắn vào
-nhưng mà phải cho người ta chỉnh sửa
-[2:07:13 PM] sok thanh: Anh Khiêm cho em xin cau api search với.
-[2:21:09 PM] Khiêm Nguyễn Văn: http://localhost:83/api/room_posted_for_sale?cm=search&dt={
+Lấy danh sách chủ hộ cho thuê hoặc đăng bán
+http://pms-dev.wahsis.net/api/
+owners?cm=list_owners_by_room_id&dt={"rooms":{"room_id":9},"company":{"company_id":40743}}
+
+Lay thông tin địa chỉ công ty
+http://dev.wahsis.net/api/company?cm=detail&dt={"company":{"company_id":40743}}
+
+cau api search
+http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=search&dt={
 "room_posted_for_sale":{"status":-1},
 "page":{"page_index":1,"page_size":10},
 "languages":{"language_id":"vi"},
 "company":{"company_id":40743}}
 
+http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=add&dt={"room_posted_for_sale":{"status":1}}
+http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=update&dt={"room_posted_for_sale":{"room_posted_for_sale_id":1,"status":1}}
+http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=delete&dt={"room_posted_for_sale":{"room_posted_for_sale_id":1}}
 
