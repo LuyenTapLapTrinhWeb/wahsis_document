@@ -16,10 +16,23 @@ http://dev.wahsis.net/api/company?cm=detail&dt={"company":{"company_id":40743}}
 
 cau api search
 http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=search&dt={
-"room_posted_for_sale":{"status":-1},
-"page":{"page_index":1,"page_size":10},
-"languages":{"language_id":"vi"},
-"company":{"company_id":40743}}
+"company":{"company_id":40743},
+"room_posted_for_sale":{
+"status":-1,
+"room_id":0,
+"room_type_id":0,
+"owner_name":"",
+"cell_phone":"",
+"acreage":0,
+"to_acreage":0,
+"total_amount":0,
+"to_total_amount":0,
+"created_date":"",
+"to_date":"2017-11-11",
+"description":"",
+"remark":""},
+"page":{"page_size":"100","page_index":1},
+"languages":{"language_id":"vi"}}
 
 http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=add&dt={"room_posted_for_sale":{"status":1}}
 http://pms-dev.wahsis.net/api/room_posted_for_sale?cm=update&dt={"room_posted_for_sale":{"room_posted_for_sale_id":1,"status":1}}
