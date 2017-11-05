@@ -57,10 +57,11 @@ function questionmarksController(
 
   /**batdat viet {phuong_thuc:"load.api.search.lansau"}*/
   $scope.load_info = (page_size, page_index) => {
-    if (page_index === undefined) {
+    if (page_index === undefined || page_index === null || page_index === "") {
       page_index = 1;
       $scope.currentPage1 = 1;
     }
+
     $scope.page = { page_size: page_size, page_index: page_index };
 
     var dt = JSON.stringify({
@@ -322,4 +323,3 @@ function questionmarksController(
     }
   };
 } /**kethuc function search */
-
