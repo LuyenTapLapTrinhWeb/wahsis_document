@@ -32,3 +32,4 @@
         $scope.rooms_list = response.dt.rooms_list;
       }
     });
+  //
