@@ -51,7 +51,7 @@ $scope.kieu_ngay_gio = function(value) {
   }
 };
 
-/* <td>{{kieu_ngay_gio(date_time)}}</td> */
+/*<td class="text-center">{{kieu_ngay_gio(date_time)}}</td> */
 
 // hàm định dạng ngày form edit
 if (item.resident_incident_id !== 0) {
