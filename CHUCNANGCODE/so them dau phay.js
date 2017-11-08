@@ -1,5 +1,5 @@
 //số thêm dấu phẩy trên form add
-$scope.ngChangeTotalamount = function(value) {
+$scope.ngChangeSothemdauphay = function(value) {
   $scope.it.total_amount = UtilityCheckFormatService.change_number(value);
 };
 /**FIX CAI BUG GIAO DIEN HIEN THI DU LIEU */
@@ -15,7 +15,8 @@ $scope.ngChangeSothemdauphay = function(value) {
   /* <td style="white-space: nowrap">{{ngChangeSothemdauphay(item.total_amount)}}</td> */
 }
 
-//số thêm dấu phẩy trên form search condition
+// UtilityService.decentralization( số thêm dấu phẩy trên form search condition )
+
 $scope.ngChangeSothemdauphay = function(loai) {
   var type = {
     acreage: $scope.acreage,
