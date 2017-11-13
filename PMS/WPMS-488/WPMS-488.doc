@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#WPMS-488] Setting Menu App WahSis PMS Guest</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('http://team.wahsis.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [WPMS-488]&nbsp;<a href="http://team.wahsis.net/browse/WPMS-488">Setting Menu App WahSis PMS Guest</a>
+            <span class="subText">
+               Created: 13/Nov/17                   &nbsp;Updated: 13/Nov/17
+
+                                    &nbsp;Due: 14/Nov/17
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">In Progress</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="http://team.wahsis.net/secure/BrowseProject.jspa?id=10000">WahSiS PMS</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Task
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="khiem.nguyen" id="word_reporter_khiem.nguyen" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=khiem.nguyen">Khiem, Nguyen</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="thanh.sok" id="word_assignee_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-19110-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Hi Thanh,</p>
+
+<p>Em thêm 1 setup như mô tả bên dưới :</p>
+
+<p><a href="http://code.wahsis.net/projects/WPOS/repos/pos-wahsis-web/browse" class="external-link" rel="nofollow">http://code.wahsis.net/projects/WPOS/repos/pos-wahsis-web/browse</a></p>
+
+<p>B1 : Vào màn hình company</p>
+
+<p>B2 : Chọn 1 company như hình bên dưới</p>
+
+<p>B3 : Từ menu action thêm 1 sub menu PMS App Guest Setting</p>
+
+<p>B4 : Click vào sub menu PMS App Guest Setting thì mở popup PMS App Guest Setting</p>
+
+<p>B4.1 : Load danh sách setting và tạo danh sách cho khách hàng nhập active và order</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>B4.1</p>
+
+<p> </p>
+
+<p>B4.2 Save sau khi nhập liệu xong B4.1</p>
+
+<p>Biến danh sách thành chuổi json</p>
+
+<p>dt={</p>
+
+<p>"core_config_data":{</p>
+
+<p>"config_id":552,</p>
+
+<p>"branch_id":0,</p>
+
+<p>"config_key":"mobile_app_setting/main_screen",</p>
+
+<p>"config_value":"<span class="error">&#91;\{\&quot;id\&quot;:\&quot;is_information\&quot;,\&quot;value\&quot;:true,order:1},\{\&quot;id\&quot;:\&quot;is_amenities\&quot;,\&quot;value\&quot;:true,order:2},\{\&quot;id\&quot;:\&quot;is_notifications\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_monthlybills\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_comments\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_leasingservices\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_smartaccess\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_smartcontroll\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_lookforsale\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_lookforrent\&quot;,\&quot;value\&quot;:true},\{\&quot;id\&quot;:\&quot;is_forrent\&quot;,\&quot;value\&quot;:false},\{\&quot;id\&quot;:\&quot;is_forsale\&quot;,\&quot;value\&quot;:false}&#93;</span>",</p>
+
+<p>"config_group":"mobile_app_setting",</p>
+
+<p>"created_by_id":0</p>
+
+<p>},”company”:{“company_id”: ?}</p>
+
+<p>}</p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Mon Nov 13 18:32:01 ICT 2017 by Thanh, Sok using JIRA 7.5.2#75007-sha1:9f5725bb824792b3230a5d8716f0c13e296a3cae.
+
+</body>
+</html>
