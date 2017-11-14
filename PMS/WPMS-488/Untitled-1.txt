@@ -1,0 +1,10 @@
+http://pos-dev.wahsis.net/api/core_config_data?cm=update&dt={
+    "core_config_data":{
+        "config_id":552,
+        "branch_id":0,
+        "config_key":"mobile_app_setting/main_screen",
+        "config_value":"[
+             
+        "config_group":"mobile_app_setting",
+        "created_by_id":0},
+    "company":{"company_id":40743}}
