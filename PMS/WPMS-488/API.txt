@@ -1,4 +1,4 @@
-http://pos-dev.wahsis.net/api/core_config_data?cm=update&dt={
+http://pos-dev.wahsis.net/api/core_config_data?cm=add&dt={
     "core_config_data":{
         "config_id":552,
         "branch_id":0,
