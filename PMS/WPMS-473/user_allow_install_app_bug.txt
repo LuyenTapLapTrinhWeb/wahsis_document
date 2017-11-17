@@ -1,0 +1,9 @@
+Chỉnh sửa function lấy dữ của combobox lúc add new
+B1 ; lấy dữ liệu đã thêm vào hệ thống với API
+    http://dev.wahsis.net/api/company_boss_account?cm=account_list&dt={
+    "company_boss_account":{"company_id":40743,"account_type":1},
+    "page":{"page_index":1,"page_size":"100000"}}
+B2 : lẫy dữ liệu cần phải thêm . Danh sách users của công ty
+    là dữ liệu trong cái combobox đang có
+B3 : so sánh số điện thoại nếu B2 không có trong B1 
+    thì add vào list mới rồi mới vẽ ra cái combobox
