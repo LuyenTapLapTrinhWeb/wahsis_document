@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#WPMS-495] Tạo danh sách chức năng và hướng dẫn sử dụng</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('http://team.wahsis.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [WPMS-495]&nbsp;<a href="http://team.wahsis.net/browse/WPMS-495">Tạo danh sách chức năng và hướng dẫn sử dụng</a>
+            <span class="subText">
+               Created: 17/Nov/17                   &nbsp;Updated: 17/Nov/17
+
+                                    &nbsp;Due: 20/Nov/17
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">In Progress</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="http://team.wahsis.net/secure/BrowseProject.jspa?id=10000">WahSiS PMS</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Task
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="khiem.nguyen" id="word_reporter_khiem.nguyen" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=khiem.nguyen">Khiem, Nguyen</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="thanh.sok" id="word_assignee_thanh.sok" href="http://team.wahsis.net/secure/ViewProfile.jspa?name=thanh.sok">Thanh, Sok</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-19302-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Hi Thanh,</p>
+
+<p>Tạo danh sách chức năng và nội dung hướng dẫn sử dụng.</p>
+
+<p>1/ Tên bảng user_guid</p>
+
+<p>2/ Chức năng, Thêm , xóa, sửa , tìm kiếm</p>
+
+<p>3/ Giao diện giống <a href="http://live.wahsis.net/#/buildings" class="external-link" rel="nofollow">http://live.wahsis.net/#/buildings</a></p>
+
+<p>4/ Danh sách các thuộc tính</p>
+
+<p> </p>
+
+<p><span class="error">&#91;user_guid_id&#93;</span> <span class="error">&#91;varchar&#93;</span>(256) NOT NULL,<br/>
+ <span class="error">&#91;module_id&#93;</span> <span class="error">&#91;varchar&#93;</span>(32) NOT NULL,<br/>
+ <span class="error">&#91;language_id&#93;</span> <span class="error">&#91;varchar&#93;</span>(8) NOT NULL,<br/>
+ <span class="error">&#91;user_guid_content&#93;</span> <span class="error">&#91;ntext&#93;</span> NULL,<br/>
+ <span class="error">&#91;description&#93;</span> <span class="error">&#91;ntext&#93;</span> NULL,<br/>
+ <span class="error">&#91;top_memu&#93;</span> nvarchar(128),<br/>
+ <span class="error">&#91;left_memu&#93;</span> nvarchar(128),<br/>
+ <span class="error">&#91;sub_memu_name&#93;</span> nvarchar(256),</p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Fri Nov 17 14:57:12 ICT 2017 by Thanh, Sok using JIRA 7.6.0#76001-sha1:7b6fd94042951391abb4cf81ae9ab14bf01b6f5f.
+
+</body>
+</html>
