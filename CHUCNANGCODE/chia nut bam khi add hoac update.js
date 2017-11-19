@@ -2,7 +2,7 @@
 <div class="form-group">
 <label>{{"RI_ROOM"|translate}}</label>
 <span class="c-red">*</span>
-<div class="lbl_like_input" ng-show="flag.ngshowCanhoSelect">
+<div ng-show="flag.ngshowCanhoSelect">
  
 </div>
 <div class="lbl_like_input" ng-show="flag.ngdisableCanhoselect">
