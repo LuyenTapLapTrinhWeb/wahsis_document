@@ -16,10 +16,9 @@
     dev.wahsis.net/api/user_guid?cm=update&dt={
     "user_guid":{ },
     "languages":{"language_id":"vi"}}
-    
+     
     dev.wahsis.net/api/user_guid?cm=delete&dt={
-    "user_guid":{"user_guid_id":"","module_id":""},
-    "languages":{"language_id":"vi"}}
+        "user_guid":{"user_guid_id":"Mã hu?ng d?n *","module_id":"sms"}}
     // Tạo danh sách chức năng và nội dung hướng dẫn sử dụng.
     // 1/ Tên bảng user_guid
     // 2/ Chức năng, Thêm , xóa, sửa , tìm kiếm
