@@ -1,0 +1,125 @@
+$scope.city_name = "";
+            $scope.state_name = "";
+            $scope.state_list = [];
+            $scope.city_list = [];
+            $scope.country_id = "";
+            $scope.city_id = "";
+            $scope.state_id = "";
+            /**FIX CAI BUG HIEN THI QUOCGIA>TINHTHANH>QUANHUYEN */
+            $scope.ngChangeThongtin_QUOCGIA_TINHTHANH_QUANHUYEN = function (loai) {
+                if (loai === 'country') {
+                    /**API THANH PHO*/
+                    $scope.showAPI_CITY(); 
+                }
+                if (loai === "city") {
+                    /**API QUAN HUYEN */
+                    $scope.showAPI_STATE();
+                }
+            };
+            $scope.showAPI_CITY = function () {
+                /**API THANH PHO API CITY*/
+                $scope.city_list.length = 0;
+
+                //select countryCode from country where country.id === countries.master_data_id
+                for (var i = 0; i < $scope.countries.length; i++) {
+                    if ($scope.country_id === $scope.countries[i].master_data_id) {
+                        $scope.countryCode = $scope.countries[i].freefield3;
+                        $scope.country_id = $scope.countries[i].master_data_id;
+                        break;
+                    }
+                }
+                // console.log("$scope.city_list", $scope.countryCode);
+                $http.get(API_URL + "master?cm=list_parent&dt={master_data:{master_group:'PROVINCE',parent_id:'" + $scope.country_id + "'}}")
+                    .success(function (response) {
+                        utility.check_error403(response.err)
+                        if (response.err === 0) {
+                            $scope.cityTemp = response.dt.master_data;
+                            $scope.city_list = [];
+                            $scope.state_list = [];
+                            $scope.city_list.length = 0;
+                            for (var i = 0; i < $scope.cityTemp.length; i++) {
+                                var temp = {
+                                    id: $scope.cityTemp[i].master_data_id,
+                                    value: $scope.cityTemp[i].master_data_name,
+                                    c_address: "",
+                                };
+                                $scope.city_list.push(temp);
+                            }
+                            console.table($scope.city_list);
+                        }
+                    });
+            };
+            $scope.showAPI_STATE = () => {
+                /**API QUAN HUYEN API DICTRICT*/
+                $scope.state_list.length = 0;
+                if (city_list.length > 0) {
+                    for (var i = 0; i < $scope.city_list.length; i++) {
+                        if ($scope.city_id === $scope.city_list[i].id) {
+                            $scope.cityName = $scope.city_list[i].value;
+                            $scope.cityID = $scope.city_list[i].id;
+                            break;
+                        }
+                    }
+                    // console.log("$scope.cityName", $scope.cityName);
+                    $http.get(API_URL + "master?cm=list_parent&dt={ master_data:{master_group:'DISTRICT',parent_id:'" + $scope.cityID + "'}}")
+                        .success(function (response) {
+                            utility.check_error403(response.err)
+                            if (response.err === 0) {
+                                $scope.district = response.dt.master_data;
+                                $scope.state_list = [];
+                                for (var i = 0; i < $scope.district.length; i++) {
+                                    var temp = {
+                                        id: $scope.district[i].master_data_id,
+                                        value: $scope.district[i].master_data_name,
+                                        c_address: "",
+                                    };
+                                    $scope.state_list.push(temp);
+                                }
+                            }
+                        });
+                }
+            }
+<div class="col-sm-4 col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{translation.RCSA_COUNTRY_ID}}</label>
+                                        <div class="col-md-8">
+                                            <div class="fg-line">
+                                                <!-- <select ng-model="country_id" data-placeholder="Choose a Country..." class="chosen-select form-control" ng-change="ngChangeThongtinQuocgia('country')" -->
+                                                <select ng-model="country_id" class="a" 
+                                                ng-change="ngChangeThongtin_QUOCGIA_TINHTHANH_QUANHUYEN('country')" 
+                                                ng-options="obj.master_data_id as obj.master_data_name for obj in countries">
+                                                    <option value="">ALL</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{translation.RCSA_CITY_NAME}}</label>
+                                        <div class="col-md-8">
+                                            <div class="fg-line" ng-disabled="city_list">
+                                                <select ng-model="city_id" class="a" 
+                                                ng-change="ngChangeThongtin_QUOCGIA_TINHTHANH_QUANHUYEN('city')" 
+                                                ng-options="obj.id as obj.value for obj in city_list">
+                                                    <option value="">ALL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{translation.RCSA_STATE_NAME}}</label>
+                                        <div class="col-md-8">
+                                            <div class="fg-line" ng-disabled="state_list">
+                                                <select ng-model="state_id" class="a" 
+                                                ng-change="ngChangeThongtin_QUOCGIA_TINHTHANH_QUANHUYEN('state')" 
+                                                ng-options="obj.id as obj.value for obj in state_list">
+                                                    <option value="">ALL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
