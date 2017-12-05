@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bower_components/angular-loading-bar/src/loading-bar.css">
+</head>
+
+<body ng-app="myApp">
+
+    <http-ctrl-directive></http-ctrl-directive>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-loading-bar/src/loading-bar.js"></script>
+    <!-- <script>
+        function httpCtrlDirective() {
+            return {
+                // template: "<h1>Made by a directive!</h1>"
+                restrict: "E",
+                // replace: true,
+                templateUrl: "./httpCtrl/httpCtrl.view.html"
+            };
+        }
+        function httpCtrl($scope, $http) {
+            // $http.get("welcome.htm").then(function (response) {
+            // $scope.myWelcome = response.data;
+            // });
+            $scope.myWelcome = "vao day"
+        }
+        angular
+            .module("myApp", [])
+            .directive("httpCtrlDirective", httpCtrlDirective)
+            .controller("httpCtrl", httpCtrl)
+    </script> -->
+    <!-- DIRECTIVE -->
+    <!-- <script src="./myCtrl/myCtrl.directive.js"></script> -->
+    <!-- <script src="./personCtrl/personCtrl.directive.js"></script> -->
+    <script src="./httpCtrl/httpCtrl.directive.js"></script>
+
+    <!-- CONTROLLER -->
+    <!-- <script src="./myCtrl/myCtrl.controller.js"></script> -->
+    <!-- <script src="./personCtrl/personCtrl.controller.js"></script> -->
+    <script src="./httpCtrl/httpCtrl.controller.js"></script>
+
+    <!-- SERVICE -->
+    <!-- <script src="./httpCtrl/httpCtrl.loadingservice.js"></script> -->
+    
+    <!-- SETUP APP -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

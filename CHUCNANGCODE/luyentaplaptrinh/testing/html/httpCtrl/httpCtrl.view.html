@@ -1,0 +1,138 @@
+<div ng-controller="httpCtrl">
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-color: #bbb;
+            border: none;
+        }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #bbb;
+            color: #594F4F;
+            background-color: #E0FFEB;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #bbb;
+            color: #493F3F;
+            background-color: #9DE0AD;
+        }
+
+        .tg .tg-zrbq {
+            background-color: #C2FFD6;
+            text-decoration: underline;
+            color: #000000;
+            vertical-align: top
+        }
+
+        .tg .tg-4oxe {
+            font-style: italic;
+            text-decoration: underline;
+            vertical-align: top
+        }
+
+        .tg .tg-pbw8 {
+            background-color: #C2FFD6;
+            text-decoration: underline;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-rmb8 {
+            background-color: #C2FFD6;
+            vertical-align: top
+        }
+
+        .tg .tg-0l6a {
+            background-color: #C2FFD6;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-ixru {
+            background-color: #C2FFD6;
+            text-decoration: underline;
+            vertical-align: top
+        }
+
+        .tg .tg-amwm {
+            font-weight: bold;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-9hbo {
+            font-weight: bold;
+            vertical-align: top
+        }
+
+        .tg .tg-yw4l {
+            vertical-align: top
+        }
+    </style>
+    <p>Today's welcome message is:</p>
+
+    <h1>{{myWelcome}}</h1>
+
+    <table class="tg" ng-repeat="u in users">
+        <tr>
+            <th class="tg-amwm">stt</th>
+            <th class="tg-amwm" colspan="6">address</th>
+            <th class="tg-amwm" colspan="3">company</th>
+            <th class="tg-9hbo">email</th>
+            <th class="tg-amwm">name</th>
+            <th class="tg-amwm">phone</th>
+            <th class="tg-amwm">username</th>
+            <th class="tg-amwm">website</th>
+        </tr>
+        <tr>
+            <td class="tg-0l6a" rowspan="3">{{u.id}}</td>
+            <td class="tg-pbw8">street</td>
+            <td class="tg-pbw8">suite</td>
+            <td class="tg-pbw8">city</td>
+            <td class="tg-pbw8">zipcode</td>
+            <td class="tg-pbw8" colspan="2">geo</td>
+            <td class="tg-zrbq">name</td>
+            <td class="tg-ixru">catchPhrase</td>
+            <td class="tg-ixru">bs</td>
+            <td class="tg-rmb8" rowspan="3">{{u.email}}</td>
+            <td class="tg-rmb8" rowspan="3">{{u.name}}</td>
+            <td class="tg-rmb8" rowspan="3">{{u.phone}}</td>
+            <td class="tg-rmb8" rowspan="3">{{u.username}}</td>
+            <td class="tg-rmb8" rowspan="3">{{u.website}}</td>
+        </tr>
+        <tr>
+            <td class="tg-yw4l" rowspan="2">{{u.address.street}}</td>
+            <td class="tg-yw4l" rowspan="2">{{u.address.suite}}</td>
+            <td class="tg-yw4l" rowspan="2">{{u.address.city}}</td>
+            <td class="tg-yw4l" rowspan="2">{{u.address.zipcode}}</td>
+            <td class="tg-4oxe">lat</td>
+            <td class="tg-4oxe">lng</td>
+            <td class="tg-yw4l" rowspan="2">{{u.company.name}}</td>
+            <td class="tg-yw4l" rowspan="2">{{u.company.catchPhrase}}</td>
+            <td class="tg-yw4l" rowspan="2">{{u.company.bs}}</td>
+        </tr>
+        <tr>
+            <td class="tg-rmb8">{{u.address.geo.lat}}</td>
+            <td class="tg-rmb8">{{u.address.geo.lng}}</td>
+        </tr>
+    </table>
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
