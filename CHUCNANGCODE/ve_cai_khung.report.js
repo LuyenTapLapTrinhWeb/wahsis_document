@@ -171,7 +171,23 @@ $scope.pdf = function () {
     }, 500);
     return false;
   };
+ 
   //viet trong ham phan quyen
+  $scope.branch = {
+    company_id: com_id
+  };
+  var dtJSONCompany = JSON.stringify({
+    company: $scope.branch
+  });
+  UtilityService.getListObjectWithParamDev(
+    "company",
+    "detail",
+    dtJSONCompany
+  ).then(function (response) {
+    if (response.data.err === 0) {
+      $scope.branch_detail = response.data.dt.company;
+    }
+  });
 $scope.get_list_pdf = function () {
     $scope.page_pdf = { page_index: 1, page_size: 10000 };
     var json_pdf = JSON.stringify({
