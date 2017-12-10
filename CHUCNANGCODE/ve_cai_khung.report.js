@@ -117,7 +117,30 @@
         <!-- end table detail file pdf -->
     </div>
 </div>
+/**VE CAI NUT */
+<div class="pull-right">
+<div class="btn-group" uib-dropdown="">
+<button class="btn btn-primary pull-right" type="button" uib-dropdown-toggle="">
 
+    {{"EXPORT"|translate}}
+    <span class="caret">
+    </span>
+</button>
+<ul role="menu" uib-dropdown-menu="">
+    <!--<li><a data-ng-click="excel()">Excel</a></li>-->
+    <li>
+        <a data-ng-click="pdf()">
+            PDF
+        </a>
+        <!-- <a data-ng-click="pdf(2)">
+            {{"Detailes_Feedback"|translate}}
+        </a> -->
+        <a id="excel">Excel</a>
+    </li>
+
+</ul>
+</div>
+</div>
     //viet ngoai ham phan quyen
 $scope.pdf = function () {
     $rootScope.checkLogout();

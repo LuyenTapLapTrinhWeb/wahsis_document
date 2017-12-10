@@ -1,0 +1,64 @@
+<div class="ibox-content" style="padding-bottom: 0px !important;">
+    <div class="panel-body row" style="padding-top:0px">
+        <div class="col-md-1 row show_tree text_doc1" style="padding-right: 0px;" ng-if='is_hide'>
+            <div onclick="thaydoi()" class='tree_text text_doc'>
+                {{"FLOOR_PLAN"|translate}}
+            </div>
+        </div>
+        <div class="col-md-3 row tree_left an" style="padding-right: 0px;">
+            <div class="col-md-12" style="height: 25px;    background: #1eb293;color: white;    padding-top: 3px;padding-left: 25px;">
+                <div class="row">
+                    {{"FLOOR_PLAN"|translate}}
+                    <div onclick="thaydoi()" style="position: absolute;    right: 2%; top: 10%;">
+                        <i class="fa fa-times" aria-hidden="true" style="transform: rotate(90deg)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="well" style="padding-bottom: 0px ;margin-bottom: 5px!important;padding-left: 0px;overflow-y: scroll;height: 426px">
+                        <div>
+                        </div>
+                        <div id="jstree" js-tree="treeConfig" ng-model="treeData" tree="treeInstance">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 well pull-right content_right" style="padding-left: 0px;padding-bottom: 0px;    padding-right: 15px;">
+            <div class="col-md-12 pull-right row" style="padding-left: 0px">
+                <div class="form-group ">
+                    <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;margin-bottom: 10px">
+                        <div class="row">
+                            <!-- condition search -->
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 ">
+                            <!-- nut search o day -->
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding-right: 0px">
+                        <div class=" text-right " id="div_paging" style="margin-bottom: 0px;padding-top:0 ;background-color:transparent !important;padding-left: 0px">
+                            <!-- menu o day -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /total  -->
+                <div class="form-group ">
+                    <div class="col-md-12" style="overflow-x: auto;padding-left: 0px;padding-right: 0px">
+                        <div class="table-responsive" style="overflow-x: inherit;height: 208px">
+                            <!-- table o day -->
+                        </div>
+                    </div>
+                </div>
+                <!--  end total -->
+                <!-- detail -->
+
+                <!--  detail -->
+            </div>
+        </div>
+    </div>
+</div>
