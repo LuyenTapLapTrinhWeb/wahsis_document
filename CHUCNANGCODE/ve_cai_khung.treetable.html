@@ -1,0 +1,141 @@
+<style>
+        .text_a {
+            border: none !important;
+            font-weight: bold;
+            background: transparent !important;
+            padding-top: 0px !important;
+        }
+    
+        .text_a:focus {
+            box-shadow: none !important;
+            border: none !important;
+        }
+    
+        label {
+            margin: 0px;
+        }
+    
+        .text_b {
+    
+            margin-bottom: 5px !important
+        }
+    
+        #frmcustomers input[type=text],
+        #frmcustomers input[type=date] {
+            margin-bottom: 10px !important;
+        }
+    </style>
+    <div>
+        <div class="page-breadcrumbs breadcrumbs-fixed">
+            <ul class="breadcrumb">
+                <li>
+                    <strong>{{translation.SMR_MODULE}}</strong>
+                </li>
+            </ul>
+            <div class="pull-right" style="margin-right: 20px">
+                <div class="pull-right" style="margin-right: 20px">
+                    <button data-ng-click="create()" ng-disabled="!allow[0]" type="button" class="btn btn-default btn-xs black">
+                        <i class="glyphicon glyphicon-pencil"></i>{{translation.ADD_NEW}}</button>
+                    <button data-ng-click="edit()" ng-disabled="!allow[1]" type="button" class="btn btn-default btn-xs black">
+                        <i class="fa fa-edit"></i>{{translation.EDIT}}</button>
+                    <button data-ng-click="delete()" ng-disabled="!allow[2]" type="button" class="btn btn-default btn-xs black">
+                        <i class="fa fa-trash-o"></i>{{translation.DELETE}}</button>
+                    <!-- <button data-ng-click="print()" ng-disabled="!allow[3]" type="button" class="btn btn-default btn-xs black">
+                            <i class="glyphicon glyphicon-print"></i>{{translation.PRINT}}</button> -->
+                    <button ng-click="company()" class="btn btn-default btn-xs black">
+                        <i class="glyphicon glyphicon-arrow-left"></i>{{translation.BACK}} {{translation.LIST_COMPANY}}</button>
+    
+                </div>
+            </div>
+        </div>
+        <!-- /Page Bread crumb -->
+        <div class="page-body" style="margin-top: 30px">
+            <form name="frmcustomers" class="form-horizontal ng-pristine ng-scope ng-invalid ng-invalid-required" novalidate="" method="POST"
+                enctype="multipart/form-data">
+                <div class="well with-header">
+                    <div class="header bordered-pink">
+                    </div>
+                    <div>
+                        <div class="row row-p-m-5">
+                            <div class="col-sm-12" style="padding-left: 0px">
+                                <div class="form-group m-b-0">
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_RESOURCES_NAME}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <input ng-model="resources_name" class="a" ng-disabled="stt_search" maxlength="256">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_ESPECIALLY_ID}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <input ng-model="especially_id" class="a" ng-disabled="stt_search" maxlength="32">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_PRIORITY}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <input ng-model="priority" class="a" ng-disabled="stt_search">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_DESCRIPTION}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <input ng-model="description" class="a" ng-disabled="stt_search">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_MODULE_ID}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <input ng-model="module_id" class=" a" ng-disabled="stt_search" maxlength="32">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">{{translation.SMR_PARENT_ID}}</label>
+                                            <div class="col-md-8">
+                                                <div class="fg-line">
+                                                    <select ng-model="parent_id" ng-options="x.parent_id as x.parent_name for x in parent_list" class="a" ng-disabled="stt_search">
+                                                        <option value="">{{translation.SMR_CHOOSE_PARENT_ID}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group  m-b-0" style="padding-top: 0;text-align: right;margin-right: 0px">
+                                            <button style="height:29px;" class="btn btn-default btn-xs red " ng-disabled="stt_search" ng-click="search()">
+                                                <i class="fa fa-search"></i>{{translation.SEARCH}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div ui-grid="gridOptions" ui-grid-tree-view class="grid"></div>
+    
+                </div>
+            </form>
+        </div>
+    </div>
