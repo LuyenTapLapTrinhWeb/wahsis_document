@@ -61,6 +61,17 @@ function report_for_sale_controller($scope, $timeout, UtilityCheckFormatService,
               }
             });
           };
+          $scope.is_hide = true;
+          $scope.change_hide = function () {
+            $timeout(function () {
+              if ($scope.is_hide == false) {
+                $scope.is_hide = true;
+              } else {
+                $scope.is_hide = false;
+              }
+              $scope.$apply();
+            }, 50);
+          };
           $scope.loadInfo = function (page_size, page_index) {
             $scope.languageTemp = { language_id: $scope.language_id };
             if (page_index === undefined || page_index === "" || page_index === null)
@@ -99,7 +110,98 @@ function report_for_sale_controller($scope, $timeout, UtilityCheckFormatService,
     });
   
   
-  
+    $scope.location_temp = {};
+    
+        var jsonLocation = JSON.stringify({
+          locations: $scope.location_temp,
+          company: $scope.company
+        });
+        UtilityService.getListObjectWithParam(
+          "locations",
+          "list",
+          jsonLocation
+        ).success(function (response) {
+          if (response.err === 0) {
+            $scope.treeData = [];
+            $scope.location_list = response.dt.locations_list;
+            // console.log($scope.location_list)
+            for (var i = 0; i < $scope.location_list.length; i++) {
+              $scope.tam = {
+                id: "",
+                parent: "",
+                text: "",
+                type: "",
+                state: {
+                  opened: true
+                  // "selected": true
+                }
+              };
+              if ($scope.location_list[i].location_id === 1) {
+                $scope.tam.id = $scope.location_list[i].location_id;
+                $scope.tam.parent = "#";
+                $scope.tam.text = $scope.location_list[i].location_name;
+                $scope.tam.type = "default";
+                $scope.treeData.push($scope.tam);
+              } else {
+                $scope.tam.id = $scope.location_list[i].location_id;
+                $scope.tam.parent = $scope.location_list[i].parent_id;
+                $scope.tam.text = $scope.location_list[i].location_name;
+                $scope.tam.type = "default";
+                $scope.treeData.push($scope.tam);
+              }
+            }
+            $scope.treeConfig = {
+              plugins: ["types", "dnd", "checkbox"],
+              types: {
+                default: {
+                  icon: "fa fa-folder"
+                },
+                html: {
+                  icon: "fa fa-file-code-o"
+                },
+                svg: {
+                  icon: "fa fa-file-picture-o"
+                },
+                css: {
+                  icon: "fa fa-file-code-o"
+                },
+                img: {
+                  icon: "fa fa-file-image-o"
+                },
+                js: {
+                  icon: "fa fa-file-text-o"
+                },
+                checkbox: {
+                  keep_selected_style: false
+                }
+              }
+            };
+            // console.log($scope.treeData)
+            //                            $(window).bind("load", function () {
+            $timeout(function () {
+              $("#jstree").jstree();
+              $("#jstree").on("changed.jstree", function (e, data) {
+                // console.log($scope.rooms_list)
+                //                                console.log(data.selected);
+                $scope.selected = data.selected;
+                // console.log(data.selected)
+                $scope.rooms = [];
+                $timeout(function () {
+                  for (var i = 0; i < data.selected.length; i++) {
+                    for (var j = 0; j < $scope.rooms_list.length; j++) {
+                      if (
+                        parseInt(data.selected[i]) ===
+                        parseInt($scope.rooms_list[j].location_id)
+                      )
+                        $scope.rooms.push($scope.rooms_list[j]);
+                    }
+                  }
+                  // console.log($scope.rooms)
+                }, 100);
+              });
+            }, 1);
+          }
+        });
     $scope.search = function () {
       $rootScope.checkLogout()
       $scope.selected_tam = ""
