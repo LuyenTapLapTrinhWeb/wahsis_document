@@ -10,3 +10,4 @@
         </table>
     </div>
 </div>
+$scope.dtOptions = DTOptionsBuilder.newOptions();
