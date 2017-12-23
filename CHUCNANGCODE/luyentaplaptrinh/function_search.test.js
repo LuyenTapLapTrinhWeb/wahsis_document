@@ -10,6 +10,9 @@ function questionmarksController(
   DTOptionsBuilder,
   $filter
 ) {
+  $rootScope.main_user_guid_userguid_id_show_popup =
+    "pms_setting_apartment_fee_group";
+  $rootScope.main_user_guid_module_id_show_popup = "pms";
   /**batdau caidat doituong{rootscope.is_menu}*/
   $scope.dtOptions = DTOptionsBuilder.newOptions();
   $rootScope.Is_Menu = "apartment";
@@ -36,6 +39,12 @@ function questionmarksController(
   /**ketthuc khaibao doi_tuong{api.search.object} */
 
   //**batdau khaibao doi_tuong{menu.search.phantrang} */
+  $scope.list_page = [];
+  $scope.item_per = [];
+  $scope.item_per_page1 = [];
+  $scope._questionmarklist_ = [];
+  $scope.selected = [];
+
   var json_value = getCookieJson("pms-dev-format");
   $scope.item_per_page = JSON.parse(json_value).item_per_page;
   $scope.item_per_page_list = JSON.parse(json_value).item_per_page_list;
@@ -50,11 +59,7 @@ function questionmarksController(
   }
   /**ketthuc khaibao doi_tuong{menu.search.phantrang}*/
   //khaibao danh_sach[api.search.component]
-  $scope.list_page = [];
-  $scope.item_per_page1 = [];
-  $scope._questionmarklist_ = [];
-  $scope.selected = [];
-
+  
   /**batdat viet {phuong_thuc:"load.api.search.lansau"}*/
   $scope.load_info = (page_size, page_index) => {
     if (page_index === undefined || page_index === null || page_index === "") {
@@ -139,33 +144,33 @@ function questionmarksController(
   );
   //batdau viet phantrang decentralization("").then(success=>{},err=>{})
   UtilityService.decentralization("pms_questionmark?").then(
-    success => {
+    response => {
       if (response.data.err === 0 && response.data.dt !== undefined) {
         $scope.allow = utility.get_allow(response.data);
         if (response.data.dt.permission_list.length > 0) {
+          $scope.questionmarks_click = (id, item) => {
+            $("tr").removeClass("clicked");
+            $("#questionmarks?_" + id).addClass("clicked");
+            $scope.selected = [];
+            $scope.selected.push(item);
+          };
           if (response.data.dt.permission_list[0].allow_edit === true) {
-            $scope.questionmarks_click = (id, item) => {
-              $("tr").removeClass("clicked");
-              $("#questionmarks?_" + id).addClass("clicked");
-              $scope.selected = [];
-              $scope.selected.push(item);
-            };
             $scope.questionmarks_dbclick = (id, item) => {
               $rootScope.checkLogout();
               $scope.selected = [];
               $scope.selected.push(item);
               openPopup($scope.questionmarksList, $scope.selected[0]);
             };
-            $scope.page = { page_index: 1, page_size: 10000 };
-            /**questionmark 
-             * batdau viet {api.component} neu co*/
-            //Happy! Go!
-            /**ketthuc viet {api.component} neuco */
-            $scope.load_info($scope.item_per_page, 1);
-            $scope.item_per_page2 = () => {
-              $scope.load_info($scope.item_per_page, 1);
-            };
           }
+          $scope.page = { page_index: 1, page_size: 10000 };
+          /**questionmark 
+           * batdau viet {api.component} neu co*/
+          //Happy! Go!
+          /**ketthuc viet {api.component} neuco */
+          $scope.load_info($scope.item_per_page, 1);
+          $scope.item_per_page2 = () => {
+            $scope.load_info($scope.item_per_page, 1);
+          };
         }
       }
     },
