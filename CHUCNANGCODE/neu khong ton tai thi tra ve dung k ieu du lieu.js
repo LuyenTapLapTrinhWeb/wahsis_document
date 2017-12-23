@@ -1,7 +1,7 @@
 /**NẾU KHÔNG TỒN TẠI THÌ TRẢ VỀ ĐÚNG KIỂU DỮ LIỆU */
 /**RETURN TRUE/FALSE */
 function checkValue(value) {
-  return array !== undefined && array !== "" && array !== null ? true : false;
+  return value !== undefined && value !== "" && value !== null ? true : false;
 }
 /**RETURN ARRAY */
 function getArray(value) {
@@ -16,6 +16,6 @@ function getString(string) {
   return checkValue(string) ? string : "";
 }
 /**RETURN -1 */
-function getTruMot(number) {
-  return checkValue(number) ? String(number) : -1;
+function getNull(number) {
+  return checkValue(number) ? number : -1;
 }
