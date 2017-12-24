@@ -60,6 +60,10 @@ pms_setting_log_database_pms_web
     <span class="nav-label menu_parent">{{"LOG_DATABASE_PMS_WEB"| translate}}</span>
     <span class="fa arrow"></span>
 </a>
+/**
+-----MODULE_ID = PMS Không đổi được phải xóa đi tạo lại vì vậy cần viết chính xác module_id
+-----RESOURCE_ID = PMS_SETTING_LOG_DATABASE_PMS_WEB
+*/
 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('notifications_logdbpmsweb')}">
     <li ui-sref-active="active" ng-if="showSubmenu(main_menu, 'notification', 'log_database_pms_web', 'pms_setting_log_database_pms_web')">
         <a ui-sref="notifications_logdbpmsweb.log_database_pms_web" ng-click="capnhat_id_user_guide('pms_setting_log_database_pms_web','pms')">
