@@ -30,7 +30,8 @@ $scope.flag.ngshowCanhoSelect = true;
             <option value="" disabled>--Choose language--</option>
         </select>
     </div>
-</div></div>
+</div>
+</div>
 
 /**CHIA NUT BAM KHI ADD HOAC UPDATE */
         $scope.flag = {};

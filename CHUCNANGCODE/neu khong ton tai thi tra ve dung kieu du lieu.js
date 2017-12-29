@@ -10,7 +10,7 @@ function getArray(value) {
 }
 /**RETURN OBJECT */
 function getObj(value) {
-  return checkValue(value) ? value : {};
+  return checkValue(value) ? JSON.parse(value) : {};
 }
 /**RETURN NUMBER */
 function getNumber(value) {
@@ -22,7 +22,7 @@ function getString(string) {
 }
 /**RETURN -1 */
 function getNull(number) {
-  return checkValue(number) ? number : -1;
+  return checkValue(number) ? parseInt(String(value)) : -1;
 }
 /**--RETURN TRUE/FALSE */
 function checkNoErr(err) {
@@ -31,4 +31,8 @@ function checkNoErr(err) {
 /**RETURN LANGUAGE */
 function getLanguage(value) {
   return checkValue(value) ? value : "en";
+}
+/**RETURN DATE */
+function getDate(value) {
+  return checkValue(value) ? utility.change_date_to_save(value) : "";
 }
