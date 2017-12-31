@@ -39,10 +39,10 @@ function questionmarksController(
   /**ketthuc khaibao doi_tuong{api.search.object} */
 
   //**batdau khaibao doi_tuong{menu.search.phantrang} */
+  $scope._questionmarklist_ = [];
   $scope.list_page = [];
   $scope.item_per = [];
   $scope.item_per_page1 = [];
-  $scope._questionmarklist_ = [];
   $scope.selected = [];
 
   var json_value = getCookieJson("pms-dev-format");
@@ -51,6 +51,8 @@ function questionmarksController(
   $scope.page_length = page_length;
   $scope.currentPage1 = 1;
   $scope.page = {};
+  
+  $scope.item_per = $scope.item_per_page_list.split(",");
   for (var j = 0; j < $scope.item_per.length; j++) {
     $scope.item_per_page1.push({
       value: $scope.item_per[j],
