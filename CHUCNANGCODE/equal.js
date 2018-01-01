@@ -23,7 +23,6 @@ var whatis = function(val) {
 		else
 			return 'integer';
 	}
-
 	return type;
 };
 
