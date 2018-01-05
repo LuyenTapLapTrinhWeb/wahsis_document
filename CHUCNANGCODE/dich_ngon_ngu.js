@@ -5,16 +5,17 @@ var dich_ngon_ngu = {
   format_to_date: "To date don't match format",
   from_to_date: "To date must greater than from date",
   check_from_to: "End date must be greater than start date",
-  delete_item: "Please choose item to delete!",
-  edit_item: "Please choose item to edit!",
   email_error: "Email invalidate",
   date_from_to: "From date and to date invalid",
   SUCCESS: "Success",
   WARNING: "Warning",
+  edit_item: "Please choose item to edit!",
+  delete_item: "Please choose item to delete!",
   Save_Error: "Save Error",
   Save_Success: "Save Success",
   Delete_Error: "Delete Error.",
   Delete_Success: "Delete Success.",
+  DELETE_UNABLE:"Because the data has been used, it can not be deleted."
   Yes_delete_it: "Yes, delete it!",
   Are_you_sure: "Are you sure?",
   DELETED: "Deleted",
@@ -26,7 +27,8 @@ var dich_ngon_ngu = {
   LDPW_CREATED_OLD_DATE: "Old Data Date",
   LDPW_CREATED_NEW_DATE: "New Data Date",
   LDPW_COMPARE_OLDNEW:"So sánh",
-  LDPW_CREATED_OLDNEW_INPUTYET:"Ngày tạo dữ liệu cũ/mới chưa xác nhập"
+  LDPW_CREATED_OLDNEW_INPUTYET:"Ngày tạo dữ liệu cũ/mới chưa xác nhập",
+  
 }
 if (response.data.err === 0) {
   $uibModalInstance.close();
