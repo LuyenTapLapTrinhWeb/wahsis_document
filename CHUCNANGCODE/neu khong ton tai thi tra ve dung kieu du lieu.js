@@ -1,3 +1,13 @@
+if ( node <> NULL ) then
+while ( node.next <> NULL ) do
+node = node.next
+leafName = node.name
+end while
+else
+leafName = ""
+end if
+you can read a statement like this:
+leafName = GetLeafName( node )
 /**============================================================================================= */
 /**NẾU KHÔNG TỒN TẠI THÌ TRẢ VỀ ĐÚNG KIỂU DỮ LIỆU */
 /**RETURN TRUE/FALSE */
