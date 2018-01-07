@@ -1,0 +1,458 @@
+
+<link href="../../css/style_form.css" rel="stylesheet" type="text/css"/>
+<link href="css/style_form_view.css" rel="stylesheet" type="text/css"/>
+<style>
+    .margin_bottom_5px{
+        margin-bottom: 5px;
+    }
+</style>
+<!-- Wrapper-->
+<div ng-controller="ReportAgents">
+    <!-- Main view  -->
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>
+                {{"report_agent_list"|translate}}
+            </h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <div class="row ">
+                            <div class="col-lg-12">
+                                <div class="pull-right">
+                                    <div class="pull-right">
+                                        <div class="btn-group" uib-dropdown="">
+                                            <button class="btn btn-outline btn-primary btn-sm" type="button" uib-dropdown-toggle="">
+                                                {{"EXPORT"|translate}}
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul role="menu" uib-dropdown-menu="">
+                                                <!-- <li><a data-ng-click="excel()">Excel</a></li> -->
+                                                <li>
+                                                    <a data-ng-click="pdf()">
+                                                        PDF
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form name="frm">
+                            <div class="form-group row">
+                                <div class="col-md-4 margin_bottom_10px" >
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"AGENT_CODE"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="agent_code" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 margin_bottom_5px">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"AGENT_NAME"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="agent_name" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 margin_bottom_5px">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"CONTACT_NAME"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="contact_name" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 margin_bottom_5px">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"PHONE"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="it.phone" onkeypress="return InputNumberOne1(this, event);" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 margin_bottom_5px">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"CELL_PHONE"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="cell_phone" onkeypress="return InputNumberOne1(this, event);" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 margin_bottom_5px">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"EMAIL_ADDRESS"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="it.email" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"COUNTRY"|translate}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <select chosen="" class="chosen-select" id="states" ng-model="country_id" ng-options="obj.master_data_id as obj.master_data_name for obj in country_list" tabindex="4">
+                                                <option selected="" value="">
+                                                    {{"ALL"|translate}}
+                                                </option>
+                                                <option disabled></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row">
+                                        <div class="col-md-5 " style="padding-right: 0px !important">
+                                            <label>
+                                                {{"TERM_PAID_vinh_report"|translate}} ({{"DAYS"|translate}})
+                                            </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input class="form-control" ng-model="term_paid" onkeypress="return InputNumberOne1(this, event);" type="text">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12 ">
+                                    <button class="btn btn-primary pull-right " data-ng-click="search()" type="button">
+                                        {{"SEARCH"|translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col-sm-2 " style="padding-left: 0px;padding-top: 0px; margin-bottom: 5px;padding-right: 0px">
+                            <p ng-show="items.length === 0" style="margin-bottom: 0px">
+                                <strong style="color: red">
+                                    {{"NO_RESULT"|translate}}
+                                </strong>
+                            </p>
+                        </div>
+                        <div class=" text-right " id="div_paging" style="margin-bottom: 5px;padding-top:0 ;background-color:transparent !important;padding-left: 0px">
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(4)" ng-disabled="currentPage1 == 1">
+                                <i class="ion-arrow-left-a">
+                                </i>
+                                {{"FIRST"|translate}}
+                            </button>
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(1)" ng-disabled="currentPage1 == 1">
+                                <i class="ion-chevron-left">
+                                </i>
+                                {{"PREVIOUS"|translate}}
+                            </button>
+                            {{"ITEM_PER_PAGE"|translate}}:
+                            <select id="page" ng-change="item_per_page2()" ng-model="item_per_page" ng-options="x.value as x.text for x in item_per_page1">
+                            </select>
+                            {{"PAGE"|translate}}
+                            <select class="page" id="page" ng-change="load_data(2)" ng-model="currentPage1" ng-options="x.val as x.test for x in list_page">
+                            </select>
+                            {{"TOTAL_PAGE"|translate}}: {{total_page}}
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(3)" ng-disabled="currentPage1 == total_page || total_page == 0">
+                                <i class="ion-chevron-right">
+                                </i>
+                                {{"NEXT"|translate}}
+                            </button>
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(5)" ng-disabled="currentPage1 == total_page || total_page == 0">
+                                <i class="ion-arrow-right-a">
+                                </i>
+                                {{"LAST"|translate}}
+                            </button>
+                            |  {{"TOTAL_RESULT"|translate}}: {{total_row}}
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover dataTables-example" data-page-length="{{page_length}}" datatable="ng" dt-options="dtOptions" id="example">
+                                <thead>
+                                    <tr>
+                                        <th style="white-space: nowrap;">
+                                            {{"STT"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"AGENT_CODE"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"AGENT_NAME"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"PHONE"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"CONTACT_NAME"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"CELL_PHONE"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"EMAIL_ADDRESS"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"ADDRESS"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"DISTRICT"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"PROVICE_CITY"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"COUNTRY"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"ZIPCODE"|translate}}
+                                        </th>
+                                        <th style="white-space: nowrap;">
+                                            {{"TERM_PAID_vinh_report"|translate}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="agents_{{item.agent_id}}" ng-click="agents_click(item.agent_id, item)" ng-dblclick="agents_dbclick(item.agent_id, item)" ng-repeat="item in agentsList">
+                                        <td style="white-space: nowrap;">
+                                            {{currentPage1 + $index}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.agent_code}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.agent_name}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.phone}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.contact_name}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.cell_phone}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.email_address}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.address}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.city}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.state}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.country_name}}
+                                        </td>
+                                        <td style="white-space: nowrap;">
+                                            {{item.zip_code}}
+                                        </td>
+                                        <td style="white-space: nowrap;text-align: right">
+                                            {{item.term_paid}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-2 " style="padding-left: 0px;padding-top: 0px; margin-bottom: 5px;padding-right: 0px">
+                            <p ng-show="items.length === 0" style="margin-bottom: 0px">
+                                <strong style="color: red">
+                                    {{"NO_RESULT"|translate}}
+                                </strong>
+                            </p>
+                        </div>
+                        <div class=" text-right " id="div_paging" style="margin-bottom: 5px;padding-top:0 ;background-color:transparent !important;padding-left: 0px">
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(4)" ng-disabled="currentPage1 == 1">
+                                <i class="ion-arrow-left-a">
+                                </i>
+                                {{"FIRST"|translate}}
+                            </button>
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(1)" ng-disabled="currentPage1 == 1">
+                                <i class="ion-chevron-left">
+                                </i>
+                                {{"PREVIOUS"|translate}}
+                            </button>
+                            {{"ITEM_PER_PAGE"|translate}}:
+                            <select id="page" ng-change="item_per_page2()" ng-model="item_per_page" ng-options="x.value as x.text for x in item_per_page1">
+                            </select>
+                            {{"PAGE"|translate}}
+                            <select class="page" id="page" ng-change="load_data(2)" ng-model="currentPage1" ng-options="x.val as x.test for x in list_page">
+                            </select>
+                            {{"TOTAL_PAGE"|translate}}: {{total_page}}
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(3)" ng-disabled="currentPage1 == total_page || total_page == 0">
+                                <i class="ion-chevron-right">
+                                </i>
+                                {{"NEXT"|translate}}
+                            </button>
+                            <button class="btn btn-default btn-xs black" ng-click="load_data(5)" ng-disabled="currentPage1 == total_page || total_page == 0">
+                                <i class="ion-arrow-right-a">
+                                </i>
+                                {{"LAST"|translate}}
+                            </button>
+                            |  {{"TOTAL_RESULT"|translate}}: {{total_row}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="table-responsive" id="bill" style="display: none">
+        <table border="0" id="table_company" style="width: 100%">
+            <tr>
+                <td rowspan="5" style="width: 25%;text-align: center; vertical-align: top;">
+                    <img ng-src="{{logo}}" style="width: 115px; height: 90px;  object-fit: scale-down">
+                    </img>
+                </td>
+                <td style="width: 10%;text-align: left;">
+                    {{"COMPANY"|translate}}
+                </td>
+                <td style="width: 60%;text-align: left;">
+                    {{branch_detail.company_name}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 10%;text-align: left;vertical-align: top;">
+                    {{"ADDRESS"|translate}}:
+                </td>
+                <td style="width: 60%;text-align: left;">
+                    {{branch_detail.address}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 10%;text-align: left;">
+                    {{"PHONE"|translate}}:
+                </td>
+                <td style="width: 60%;text-align: left;">
+                    {{branch_detail.phone1}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 10%;text-align: left;">
+                    {{"WEBSITE"|translate}}:
+                </td>
+                <td style="width: 60%;text-align: left;">
+                    {{branch_detail.website}}
+                </td>
+            </tr>
+        </table>
+        <div class="text_print" style="text-align: center;width: 100%">
+            <b style="font-size: 20px;text-transform: uppercase;">
+                {{"report_agent_list"|translate}}
+            </b>
+        </div>
+        <table border="1" style="width: 100%;border-collapse: collapse; border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="white-space: nowrap;">
+                        {{"STT"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"AGENT_CODE"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"AGENT_NAME"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"PHONE"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"CONTACT_NAME"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"EMAIL_ADDRESS"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"ADDRESS"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"DISTRICT"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"PROVICE_CITY"|translate}}
+                    </th>
+                    <th style="white-space: nowrap;">
+                        {{"COUNTRY"|translate}}
+                    </th>
+                    <!--<th style="">{{"TERM_PAID"|translate}}</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in agentsList_print">
+                    <td style="white-space: nowrap;">
+                        {{currentPage1 + $index}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.agent_code}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.agent_name}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.phone}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.contact_name}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.email_address}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.address}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.city}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.state}}
+                    </td>
+                    <td style="white-space: nowrap;">
+                        {{item.country_id}}
+                    </td>
+                    <!--<td style="white-space: nowrap;text-align: right">{{item.term_paid}}</td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- End wrapper-->
