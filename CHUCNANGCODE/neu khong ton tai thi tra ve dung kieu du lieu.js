@@ -14,7 +14,7 @@ function getObj(value) {
 }
 /**RETURN NUMBER */
 function getNumber(value) {
-  return checkValue(value) ? parseInt(String(value)) : 0;
+  return checkValue(value) ? Number(String(value)) : 0;
 }
 /**RETURN STRING */
 function getString(string) {
