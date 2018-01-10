@@ -45,9 +45,9 @@ var thaydoi = function () {
 $scope.thaydoi = () => {
     thaydoi();
 }
- 
+
 <style>
-    
+
 
     /* ============================style for tree=========================== */
 
@@ -77,27 +77,27 @@ $scope.thaydoi = () => {
         transform-origin: left top;
     }
 </style>
-/** tree html */
-<div class="ibox-title">
-    <div class="row ">
-        <div class="col-lg-12">
-            <div class="pull-right">
-                <div class="btn-group" uib-dropdown>
-                    <button type="button" class="btn btn-outline btn-primary btn-sm" uib-dropdown-toggle style="font-size:13px">
-                        {{ "EXPORT"| translate }}
-                        <span class="caret"></span>
-                    </button>
-                    <ul role="menu" uib-dropdown-menu="">
-                        <!-- <li><a data-ng-click="excel()">Excel</a></li> -->
+    /** tree html */
+    <div class="ibox-title">
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="pull-right">
+                    <div class="btn-group" uib-dropdown>
+                        <button type="button" class="btn btn-outline btn-primary btn-sm" uib-dropdown-toggle style="font-size:13px">
+                            {{ "EXPORT"| translate }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul role="menu" uib-dropdown-menu="">
+                            <!-- <li><a data-ng-click="excel()">Excel</a></li> -->
                     <li>
-                            <a data-ng-click="pdf()">PDF</a>
-                        </li>
-                    </ul>
+                                <a data-ng-click="pdf()">PDF</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <div class="ibox-content">
         <div class="panel-body row" style="padding-top:0px">
             <div class="col-md-1 row show_tree text_doc1" style="padding-right: 0px;" ng-if='is_hide'>
@@ -105,7 +105,7 @@ $scope.thaydoi = () => {
                     {{ "FLOOR_PLAN"| translate }}
                 </div>
             </div>
-            <div class="col-md-3 row tree_left an" style="padding-right: 0px;">
+            <div class="col-md-3 row tree_left an">
                 <div class="col-md-12" style="height: 25px;    background: #1eb293;color: white;    padding-top: 3px;padding-left: 25px;">
                     <div class="row">
                         {{ "FLOOR_PLAN"| translate }}
@@ -133,7 +133,7 @@ $scope.thaydoi = () => {
                                 {{ "APARTMENT_TYPE"| translate }}
                             </label>
                             <div class="col-xs-12 col-md-8">
-                                <select type="text" id="states" chosen class="form-control" ng-options="x.room_type_id as x.name for x in type_list" ng-model="room_type_id">
+                                <select chosen id="states" class="chosen-select" ng-options="x.room_type_id as x.name for x in type_list" ng-model="room_type_id">
                                     <option value="">{{ "ALL"| translate }}</option>
                                     <option disabled></option>
                                 </select>
@@ -146,7 +146,7 @@ $scope.thaydoi = () => {
                                 {{ "VIEW_APARTMENT"| translate }}
                             </label>
                             <div class="col-xs-12 col-md-8">
-                                <select chosen="" class="form-control" id="states" ng-model="view_id" ng-options="x.master_data_id as x.master_data_name for x in viewList"
+                                <select chosen id="states" class="chosen-select" ng-model="view_id" ng-options="x.master_data_id as x.master_data_name for x in viewList"
                                     type="text">
                                     <option value="">
                                         {{ "ALL"| translate }}
@@ -216,7 +216,7 @@ $scope.thaydoi = () => {
                         <div class="form-group row">
                             <label class="col-xs-12 col-md-4">{{ "STATUS"| translate }}</label>
                             <div class="col-xs-12 col-md-8">
-                                <select class="form-control" ng-model="status_id" ng-change="status()" ng-options="obj.apartment_status_id as obj.value for obj in status1">
+                                <select chosen id="states" class="chosen-select" ng-model="status_id" ng-change="status()" ng-options="obj.apartment_status_id as obj.value for obj in status1">
                                 </select>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ $scope.thaydoi = () => {
                         </button>
                     </div>
                     <div class='col-md-12'>
-                        <div class="pull-right " id="div_paging">
+                        <div class="text-right " id="div_paging">
                             <button ng-disabled="currentPage1 == 1" ng-click="load_data(4)" class="btn btn-default btn-xs black">
                                 <i class="ion-arrow-left-a"></i>
                                 {{ "FIRST"| translate }}
@@ -261,44 +261,43 @@ $scope.thaydoi = () => {
                         </div>
                     </div>
                     <div class='col-md-12'>
-                         <div class="form-group" >
-                         <div class="table-responsive" style="overflow-x: auto">
-                                <table data-page-length='{{page_length}}' style="overflow-x: inherit;height: 230px" datatable="ng" dt-options="dtOptions"
-                                    class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th style="white-space: nowrap">{{ "STT"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "CONTRACT_NO"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "room_id"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "MAINTENANCE_VALUE"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "MAINTENANCE_FEE"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "handover_by_id"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "handover_date"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "handover_content"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "repair_content"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "remark"| translate }}</th>
-                                            <th style="white-space: nowrap">{{ "STATUS"| translate }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="item in handover_list" id="apartment_{{item.apartment_handover_id}}" ng-click="apartment_list_click(item.apartment_handover_id, item)"
-                                            ng-dblclick="apartment_list_dbclick(item.apartment_handover_id, item)">
-                                            <td style="white-space: nowrap">{{ item.stt }}</td>
-                                            <td style="white-space: nowrap">{{ item.contract_no }}</td>
-                                            <td style="white-space: nowrap">{{ item.room_name }}</td>
-                                            <td style="white-space: nowrap;text-align: right">{{ item.maintenance_value }}</td>
-                                            <td style="white-space: nowrap;text-align: right">{{ setchannumber(item.maintenance_fee)}}</td>
-                                            <td style="white-space: nowrap">{{ item.handover_by_name }}</td>
-                                            <td style="white-space: nowrap;text-align: center">{{ setdate(item.handover_date)}}</td>
-                                            <td style="white-space: nowrap">{{ item.handover_content }}</td>
-                                            <td style="white-space: nowrap">{{ item.repair_content }}</td>
-                                            <td style="white-space: nowrap">{{ item.remark }}</td>
-                                            <td style="white-space: nowrap">{{ item.status_name }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="table-responsive" style="overflow-x: auto; max-height: 300px">
+                            <table style="display: table;overflow-x: inherit;min-width:100%" data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
+                                class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="white-space: nowrap">{{ "STT"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "CONTRACT_NO"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "room_id"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "MAINTENANCE_VALUE"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "MAINTENANCE_FEE"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "handover_by_id"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "handover_date"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "handover_content"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "repair_content"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "remark"| translate }}</th>
+                                        <th style="white-space: nowrap">{{ "STATUS"| translate }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in handover_list" id="apartment_{{item.apartment_handover_id}}" ng-click="apartment_list_click(item.apartment_handover_id, item)"
+                                        ng-dblclick="apartment_list_dbclick(item.apartment_handover_id, item)">
+                                        <td style="white-space: nowrap">{{ item.stt }}</td>
+                                        <td style="white-space: nowrap">{{ item.contract_no }}</td>
+                                        <td style="white-space: nowrap">{{ item.room_name }}</td>
+                                        <td style="white-space: nowrap;text-align: right">{{ item.maintenance_value }}</td>
+                                        <td style="white-space: nowrap;text-align: right">{{ setchannumber(item.maintenance_fee)}}</td>
+                                        <td style="white-space: nowrap">{{ item.handover_by_name }}</td>
+                                        <td style="white-space: nowrap;text-align: center">{{ setdate(item.handover_date)}}</td>
+                                        <td style="white-space: nowrap">{{ item.handover_content }}</td>
+                                        <td style="white-space: nowrap">{{ item.repair_content }}</td>
+                                        <td style="white-space: nowrap">{{ item.remark }}</td>
+                                        <td style="white-space: nowrap">{{ item.status_name }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+
                     </div>
                 </div>
             </div>
