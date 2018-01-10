@@ -1,3 +1,4 @@
+Location_Service,$timeout,
 /**FIX CAI BUG TREE */
 $scope.is_hide = true
 $scope.change_hide = function () {
@@ -50,6 +51,7 @@ UtilityService.decentralization("pms_report_project_apartment_for_agents").then(
     if (response.data.err === 0 && response.data.dt !== undefined) {
         $scope.allow = utility.get_allow(response.data);
         if (response.data.dt.permission_list.length > 0) {
+            /**Dữ liệu cay tòa nhà */
             Location_Service.getList(language).then(function (response) {
                 if (response.err === 0) {
                     $scope.treeData = []
@@ -333,33 +335,43 @@ UtilityService.decentralization("pms_report_project_apartment_for_agents").then(
                         </button>
                     </div>
                     <div class='col-md-12'>
-                        <div class="text-right " id="div_paging">
-                            <button ng-disabled="currentPage1 == 1" ng-click="load_data(4)" class="btn btn-default btn-xs black">
-                                <i class="ion-arrow-left-a"></i>
-                                {{ "FIRST"| translate }}
-                            </button>
-                            <button ng-disabled="currentPage1 == 1" ng-click="load_data(1)" class="btn btn-default btn-xs black">
-                                <i class="ion-chevron-left"></i>
-                                {{ "PREVIOUS"| translate }}
-                            </button>
-                            {{ "ITEM_PER_PAGE"| translate }}:
-                                            <select id="page" ng-model="item_per_page" ng-change="item_per_page2()" ng-options="x.value as x.text for x in item_per_page1"></select>
-                            {{ "PAGE"| translate }}
-                            <select id="page" class="page" ng-model="currentPage1" ng-change="load_data(2)" ng-options="x.val as x.test for x in list_page"></select>
-                            {{ "TOTAL_PAGE"| translate }}: {{ total_page }}
-                            <button ng-disabled="currentPage1 == total_page || total_page == 0" ng-click="load_data(3)" class="btn btn-default btn-xs black">
-                                <i class="ion-chevron-right"></i>
-                                {{ "NEXT"| translate }}
-                            </button>
-                            <button ng-disabled="currentPage1 == total_page || total_page == 0" ng-click="load_data(5)" class="btn btn-default btn-xs black">
-                                <i class="ion-arrow-right-a"></i>
-                                {{ "LAST"| translate }}
-                            </button> | {{ "TOTAL_RESULT"| translate }}: {{ total_row }}
-                        </div>
-                    </div>
+                                <div class="row">
+                                    <div class="col-sm-2 pull-left">
+                                        <p ng-show="items.length === 0" style="margin-bottom: 0px">
+                                            <strong style="color: red">
+                                                {{"NO_RESULT"|translate}}
+                                            </strong>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-8 pull-right text-right">
+                                        <button ng-disabled="currentPage1 == 1" ng-click="load_data(4)" class="btn btn-default btn-xs black">
+                                            <i class="ion-arrow-left-a"></i>
+                                            {{ "FIRST"| translate }}
+                                        </button>
+                                        <button ng-disabled="currentPage1 == 1" ng-click="load_data(1)" class="btn btn-default btn-xs black">
+                                            <i class="ion-chevron-left"></i>
+                                            {{ "PREVIOUS"| translate }}
+                                        </button>
+                                        {{ "ITEM_PER_PAGE"| translate }}:
+                                        <select id="page" ng-model="item_per_page" ng-change="item_per_page2()" ng-options="x.value as x.text for x in item_per_page1"></select>
+                                        {{ "PAGE"| translate }}
+                                        <select id="page" class="page" ng-model="currentPage1" ng-change="load_data(2)" ng-options="x.val as x.test for x in list_page"></select>
+                                        {{ "TOTAL_PAGE"| translate }}: {{ total_page }}
+                                        <button ng-disabled="currentPage1 == total_page || total_page == 0" ng-click="load_data(3)" class="btn btn-default btn-xs black">
+                                            <i class="ion-chevron-right"></i>
+                                            {{ "NEXT"| translate }}
+                                        </button>
+                                        <button ng-disabled="currentPage1 == total_page || total_page == 0" ng-click="load_data(5)" class="btn btn-default btn-xs black">
+                                            <i class="ion-arrow-right-a"></i>
+                                            {{ "LAST"| translate }}
+                                        </button> | {{ "TOTAL_RESULT"| translate }}: {{ total_row }}
+                                    </div>
+                                </div>
+                            </div>
                     <div class='col-md-12'>
-                        <div class="table-responsive" style="overflow-x: auto; max-height: 300px">
-                            <table style="display: table;overflow-x: inherit;min-width:100%" data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
+                    
+                        <div class="table-responsive" style="overflow-x: auto; ">
+                            <table style="display: table;overflow-x: inherit; max-height: 300px; min-width:100%" data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
                                 class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
