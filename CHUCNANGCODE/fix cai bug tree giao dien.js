@@ -45,6 +45,103 @@ var thaydoi = function () {
 $scope.thaydoi = () => {
     thaydoi();
 }
+UtilityService.decentralization("pms_report_project_apartment_for_agents").then(function (response) {
+
+    if (response.data.err === 0 && response.data.dt !== undefined) {
+        $scope.allow = utility.get_allow(response.data);
+        if (response.data.dt.permission_list.length > 0) {
+            Location_Service.getList(language).then(function (response) {
+                if (response.err === 0) {
+                    $scope.treeData = []
+                    $scope.location_list = response.dt.locations_list;
+                    for (var i = 0; i < $scope.location_list.length; i++) {
+                        $scope.tam = {
+                            "id": "",
+                            "parent": "",
+                            "text": "",
+                            "type": "",
+                            "state": {
+                                "opened": true,
+                            },
+                        }
+                        if ($scope.location_list[i].location_id === 1) {
+                            $scope.tam.id = $scope.location_list[i].location_id;
+                            $scope.tam.parent = "#";
+                            $scope.tam.text = $scope.location_list[i].location_name;
+                            $scope.tam.type = "default";
+                            $scope.treeData.push($scope.tam)
+                        } else {
+                            $scope.tam.id = $scope.location_list[i].location_id;
+                            $scope.tam.parent = $scope.location_list[i].parent_id;
+                            $scope.tam.text = $scope.location_list[i].location_name;
+                            $scope.tam.type = "default";
+                            $scope.treeData.push($scope.tam)
+                        }
+                    }
+                    $scope.treeConfig = {
+                        'plugins': ['types', 'dnd', 'checkbox'],
+                        'types': {
+                            'default': {
+                                'icon': 'fa fa-folder',
+                            },
+                            'html': {
+                                'icon': 'fa fa-file-code-o'
+                            },
+                            'svg': {
+                                'icon': 'fa fa-file-picture-o'
+                            },
+                            'css': {
+                                'icon': 'fa fa-file-code-o'
+                            },
+                            'img': {
+                                'icon': 'fa fa-file-image-o'
+                            },
+                            'js': {
+                                'icon': 'fa fa-file-text-o'
+                            },
+                            "checkbox": {
+                                "keep_selected_style": false
+                            },
+                        }
+                    };
+                    console.log($scope.treeData)
+                    $timeout(function () {
+                        $('#jstree').jstree();
+                        $('#jstree').on("changed.jstree", function (e, data) {
+                            console.log($scope.rooms_list)
+                            //                                console.log(data.selected);
+                            $scope.selected = data.selected
+                            console.log(data.selected)
+                            $scope.rooms = []
+                            $timeout(function () {
+                                for (var i = 0; i < data.selected.length; i++)
+                                {
+                                    for (var j = 0; j < $scope.rooms_list.length; j++)
+                                    {
+                                        if (parseInt(data.selected[i]) === parseInt($scope.rooms_list[j].location_id))
+                                            $scope.rooms.push($scope.rooms_list[j])
+                                    }
+                                }
+                                console.log($scope.rooms)
+                            }, 100);
+                        });
+                    }, 1);
+                    $scope.branch = {company_id: com_id}
+                    var dtJSONCompany = JSON.stringify({
+                        company: $scope.branch
+                    })
+                    UtilityService.getListObjectWithParamDev("company", "detail", dtJSONCompany).then(function (response) {
+                        if (response.data.err === 0) {
+                            $scope.branch_detail = response.data.dt.company;
+                            ///$scope.search();
+                        }
+                    });
+                }
+            });
+        }
+    }
+})
+
 
 <style>
 
