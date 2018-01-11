@@ -17,9 +17,6 @@ var thaydoi = function () {
     if ($(".tree_left").hasClass("an")) {
         $(".tree_left").removeClass("an")
         $(".tree_left").addClass("hien")
-        // $(".show_tree").removeClass("hien")
-        // $(".show_tree").addClass("an")
-        // $(".tree_text").removeClass("text_doc")
 
         $scope.change_hide();
 
@@ -32,10 +29,7 @@ var thaydoi = function () {
     } else {
         $(".tree_left").removeClass("hien")
         $(".tree_left").addClass("an")
-        // $(".show_tree").removeClass("an")
-        // $(".show_tree").addClass("hien")
-        // $(".tree_text").addClass("text_doc")
-
+         
         $scope.change_hide();
         $(".content_right").removeClass("col-md-9 col-xs-12 pull-right")
         $(".content_right").addClass("col-md-12 col-xs-12")
@@ -143,8 +137,16 @@ UtilityService.decentralization("pms_report_project_apartment_for_agents").then(
         }
     }
 })
-
-
+/**Thêm location_id vào điều kiện search */
+$scope.search = function () {
+    $rootScope.checkLogout();
+    
+    if ($scope.selected.length > 0) {
+        $scope.str_search_rooms.location_id = $scope.selected;
+    } else {
+        $scope.str_search_rooms.location_id = -1;
+    }
+}
 <style>
 
 
