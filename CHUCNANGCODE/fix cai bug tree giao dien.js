@@ -147,6 +147,8 @@ $scope.search = function () {
         $scope.str_search_rooms.location_id = -1;
     }
 }
+<link href="css/style_form.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/style_form_view.css" rel="stylesheet" type="text/css"/>
 <style>
 
 
