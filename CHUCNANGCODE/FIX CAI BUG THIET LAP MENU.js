@@ -3,13 +3,13 @@
 pms_setting_log_database_pms_web
 ============================================
 -----config.js
------state cha
+-----state cha  /**top menu*/
 .state("notifications_logdbpmsweb", {
     abstract: true,
     url: "/noti_logdb",
     templateUrl: "views/common/content.html"
   })
------state con
+-----state con  /**top menu.left menu*/
 .state("notifications_logdbpmsweb.log_database_pms_web", {
     url: "/log_database_pms_web",
     templateUrl:"setting/notification/log_database_pms_web/log_database_pms_web.view.html",
