@@ -15,7 +15,8 @@ var dich_ngon_ngu = {
   Save_Success: "Save Success",
   Delete_Error: "Delete Error.",
   Delete_Success: "Delete Success.",
-  DELETE_UNABLE:"Because the data has been used, it can not be deleted."
+  DELETE_UNABLE:"Because the data has been used, it can not be deleted.",
+  Notice: "Notice!",
   Yes_delete_it: "Yes, delete it!",
   Are_you_sure: "Are you sure?",
   DELETED: "Deleted",
