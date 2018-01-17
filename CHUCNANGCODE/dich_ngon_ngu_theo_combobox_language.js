@@ -1,3 +1,4 @@
+/**DICH NGON NGU THEO COMBO BOX LANGUAGE */
 $scope.$watch(
     $scope => {
       return ($scope.abc = $filter("translate")("NOTE_FORMAT1"));
