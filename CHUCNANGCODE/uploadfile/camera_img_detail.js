@@ -1,3 +1,4 @@
+/**Đặt chung với fix cai bug giao diện */
 if (item.master_camera_id !== 0) {
 
     if ($scope.room_posted_for_sale_detail.image_path !== "" && $scope.room_posted_for_sale_detail.image_path !== "[]" && $scope.room_posted_for_sale_detail.image_path !== null && $scope.room_posted_for_sale_detail.image_path !== undefined)

@@ -1,3 +1,7 @@
+/**FIX CAI BUG UPLOAD HINH
+ * 
+ * NHỚ CÀI ĐẶT THUỘC TÍNH IMAGE_PAGE CHO JSONDATA ADD VÀ UPDATE
+ */
 $scope.reply_attachments = ""
 $scope.reply_attachments1 = []
 $scope.selected_image_list = [];

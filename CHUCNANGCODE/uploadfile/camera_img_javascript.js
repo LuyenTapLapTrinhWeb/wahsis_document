@@ -1,4 +1,5 @@
 <!-- // copy vao file new html -->
+// Nho cai dat id page_child cho page + id btn_ok cho nut save
 <script src="js/jquery/jquery_3_1_1.js" type="text/javascript"></script>
 <script>
 
@@ -114,7 +115,7 @@
         token = 'Bearer ' + JSON.parse(token1).token;
 
     }
-console.log("dfdg")
+console.log("camera_img")
     $("#page_child").on("click", "#btn_ok", function () {
         if (angular.element($("#page_child")).scope().is_send == true) {
             angular.element($("#page_child")).scope().is_send = false
