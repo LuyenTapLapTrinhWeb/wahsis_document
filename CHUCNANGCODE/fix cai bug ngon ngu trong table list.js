@@ -68,3 +68,43 @@ $scope.loadInfo = function () {
     });
     $scope.selected = [];
   };
+
+
+/**  ============================================ fix loi trong project pos-wahsis-web ====================  */
+  $scope.kieu_active = function (row) { 
+    var value = row.entity.is_active;
+
+    if (value === 1 && language_id === "en") {
+        return "Active"
+    } else if (value === 0 && language_id === "en") {
+        return "Unactive"
+    } else if (value === 1 && language_id === "vi") {
+        return "Kích hoạt"
+    } else {
+        return "Không kích hoạt"
+    }
+};
+
+$scope.gridOptions = {
+    data: "items",
+    enableRowSelection: true,
+    enableRowHeaderSelection: false,
+    filterOptions: $scope.filterOptions,
+    multiSelect: false,
+    rowTemplate: '<div ng-dblclick="grid.appScope.rowDblClick(row)" external-scopes="gridHandlers" ng-repeat=\"(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name\" class=\"ui-grid-cell\" ng-class=\"{ \'ui-grid-row-header-cell\': col.isRowHeader }\" ui-grid-cell></div>',
+    columnDefs: [
+        { name: 'No.', field: 'No.', width: "5%", cellTemplate: '<div class="ui-grid-cell-contents">{{(grid.renderContainers.body.visibleRowCache.indexOf(row))+1}}</div>' },
+        { field: "provider_name", displayName: "Provider Name" },
+        { field: "provider_address", displayName: "Provider Address" },
+        { field: "effective_date", displayName: "Effective Date" },
+        // { field: "created_by_id", displayName: "Created By Id" },
+        { field: "created_by_name", displayName: "Created by Name" },
+        { field: 'is_active', displayName: 'Is active', width: 150, cellTemplate: '<div class="ui-grid-cell-contents">{{grid.appScope.kieu_active(row)}}</div>' },
+    ],
+    onRegisterApi: function (gridApi) {
+        $scope.gridApi = gridApi;
+        gridApi.selection.on.rowSelectionChanged($scope, function (rows) {
+            $scope.selectedItems = gridApi.selection.getSelectedRows();
+        });
+    }
+};
