@@ -1,4 +1,4 @@
-/**DICH NGON NGU THEO COMBO BOX LANGUAGE */
+/**DICH NGON NGU TRONG TABLE LIST */
 $scope.$watch(
     $scope => {
       return ($scope.abc = $filter("translate")("NOTE_FORMAT1"));
@@ -44,7 +44,7 @@ $scope.loadInfo = function () {
                   ed_list[x].apartment_fee_group_name = element.apartment_fee_group_name;
                 }
               });
-              /**0: no, 1:yes */
+              /**0: no, 1:yes*/
               ed_list[x].price = UtilityCheckFormatService.change_number(ed_list[x].price);
               ed_list[x].last_month_name = $scope.dich_ngon_ngu(getNumber(ed_list[x].last_month));
               ed_list[x].is_evrm_fee_name = $scope.dich_ngon_ngu(getNumber(ed_list[x].is_evrm_fee));
@@ -52,7 +52,6 @@ $scope.loadInfo = function () {
               ed_list[x].is_progressive_formula_name = $scope.dich_ngon_ngu(getNumber(ed_list[x].is_progressive_formula));
               ed_list[x].next_month_name = $scope.dich_ngon_ngu(getNumber(ed_list[x].next_month));
             }
-             
             $scope.apartmentFeeCategoriesList = ed_list;
 
             console.log($scope.apartmentFeeCategoriesList);
