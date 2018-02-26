@@ -42,7 +42,7 @@ $scope.$watch(
         return "null";
       }
     }
-    $scope.status_id = $scope.status_list[0].apartment_status_id; 
+    $scope.status_id = $scope.status_list[0].apartment_status_id;
   }
 );
 $scope.loadInfo = function () {
