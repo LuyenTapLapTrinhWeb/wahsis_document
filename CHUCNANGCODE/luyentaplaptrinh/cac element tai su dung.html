@@ -9,7 +9,7 @@
 <label>{{"0WNER_NAME"|translate}}</label>
 <input type="text" rows="1" class="form-control" ng-model="owner_name">
 <label>{{"PHONE"|translate}}</label>
-<input type="text"  class="form-control" onKeyPress='return InputNumberOne1(this, event);' ng-model="owner_phone">
+<input type="text" class="form-control" onKeyPress='return InputNumberOne1(this, event);' ng-model="owner_phone">
 <label>{{"EMAIL"|translate}}</label>
 <input type="email" rows="1" class="form-control" ng-model="owner_email_address" required>
 <label>{{"FROM_DAY"|translate}}</label>
@@ -40,5 +40,48 @@
 <label>{{"IMAGE"|translate}}</label>
 <span class="c-red">*</span>
 <img ng-src={{img_service}} class="img-responsive" style="margin-bottom: 5px;">
-<label style="border: 1px solid #e7eaec" class="btn btn-default btn-xs red"  ng-click="update_service_image()"><i class="fa fa-upload"></i>{{"UPLOAD"||translate}}</label>
+<label style="border: 1px solid #e7eaec" class="btn btn-default btn-xs red" ng-click="update_service_image()">
+    <i class="fa fa-upload"></i>{{"UPLOAD"||translate}}</label>
 <!-- //hinh anh -->
+
+
+<div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+    <div class="row">
+        <div class="col-md-5">
+            <label>{{"KEY_TYPE"|translate}}</label>
+        </div>
+
+        <div class="col-md-7">
+            <select chosen id="states" class="chosen-select width100" ng-model="key_type" ng-change="change_floor()" ng-options="obj.key_type_id as obj.key_type_name for obj in keyType">
+                <option value="">{{"ALL"|translate}}</option>
+                <option disabled></option>
+            </select>
+            <input type="text" class="form-control" ng-model="key_type">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-6 col-xs-12 marginBot5">
+    <div class="row">
+        <div class="col-md-5">
+            <label>{{"FROM_DATE2"|translate}}
+                <span class="c-red"></span>
+            </label>
+        </div>
+        <div class="col-md-7">
+            <input type="text" class="form-control" id="fromDate" ng-model="effective_date" placeholder="dd-MM-yyyy">
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 marginBot5">
+    <div class="row">
+        <div class="col-md-5">
+            <label>{{"TO_DATE2"|translate}}
+                <span class="c-red"></span>
+            </label>
+        </div>
+        <div class="col-md-7">
+            <input type="text" class="form-control" id="toDate" ng-model="to_Date" placeholder="dd-MM-yyyy">
+        </div>
+    </div>
+</div>
