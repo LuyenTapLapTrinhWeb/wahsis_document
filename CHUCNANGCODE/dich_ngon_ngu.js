@@ -31,6 +31,7 @@ var dich_ngon_ngu = {
   LDPW_CREATED_OLDNEW_INPUTYET:"Ngày tạo dữ liệu cũ/mới chưa xác nhập",
   
 }
+swal($filter("translate")("WARNING"), e, "warning");
 var kiemtra_nhap_truockhi_luu = () => {
   if (!utility.checkValue($scope.roomkey_id)) {
       swal($filter("translate")("Save_Error"), $filter("translate")("c_red"), "warning");
