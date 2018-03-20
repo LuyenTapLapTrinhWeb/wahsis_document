@@ -1,4 +1,4 @@
-"<p class="text-capitalize">Creation date of old data must be less than creation date of new data.</p>"
+"<p class="text - capitalize">Creation date of old data must be less than creation date of new data.</p>"
 var dich_ngon_ngu = {
   $filter("translate")("format_from_date"),
   format_from_date: "From date don't match format",
@@ -15,10 +15,10 @@ var dich_ngon_ngu = {
   Save_Success: "Save Success",
   Delete_Error: "Delete Error.",
   Delete_Success: "Delete Success.",
-  DELETE_UNABLE:"Because the data has been used, it can not be deleted.",
+  DELETE_UNABLE: "Because the data has been used, it can not be deleted.",
   Notice: "Notice!",
-  Yes_delete_it: "Yes, delete it!",
   Are_you_sure: "Are you sure?",
+  Yes_delete_it: "Yes, delete it!",
   DELETED: "Deleted",
   UPLOAD_ITEM_SUCCESS: "Upload image success",
   UPLOAD_ITEM_ERROR: "Upload image error",
@@ -27,14 +27,14 @@ var dich_ngon_ngu = {
   LDPW_CREATED_DATE_LT_TODATE: "Creation Date Of Old Data Must Be Less Than Creation Date Of New Data.",
   LDPW_CREATED_OLD_DATE: "Old Data Date",
   LDPW_CREATED_NEW_DATE: "New Data Date",
-  LDPW_COMPARE_OLDNEW:"So sánh",
-  LDPW_CREATED_OLDNEW_INPUTYET:"Ngày tạo dữ liệu cũ/mới chưa xác nhập",
+  LDPW_COMPARE_OLDNEW: "So sánh",
+  LDPW_CREATED_OLDNEW_INPUTYET: "Ngày tạo dữ liệu cũ/mới chưa xác nhập",
   
 }
 swal($filter("translate")("WARNING"), e, "warning");
 var kiemtra_nhap_truockhi_luu = () => {
   if (!utility.checkValue($scope.roomkey_id)) {
-      swal($filter("translate")("Save_Error"), $filter("translate")("c_red"), "warning");
+    swal($filter("translate")("Save_Error"), $filter("translate")("c_red"), "warning");
   }
 }
 if (response.data.err === 0) {
@@ -43,3 +43,14 @@ if (response.data.err === 0) {
 } else {
   swal($filter("translate")("Save_Error"), $filter("translate")("Save_Error"), "warning");
 }
+if (response.data.err === 0) { 
+  swal($filter("translate")("Delete_Success"), $filter("translate")("Delete_Success"), "success");
+} else {
+  swal($filter("translate")("Delete_Error"), $filter("translate")("Delete_Error"), "warning");
+}
+title:  $filter("translate")("Are_you_sure"),
+type: "warning",
+showCancelButton: true,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: $filter("translate")("Yes_delete_it"),
+closeOnConfirm: false
