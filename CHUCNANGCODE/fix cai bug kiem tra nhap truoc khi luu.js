@@ -12,3 +12,6 @@ $scope.kiemtra_nhap_truockhi_luu = () => {
         return false;
     }
 }
+
+swal({ title: translation.notice, text: translation.no_data, timer: 2000, type: "error" });
+swal({ title: translation.warning, text: translation.save_error, timer: 2000, type: "warning" });
