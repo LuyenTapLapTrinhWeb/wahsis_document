@@ -48,6 +48,8 @@ if (response.data.err === 0) {
 } else {
   swal($filter("translate")("Delete_Error"), $filter("translate")("Delete_Error"), "warning");
 }
+swal($filter("translate")("warning"), $filter("translate")("errjsonparse") + "\n" + e, "warning");
+
 title:  $filter("translate")("Are_you_sure"),
 type: "warning",
 showCancelButton: true,
