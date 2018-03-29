@@ -43,7 +43,7 @@ if (response.data.err === 0) {
 } else {
   swal($filter("translate")("Save_Error"), $filter("translate")("Save_Error"), "warning");
 }
-if (response.data.err === 0) { 
+if (response.data.err === 0) {
   swal($filter("translate")("Delete_Success"), $filter("translate")("Delete_Success"), "success");
 } else {
   swal($filter("translate")("Delete_Error"), $filter("translate")("Delete_Error"), "warning");
@@ -52,15 +52,20 @@ swal($filter("translate")("warning"), $filter("translate")("errjsonparse") + "\n
 
 swal($filter("translate")("Notice"), "Get time of receipt error", "error");
 
-swal($filter("translate")("warning"),  e.message + "\n" + e.stack, "warning");
-title:  $filter("translate")("Are_you_sure"),
-type: "warning",
-showCancelButton: true,
-confirmButtonColor: "#DD6B55",
-confirmButtonText: $filter("translate")("Yes_delete_it"),
-closeOnConfirm: false 
-                swal({
-                  title: $filter("translate")("edit_item"),
-                  type: "warning", 
-                  timer:1240
-              });
+
+try{}catch(e){swal($filter("translate")("warning"), e.message + "\n" + e.stack, "warning");}
+
+
+title: $filter("translate")("Are_you_sure"),
+  type: "warning",
+    showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+        confirmButtonText: $filter("translate")("Yes_delete_it"),
+          closeOnConfirm: false
+
+
+swal({
+  title: $filter("translate")("edit_item"),
+  type: "warning",
+  timer: 1240
+});
