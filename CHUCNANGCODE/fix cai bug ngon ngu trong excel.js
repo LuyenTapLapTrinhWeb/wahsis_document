@@ -1,4 +1,23 @@
- < !--excelbill o day-- >
+ /* goi toan bo getbranch_detail() vao trong get pdf list.  
+    Kiem tra $scope.total_row > 0 thi 
+    1/thuc thi getbranch_detail()
+    2/set $scope.page
+ */
+$scope.getbranch_detail = () => {
+    $scope.branch = { company_id: com_id }
+    var dtJSONCompany = JSON.stringify({ company: $scope.branch })
+    UtilityService.getListObjectWithParamDev("company", "detail", dtJSONCompany).then(function (response) {
+        if (response.data.err === 0) {
+            $scope.branch_detail = response.data.dt.company;
+
+        }
+    });
+}
+ /* cai bug so dien thoai o day */
+ <td style="white-space: nowrap;">{{kieu_null(item.phone)}}&nbsp;</td>
+
+ 
+  < !--excelbill o day-- >
     <div class="table-responsive" id="excelbill" style="display: none;width: 100% !important">
         <meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">
             <table id="table_company" border="0" style="width: 100%">
