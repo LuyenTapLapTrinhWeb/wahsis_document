@@ -1,0 +1,1 @@
+((message)=>{alert(message)})("fucking wow shit!")
