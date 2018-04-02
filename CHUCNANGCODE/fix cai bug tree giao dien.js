@@ -39,28 +39,7 @@ var thaydoi = function () {
 }
 $scope.thaydoi = () => {
     thaydoi();
-}
-var excel = function() {
-    $(document).ready(function () {
-        $("#excel").click(function (e) {
-            e.preventDefault();
-
-            //getting data from our table
-            var data_type = 'data:application/vnd.ms-excel';
-            var table_div = document.getElementById('excelbill');
-            var table_html = table_div.outerHTML.replace(/ /g, '%20');
-
-            var a = document.createElement('a');
-            a.href = data_type + ', ' + table_html;
-            a.download = 'report_excel' + Math.floor((Math.random() * 9999999) + 1000000) + '.xls';
-            a.click();
-            e.preventDefault();
-        });
-    });
-}
-$scope.excel = () => {
-    excel();
-}
+} 
 UtilityService.decentralization("pms_report_project_apartment_for_agents").then(function (response) {
 
     if (response.data.err === 0 && response.data.dt !== undefined) {
