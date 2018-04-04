@@ -52,7 +52,7 @@ swal($filter("translate")("warning"), $filter("translate")("errjsonparse") + "\n
 
 swal($filter("translate")("Notice"), "Get time of receipt error", "error");
 
-
+swal($filter("translate")("Notice"), $filter("translate")("DO_NOT_FAST"), "error");
 try{}catch(e){swal($filter("translate")("warning"), e.message + "\n" + e.stack, "warning");}
 
 
