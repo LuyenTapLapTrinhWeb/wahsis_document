@@ -1,0 +1,25 @@
+.myClass{
+    color:red;
+}
+.error {
+    color: 'purple'
+}
+
+div {
+    height: 100px;
+    width: 100px;
+    background-color: steelblue;
+    margin:5px;
+}
+#container {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+
+}
+text {
+	fill: 'black';
+    font-family: 'Arial';
+    font-weight: bold;
+    font-size: 28px;
+  }
