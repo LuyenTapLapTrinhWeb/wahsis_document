@@ -1,5 +1,5 @@
 /** search */
-
+/* fix cai bug trong table list khi su dung comobobox */
 function dichngonngucombobox(list, language_id) {
     var ed_list = [];
     for (x in list) {
