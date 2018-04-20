@@ -69,3 +69,5 @@ swal({
   type: "warning",
   timer: 1240
 });
+
+swal("Warning!", $filter("translate")("Duplicate_input"), "warning");
