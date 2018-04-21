@@ -1,3 +1,10 @@
+/* hien thi tren popup view  ngay hien tai*/
+var date = new Date();
+var fromDateReservation = date;
+$scope.reservation.effective_date = $filter('date')(fromDateReservation, 'yyyy-MM-dd');
+/* dd - mm - yyyy*/
+let effective_date = UtilityCheckFormatService.change_date_to_save($scope.reservation.effective_date);
+
 /**FIX CAI BUG HIEN THI NGAY THANG */
 $scope.format_date = "dd-MM-yyyy"
 $scope.created_date = $filter("date")(new Date(new Date().getFullYear(), 0, 1), $scope.format_date);
