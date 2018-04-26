@@ -1,0 +1,1 @@
+angular.element($("#language_translation")).scope().grand_total_salse_list
