@@ -1,6 +1,6 @@
 //fix cai bug sap xep theo mot cot trong json array
 $scope.new_config_value.sort(function (a, b) {
-    return parseFloat(a.order) - parseFloat(b.order);
+    return Number(a.order) - Number(b.order);
 });
 SortByName();
 // luoi grid hien thi
