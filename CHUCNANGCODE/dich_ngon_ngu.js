@@ -29,7 +29,7 @@ var dich_ngon_ngu = {
   LDPW_CREATED_NEW_DATE: "New Data Date",
   LDPW_COMPARE_OLDNEW: "So sánh",
   LDPW_CREATED_OLDNEW_INPUTYET: "Ngày tạo dữ liệu cũ/mới chưa xác nhập",
-  
+  no_translation
 }
 swal($filter("translate")("WARNING"), e, "warning");
 var kiemtra_nhap_truockhi_luu = () => {
