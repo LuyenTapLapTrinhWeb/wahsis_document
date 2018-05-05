@@ -49,6 +49,7 @@ if (response.data.err === 0) {
   swal($filter("translate")("Delete_Error"), $filter("translate")("Delete_Error"), "warning");
 }
 swal($filter("translate")("warning"), $filter("translate")("errjsonparse") + "\n" + e, "warning");
+swal($filter("translate")("warning"), $filter("translate")("no_data"), "warning");
 
 swal($filter("translate")("Notice"), "Get time of receipt error", "error");
 
