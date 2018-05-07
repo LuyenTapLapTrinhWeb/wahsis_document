@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  
+<button ng-click="bulbon()">Turn on the light</button>
+
+<img ng-src="{{src}}">
+
+<button ng-click="bulboff()">Turn off the light</button>
+</div>
+<!-- basic -->
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+   	var url = "https://www.w3schools.com/js/";
+    var bulbon = "pic_bulbon.gif";
+    var bulboff = "pic_bulboff.gif";
+    $scope.src = url+bulboff;
+    $scope.bulbon = function(){
+    	let src = url + bulbon;
+    	$scope.src = src;
+    }
+    $scope.bulboff = function(){
+    	let src = url + bulboff;
+    	$scope.src = src;
+    }
+});
+</script>
+
+</body>
+</html>
+
+<!-- advance -->
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+<img ng-src="{{src}}" ng-click="getBulbStatus()"><span>{{title}}</span>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+   	var url = "https://www.w3schools.com/js/"; 
+    var src_arr =[ 
+      {url:url,filename:"pic_bulbon",type:".gif", title:"Turn on the light", status:1},
+      {url:url,filename:"pic_bulboff",type:".gif", title:"Turn off the light",status:0}
+    ]
+    $scope.src = url + src_arr[1].filename+src_arr[1].type;
+    $scope.title = src_arr[1].title;
+    $scope.counting = 0;
+    $scope.getBulbStatus =()=>{
+        $scope.counting++; 
+        if($scope.counting %2===0){
+			$scope.src = url + src_arr[1].filename+src_arr[1].type;
+            $scope.title = src_arr[1].title
+        }else{
+        	$scope.src = url + src_arr[0].filename+src_arr[0].type;
+            $scope.title = src_arr[0].title
+        }
+    }
+});
+</script>
+</body>
+</html>
