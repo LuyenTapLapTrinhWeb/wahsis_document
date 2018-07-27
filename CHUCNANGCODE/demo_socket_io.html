@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="row text-center" style="margin:10px">
+        <button class="btn btn-default" id="btn_connect">Connect</button>
+        <input type="text" id="text_company">
+    </div>
+
+    <div class="row text-center" style="margin:10px">
+        <button class="btn btn-default" id="btn_notify_data_change">Send Data Change</button>
+    </div>
+
+    <div class="row">
+        <table class="table" id="status_table">
+            <tr>
+                <th>Event</th>
+                <th>Time</th>
+                <th>More</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    let NAMESPACE_APARTMENT_SALES_STATUS = '/wahsis-sms-apartment-sales-status';
+    let socket = io(NAMESPACE_APARTMENT_SALES_STATUS, {
+        autoConnect: false
+    });
+
+    socket.on('connected', (data) => {
+        addRowToTable('#status_table', 'connected', JSON.stringify(data));
+
+        let companyId = $('#text_company').val();
+        let registerData = {
+            company: {
+                company_id: companyId
+            }
+        };
+        socket.emit('register', registerData);
+    });
+
+    socket.on('connected_to_company', function (data) {
+        //logs consoloe.log(data.message)
+        addRowToTable('#status_table', 'connected_to_company', JSON.stringify(data));
+    });
+
+    socket.on('apartment_sales_status_do_update_data', function (data) {
+        /* reload data from pms-api */
+        addRowToTable('#status_table', 'apartment_sales_status_do_update_data', JSON.stringify(data));
+    });
+
+</script>
+
+<script>
+    $(() => {
+        $('#btn_connect').click(() => {
+            socket.connect();
+        });
+
+
+        $('#btn_notify_data_change').click(() => {
+            let companyId = $('#text_company').val();
+            let data = {
+                company: {
+                    company_id: companyId
+                }
+            };
+            socket.emit('apartment_sales_status_notify_data_change', data);
+        });
+    });
+</script>
+
+
+<script>
+    addRowToTable = (table_id, event, more) => {
+        $(table_id).find('tbody').append(`
+                <tr>
+                    <td>${ event }</td>
+                    <td>${ new Date().toLocaleTimeString() }</td>
+                    <td>${ more }</td>
+                </tr>`
+        );
+    }
+</script>
+
+</body>
+</html>

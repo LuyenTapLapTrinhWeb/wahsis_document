@@ -80,3 +80,17 @@ RESOURCE_ID = pms_setting_log_database_pms_web
 </ul>
 </li>
 =============================================
+/* Điều hướng top menu */
+$rootScope.Is_Menu = 'project';
+$rootScope.ShowLeftMenu($rootScope.main_menu, 'project')
+$rootScope.color_top_menu("project")
+$rootScope.is_load_dashboard = false
+$rootScope.is_load_project = true
+$rootScope.is_load_apartment = false
+$rootScope.is_load_hotel = false
+$rootScope.is_load_service = false
+$rootScope.is_load_profile = false
+$rootScope.is_load_notification = false
+$rootScope.is_load_report = false
+$rootScope.is_load_approvals = false
+$rootScope.is_load_setting = false
