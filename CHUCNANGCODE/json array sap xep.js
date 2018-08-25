@@ -2,6 +2,15 @@
 $scope.new_config_value.sort(function (a, b) {
     return Number(a.order) - Number(b.order);
 });
+let end_time_max = mang_doi_sang_so_gio_hien_thi.reduce(function (a, b) {
+    return Math.max(a, b);
+});
+let start_time_min = mang_doi_sang_so_gio_hien_thi.reduce(function (a, b) {
+    return Math.min(a, b);
+});
+function uniq_nhanvien_dadangky_phan_biet(dup_nhan_vien_list) {
+    return Array.from(new Set(dup_nhan_vien_list));
+}
 SortByName();
 // luoi grid hien thi
 $scope.gridOptions_menuPMSGuest = {
@@ -29,4 +38,14 @@ function SortByName(array) {
             return 1;
         return 0;
     });
+}
+function getAllNumbersBetween(x, y) {
+    var numbers = [];
+    // Set a temporary variable i to start at value x.
+    // As long as the value of i is less than the value y, increment it.
+    // The loop will end when i is equal to y.
+    for (var i = x; i < y; i++) {
+        numbers.push(i);
+    }
+    return numbers;
 }
