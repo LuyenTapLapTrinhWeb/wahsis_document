@@ -64,3 +64,28 @@ onKeyPress='return InputNumberOne1(this, event);'
 ng-change="ngChangeSothemdauphay('acreage')"
 ng-model="acreage"> */
 }
+/* tinh toan trong form add new */
+$scope.ngChangeSothemdauphay = function (loai) {
+  var typing_input = {
+      acreage: $scope.it.acreage,
+      construction_cost: $scope.it.construction_cost,
+      price: $scope.it.price,
+      cost_of_land_use_rights: $scope.it.cost_of_land_use_rights,
+      total_price: $scope.it.total_price
+  };
+  if (loai === "acreage") {
+      $scope.it.acreage = UtilityCheckFormatService.change_so_thap_phan_khong_gioi_han(typing_input.acreage);
+  } else if (loai === "construction_cost") {
+      $scope.it.construction_cost = UtilityCheckFormatService.change_so_thap_phan_khong_gioi_han(typing_input.construction_cost);
+  } else if (loai === "price") {
+      $scope.it.price = UtilityCheckFormatService.change_so_thap_phan_khong_gioi_han(typing_input.price);
+  } else if (loai === "cost_of_land_use_rights") {
+      $scope.it.cost_of_land_use_rights = UtilityCheckFormatService.change_so_thap_phan_khong_gioi_han(typing_input.cost_of_land_use_rights);
+  }
+  if ($scope.rooms_detail.room_model === 1) {
+      typing_input.total_price = utility.so_tra_ve_binh_thuong(typing_input.acreage) * utility.so_tra_ve_binh_thuong(typing_input.price);
+  } else {
+      typing_input.total_price = utility.so_tra_ve_binh_thuong(typing_input.construction_cost) + utility.so_tra_ve_binh_thuong(typing_input.cost_of_land_use_rights);
+  }
+  $scope.it.total_price = UtilityCheckFormatService.change_currency(typing_input.total_price);
+};
