@@ -11,6 +11,10 @@ let start_time_min = mang_doi_sang_so_gio_hien_thi.reduce(function (a, b) {
 function uniq_nhanvien_dadangky_phan_biet(dup_nhan_vien_list) {
     return Array.from(new Set(dup_nhan_vien_list));
 }
+/* so nam ngoai mang array */
+mang_so_gio_hien_thi = mang_so_gio_hien_thi.filter(function (a) {
+    return !doi_sang_mang_so_gio_hien_thi.includes(a);
+});
 SortByName();
 // luoi grid hien thi
 $scope.gridOptions_menuPMSGuest = {
