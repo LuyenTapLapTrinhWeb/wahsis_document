@@ -4,6 +4,16 @@
     <option value="">{{"ALL"|translate}}</option>
     <option disabled></option>
 </select>
+<div class="col-md-3" style="margin-bottom: 1px">
+    <div class="form-group">
+        <label>{{"recorfed_by_id"|translate}}</label>edit 
+        <select ng-model="item.recorfed_by_id" ng-options="obj.employee_id as obj.employee_name for obj in employee_list"
+            chosen id="states" class="chosen-select">
+            <option value=""disabled>{{"SELECT_AN_OPTION"|translate}}</option>
+            <option disabled></option>
+        </select>
+    </div>
+</div>
 <label>{{"CONTACT_NAME"|translate}}</label>
 <input type="text" class="form-control" ng-model="contact_name" maxlength="256">
 <label>{{"0WNER_NAME"|translate}}</label>
