@@ -37,6 +37,7 @@ var kiemtra_nhap_truockhi_luu = () => {
     swal($filter("translate")("Save_Error"), $filter("translate")("c_red"), "warning");
   }
 }
+swal($filter("translate")("SUCCESS"), $filter("translate")("Save_Success"), "success");
 if (response.data.err === 0) {
   $uibModalInstance.close();
   swal($filter("translate")("Save_Success"), $filter("translate")("Save_Success"), "success");
