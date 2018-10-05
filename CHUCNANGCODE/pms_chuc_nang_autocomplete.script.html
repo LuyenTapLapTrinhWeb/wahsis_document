@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="assets/js/style_autocomplete.css">
+<!--<script src="assets/js/jquery_autocomplete.js"></script>-->
+<script src="assets/js/jquery_ui_autocomplete.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ui.autocomplete.prototype._renderItem = function (table, item) {
+            return $("<li>")
+                .data("item.autocomplete", item)
+                .append("<div><b>" + item.value + "</b></div>" + "<div class='listJobTitle'>" + item.c_address + "</div>")
+                .appendTo(table);
+        };
+        $("#project").autocomplete({
+            minLength: 1,
+            source: angular.element($("#booking")).scope().source,
+            focus: function (event, ui) {
+                //                $("#project").val(ui.item.value);
+                if (ui.item !== undefined) {
+                    angular.element($("#booking")).scope().capnhatcustomer_focus(ui.item.value);
+                }
+                //                $("#project-id").val(ui.item.id);
+                //                $("#project-description").html(ui.item.c_address);
+                return false;
+            },
+            select: function (event, ui) {
+                //                $("#project").val(ui.item.value);
+                angular.element($("#booking")).scope().capnhatcustomer_select(ui.item.id, ui.item.value);
+
+                //                $("#project-id").val(ui.item.id);
+                //                $("#project-description").html(ui.item.c_address);
+                return false;
+            }
+        });
+    });
+</script>
+ 

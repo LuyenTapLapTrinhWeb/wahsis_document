@@ -1,0 +1,127 @@
+<div class="col-md-6">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-3 control-label">{{ 'GUEST' | translate }}<span class="c-red">*</span></label>
+                    <div class="col-lg-9"><input id="project" type="text" class="form-control" name="color_name"
+                            ng-model="customers.customer_name" required="true"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-3 control-label">{{ 'ADDRESS' | translate }}</label>
+                    <div class="col-lg-9"><input ng-maxlength="256" type="text" class="form-control" name="color_name"
+                            ng-model="customers.address" required="true"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group" style="    margin-bottom: 1px;">
+                <div class="row"><label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-3">
+                        <input ng-maxlength="256" placeholder="{{'State'|translate}}" type="text" class="form-control"
+                            name="color_name" ng-model="customers.state" required="true">
+                    </div>
+                    <div class="col-lg-3">
+                        <input placeholder="{{'City'|translate}}" ng-maxlength="256" type="text" class="form-control"
+                            name="color_name" ng-model="customers.city" required="true">
+                    </div>
+                    <div class="col-lg-3">
+                        <input ng-maxlength="256" type="text" class="form-control" name="color_name" ng-model="customers.zip"
+                            required="true" placeholder="{{'Zip'|translate}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <!--<div class="form-group"><div class="row"><label class="col-lg-2 control-label">Country</label> <div class="col-lg-10"><input type="text" ng-maxlength="512"  class="form-control" name="color_name" ng-model="customers.country_id" required="true"></div></div></div>-->
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-lg-3 control-label" style="padding-right:0px">{{"grid_country"|translate}}</label>
+                    <!--   <input type="text" class="form-control" ng-model="employeesList.country_id"> -->
+                    <div class="col-lg-9">
+                        <select ng-model="customers.country_id" ng-options="obj.master_data_id as obj.master_data_name for obj in countries"
+                            class="form-control" ng-required="true" style="padding-top: 0px;padding-bottom: 0px">
+                            <option value="">--{{"CHOOSE"|translate}}--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-6 control-label">{{ 'grid_birthday' | translate }}</label>
+                    <div class="col-lg-6" style="padding-right: 0px;">
+                        <input type="text" id="birthday" class="form-control" name="color_name" ng-model="customers1.birthday"
+                            required="true" ng-click="update_is_select_booking_date(0)" maxlength="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-lg-4 control-label" style="padding-right:0px">{{ 'GENDER' | translate }}</label>
+                    <div class="col-lg-8"><select ng-model="customers.sex" ng-options="x.value as x.name for x in gender_list"
+                            class="form-control" style="padding-top: 0px; padding-bottom: 0px"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-6 control-label">{{ 'grid_phone' | translate }}<span class="c-red">*</span></label>
+                    <div class="col-lg-6" style="padding-right: 0px"><input type="text" class="form-control" name="color_name"
+                            ng-model="customers.phone" required="true" onKeyPress='return InputNumberOne1(this, event);'></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-4 control-label">{{ 'EMAIL_ADDRESS' | translate }}</label>
+                    <div class="col-lg-8"><input type="text" class="form-control" name="color_name" ng-model="customers.email_address"
+                            required="true"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-6 control-label" style="padding-right: 0px">{{ 'IDENTITYS' |
+                        translate }}</label>
+                    <div class="col-lg-6" style="padding-right: 0px;"><select ng-model="customers.identity_type"
+                            ng-options="x.value as x.name for x in indentity_list" class="form-control" style="padding-top: 0px; padding-bottom: 0px">
+                            <option value="">--{{"CHOOSE"|translate}}--</option>
+                        </select></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-4 control-label">{{ 'ID' | translate }}</label>
+                    <div class="col-lg-8"><input type="text" class="form-control" name="color_name" ng-model="customers.identity_number"
+                            required="true" onKeyPress='return InputNumberOne1(this, event);' style="width: 88%;display: inline-block;margin-right: 2px;"><i
+                            class="fa fa-camera" aria-hidden="true" ng-click="up_hinh_cmnd()"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-3 control-label" style="padding-right:0px">{{ 'VISA' | translate
+                        }}</label>
+                    <div class="col-lg-9"><input type="text" class="form-control" name="color_name" ng-model="customers.visa_number"
+                            required="true"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="row"><label class="col-lg-3 control-label" style="padding-right:0px">{{ 'REMARK' |
+                        translate }}</label>
+                    <div class="col-lg-9"><textarea row="2" style="width:100%;max-width: 100% ;min-width: 100% ;min-height: 50px ; height: 50px;max-height: 50px;margin-bottom: 2px"
+                            class="form-control" name="color_name" ng-model="customers.remark" required="true"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
