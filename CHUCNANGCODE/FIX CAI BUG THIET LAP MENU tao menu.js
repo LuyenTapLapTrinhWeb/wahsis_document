@@ -20,6 +20,12 @@ pms_setting_log_database_pms_web
 -----index.html
 <script src="setting/notification/log_database_pms_web/log_database_pms_web.controller.js"></script>
 ============================================
+
+============================================
+-----log_database_pms_web.view.html
+<div id="language_translation" ng-controller="log_database_pms_web_ctrl">
+============================================
+
 -----controller.js 
  /**FIX CÁI BUG TẠO MENU LEFT + SUBMENU */
  function createArrayLeftMenuNotificationLogdbpmsweb() {
