@@ -1,0 +1,3 @@
+Request URL: http://pms-dev.wahsis.net/api/apartment_sales_contract?cm=detail&dt={company:{company_id:54744},apartment_sales_contract:{room_id:10009}}
+cm: detail
+dt: {company:{company_id:54744},apartment_sales_contract:{room_id:10009}}
