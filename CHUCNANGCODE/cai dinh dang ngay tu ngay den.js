@@ -36,7 +36,7 @@ $scope.to_date = UtilityCheckFormatService.change_date_to_save(
 console.log($scope.from_date, $scope.to_date);
 
 // hàm định dạng ngày trên form search list
-$scope.kieu_ngay_gio = function(value) {
+$scope.kieu_ngay_gio = function (value) {
   if (
     value !== "" &&
     value !== null &&
@@ -57,4 +57,18 @@ $scope.kieu_ngay_gio = function(value) {
 if (item.resident_incident_id !== 0) {
   $scope.it.date_time = $filter("date")(new Date(item.date_time), "dd-MM-yyyy");
 }
- 
+
+let effective_date = utility.kieu_ngay_gio(utility.getString(contract_detail.effective_date), "yyyy-MM-dd");
+apartment_sales_contract.effective_date = UtilityCheckFormatService.kieu_ngay_gio(effective_date);
+
+/* ngay co dau gach cheo trong hop dong */
+function ngay_tra_ve_binh_thuong(identify_created) {
+  let ngay_chua_tra_ve_binh_thuong = identify_created;
+  let ngay_tra_ve_binh_thuong = identify_created;
+  if (ngay_chua_tra_ve_binh_thuong) {
+      ngay_chua_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.split("/");
+      ngay_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.join("-");
+      ngay_tra_ve_binh_thuong = utility.kieu_ngay_gio(utility.getString(ngay_tra_ve_binh_thuong), "yyyy-MM-dd");
+      return ngay_tra_ve_binh_thuong
+  }
+}
