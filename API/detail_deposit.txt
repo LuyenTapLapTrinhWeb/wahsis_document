@@ -1,0 +1,1 @@
+http://pms-dev.wahsis.net/api/apartment_sales_deposit?cm=detail&dt={%22company%22:{%22company_id%22:54744},%22apartment_sales_deposit%22:{%22apartment_sales_deposit_id%22:139}}
