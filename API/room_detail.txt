@@ -1,0 +1,1 @@
+http://pms-dev.wahsis.net/api/rooms?cm=detail&dt={%22company%22:{%22company_id%22:54744},%22languages%22:{%22language_id%22:%22vi%22},%22rooms%22:{%22room_id%22:10006},%22apartment_sales_marketing_unit%22:{%22apartment_sales_marketing_id%22:1}}
