@@ -1,0 +1,24 @@
+http://pms-dev.wahsis.net/pms/api/apartment_sales_commission_period?cm=add&dt=
+
+{apartment_sales_commission_period:\{apartment_sales_commission_period_name:"So name",apartment_sales_commission_assign_id:"1",receive_date:"2018-12-31",commission_type:"hh",value:"1",amount:"1",other_amount:"1"}
+,company:{company_id:"54744"}}
+
+http://pms-dev.wahsis.net/pms/api/apartment_sales_commission_period?cm=update&dt=\{apartment_sales_commission_period:
+
+{apartment_sales_commission_period_id:"1",apartment_sales_commission_period_name:"S name",apartment_sales_commission_assign_id:"1",receive_date:"2018-11-30",commission_type:"hh",value:"1",amount:"1",other_amount:"1"}
+,company:{company_id:"54744"}}
+
+http://pms-dev.net/pms/api/apartment_sales_commission_period?cm=delete&dt=\{apartment_sales_commission_period:
+
+{apartment_sales_commission_period_id:"35",apartment_sales_commission_period_name:"So name",apartment_sales_commission_assign_id:"1",receive_date:"2018-11-30",commission_type:"hh",value:"1",amount:"1",other_amount:"1"}
+,company:{company_id:"54744"}}
+
+http://pms-dev.net/pms/api/apartment_sales_commission_period?cm=detail&dt=\{apartment_sales_commission_period:
+
+{apartment_sales_commission_period_id:"10",apartment_sales_commission_period_name:"So name",apartment_sales_commission_assign_id:"1",receive_date:"2018-11-30",commission_type:"hh",value:"1",amount:"1",other_amount:"1"}
+,company:{company_id:"54744"}}
+
+http://pms-dev.wahsis.net/pms/api/apartment_sales_commission_period?cm=search&dt=\{apartment_sales_commission_period:
+
+{apartment_sales_commission_period_id:"10",apartment_sales_commission_period_name:"Some name",apartment_sales_commission_assign_id:"1",receive_date:"2018-11-30",commission_type:"hh",value:"1",amount:"1",other_amount:"1"}
+,company:{company_id:"54744"}}
