@@ -1,10 +1,14 @@
+Request URL: http://pms-dev.wahsis.net/api/apartment_sales_marketing?
+cm: list
+dt: {"company":{"company_id":54744},"languages":{"language_id":"vi"},"apartment_sales_marketing":{"from_date":""}}
+
 {"resident_request_service":{
 	"room_id":4,
-	"contact_name":"MR Ðàm",
+	"contact_name":"MR ï¿½ï¿½m",
 	"created_by_name":"Admin",
 	"created_date":"",
 	"template_type_id":"R01a",
-	"description":"Ghi chú",
+	"description":"Ghi chï¿½",
 	"room_contact_id":20179,
 	"cell_phone":"8414124213",
 	"email_address":""},
@@ -37,7 +41,7 @@ apartment_fee_skip_calculations?cm=add&dt={
 	"apartment_fee_category_id":3,
 	"months":10,"years":2017,
 	"created_date":"2017-10-26",
-	"remark":"Lý%20do%20không%20tính%20phí%20*"},
+	"remark":"Lï¿½%20do%20khï¿½ng%20tï¿½nh%20phï¿½%20*"},
 "company":{"company_id":40743}}
 
 
@@ -88,4 +92,5 @@ room_posted_for_sale?cm=search&dt={
 "page":{"page_index":1,"page_size":10},
 "languages":{"language_id":"vi"},
 "company":{"company_id":40743}}
+
 
