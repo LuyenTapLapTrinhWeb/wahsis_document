@@ -1,0 +1,37 @@
+Hi anh, 
+
+Em đã xong task , anh kiểm lại giúp em.
+
+Thanks anh.
+
+Em gửi anh tất cả câu APIs:
+
+ADD: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=add&dt={"company":
+
+{"company_id":54744}
+,"apartment_sales_commission_assign_list":[\{"apartment_sales_contract_id":"1","employee_id":"1","employee_name":"khanh","object_type":"1","commission_type":"percent","commission_value":"1" ,"commission_amount":"1","commission_value_final":"1","commission_amount_final":"1","other_amount":"1"},\{"apartment_sales_contract_id":"1","employee_id":"1","employee_name":"khanhkhukho","object_type":"1","commission_type":"percent","commission_value":"1" ,"commission_amount":"1","commission_value_final":"1","commission_amount_final":"1","other_amount":"1"}],"support":{"percentage_remaining":"1","apartment_sales_commission_assign_support_list":[
+
+{"apartment_sales_contract_id":"1","employee_id":"1","employee_name":"khanh","object_type":"1","commission_type":"percent","commission_value":"1" ,"commission_amount":"1","commission_value_final":"1","commission_amount_final":"1","other_amount":"1"}
+,{"apartment_sales_contract_id":"1","employee_id":"1","employee_name":"khanhcute","object_type":"1","commission_type":"percent","commission_value":"1" ,"commission_amount":"1","commission_value_final":"1","commission_amount_final":"1","other_amount":"1"}]}}
+
+DELETE: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=delete&dt={"company":
+
+{"company_id":54744}
+,"apartment_sales_commission_assign":{"apartment_sales_commission_assign_id":"30"}}
+
+DETAIL: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=detail&dt={"company":
+
+{"company_id":54744}
+,"apartment_sales_commission_assign":{"apartment_sales_commission_assign_id":"32"}}
+
+LIST: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=list&dt={"company":{"company_id":54744}}
+
+UPDATE: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=update&dt={"company":
+
+{"company_id":54744}
+,"apartment_sales_commission_assign":{"apartment_sales_commission_assign_id":"32","apartment_sales_contract_id":"1","employee_id":"1","employee_name":"abccd","commission_type":"percent","commission_value":"1","commission_amount":"1","commission_value_final":"2","commission_amount_final":"2","other_amount":"2"}}
+
+SEARCH: pms-dev.wahsis.net/api/apartment_sales_commission_assign?cm=search&dt={"company":
+
+{"company_id":54744}
+,"apartment_sales_commission_assign":{"apartment_sales_commission_assign_id":"30","apartment_sales_contract_id":"1","employee_id":"1","employee_name":"khanh","object_type":"1","commission_type":"percent","commission_value":"1" ,"commission_amount":"1","commission_value_final":"1","commission_amount_final":"1","other_amount":"1"},"page":{"page_index":1,"page_size":1}}
