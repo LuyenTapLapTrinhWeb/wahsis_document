@@ -13,3 +13,10 @@ Anh đã fix xong theo thao tác của em. Em hãy giúp anh xem và check lại
 Nếu còn lỗi hãy feed back lại cho anh biết chỗ anh còn sửa chưa được nhé.
 
 Regards
+
+
+Hi @Diep, Nguyen,
+
+Anh đã fix xong theo thao tác của em. Em giúp anh xem và check lại lần nữa nha.
+
+Regards
