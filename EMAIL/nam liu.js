@@ -20,3 +20,5 @@ Hi @Diep, Nguyen,
 Anh đã fix xong theo thao tác của em. Em giúp anh xem và check lại lần nữa nha.
 
 Regards
+
+@Vinh Phạm   Hi Vinh! Em làm ơn kéo 1266 merge vào dev lên host giùm anh nha Vinh.
