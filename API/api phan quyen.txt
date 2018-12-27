@@ -1,0 +1,10 @@
+admin
+http://pms-dev.wahsis.net/api/permission?cm=permission&dt={company:{company_id:54739},permission:{users_id:6,resource_id:%27%27}}
+
+thanh.sok
+http://pms-dev.wahsis.net/api/permission?cm=permission&dt={company:{company_id:54739},permission:{users_id:51,resource_id:%27%27}}
+
+phan quyen
+Request URL: http://pms-dev.wahsis.net/api/permission?
+cm: search
+dt: {"permission":{"roles_id":"Administrator","account_type":1,"user_id":6},"resources":{"module_id":"pms"},"company":{"company_id":54739},"languages":{"language_id":"vi"}}

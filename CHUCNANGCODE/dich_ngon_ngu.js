@@ -73,3 +73,28 @@ swal({
 });
 
 swal("Warning!", $filter("translate")("Duplicate_input"), "warning");
+
+if ($scope.selected.length > 0) {
+  $scope.contract_no = $scope.selected.contract_no;
+  $scope.selected_room = $scope.selected.selected_room;
+  $scope.percent_of_remaining_commission = $scope.selected.percent_of_remaining_commission;
+  choose_commissions_for_support($scope.contract_no, $scope.selected_room, $scope.percent_of_remaining_commission)
+} else {
+  swal($filter("translate")("Notice"), $filter("translate")("SELECTED_UNDEFINED"), "error");
+}
+
+
+if ($scope.selected_sales_commission.length > 0 || $scope.selected_commission_support.length > 0) {
+  if ($scope.selected_sales_commission[0].selected_sales_commission) {
+      $scope.selected = $scope.selected_sales_commission;
+  } else if ($scope.selected_commission_support[0].selected_commission_support) {
+      $scope.selected = $scope.selected_commission_support;
+  }
+  if ($scope.check_in_commission_for_support) {
+      Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_support_list)
+  } else {
+      Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_list)
+  }
+} else {
+  swal($filter("translate")("Notice"), $filter("translate")("SELECTED_UNDEFINED"), "error");
+} 
