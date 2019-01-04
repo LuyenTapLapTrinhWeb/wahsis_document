@@ -55,7 +55,7 @@ swal($filter("translate")("warning"), $filter("translate")("no_data"), "warning"
 swal($filter("translate")("Notice"), "Get time of receipt error", "error");
 
 swal($filter("translate")("Notice"), $filter("translate")("DO_NOT_FAST"), "error");
-try{}catch(e){swal($filter("translate")("warning"), e.message + "\n" + e.stack, "warning");}finally{}
+try { } catch (e) { swal($filter("translate")("warning"), e.message + "\n" + e.stack, "warning"); } finally { }
 
 
 title: $filter("translate")("Are_you_sure"),
@@ -86,15 +86,78 @@ if ($scope.selected.length > 0) {
 
 if ($scope.selected_sales_commission.length > 0 || $scope.selected_commission_support.length > 0) {
   if ($scope.selected_sales_commission[0].selected_sales_commission) {
-      $scope.selected = $scope.selected_sales_commission;
+    $scope.selected = $scope.selected_sales_commission;
   } else if ($scope.selected_commission_support[0].selected_commission_support) {
-      $scope.selected = $scope.selected_commission_support;
+    $scope.selected = $scope.selected_commission_support;
   }
   if ($scope.check_in_commission_for_support) {
-      Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_support_list)
+    Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_support_list)
   } else {
-      Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_list)
+    Openpopup_crud_commissions_for_support_ctrl($scope.selected[0], $scope.apartment_sales_commission_assign_list)
   }
 } else {
   swal($filter("translate")("Notice"), $filter("translate")("SELECTED_UNDEFINED"), "error");
-} 
+}
+
+$scope.delete = function () {
+  var previousWindowKeyDown = window.onkeydown;
+  $rootScope.checkLogout()
+  if ($scope.selected1.length !== 0 || $scope.selected.length !== 0) {
+
+
+    swal({
+      title: $filter("translate")("Are_you_sure"),
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: $filter("translate")("Yes_delete_it"),
+      closeOnConfirm: false
+    }, function () {
+      if ($scope.selected.length !== 0) {
+        $scope.object = {
+          period_salary_id: $scope.selected[0].period_salary_id,
+        }
+        var dtJSON = JSON.stringify({
+          pr_period_salary: JSON.parse(JSON.stringify($scope.object)),
+          company: JSON.parse(JSON.stringify($scope.company))
+        });
+        UtilityService.deleteObject("pr_period_salary", dtJSON).then(function (response) {
+          if (response.data.err === 0) {
+            swal($filter("translate")("Delete_Success"), $filter("translate")("Delete_Success"), "success");
+            $scope.load_info($scope.item_per_page, 1)
+            $scope.selected1 = []
+            $scope.selected = []
+          } else {
+            swal("Warning!", "Delete failed", "warning");
+          }
+        })
+      } else {
+        $scope.object = {
+          stage_salary_id: $scope.selected1[0].stage_salary_id,
+        }
+        var dtJSON = JSON.stringify({
+          pr_stage_salary: JSON.parse(JSON.stringify($scope.object)),
+          company: JSON.parse(JSON.stringify($scope.company))
+        });
+        UtilityService.deleteObject("pr_stage_salary", dtJSON).then(function (response) {
+          if (response.data.err === 0) {
+            swal($filter("translate")("Delete_Success"), $filter("translate")("Delete_Success"), "success");
+            $scope.load_info($scope.item_per_page, 1)
+            $scope.selected1 = []
+            $scope.selected = []
+          } else {
+            swal("Warning!", "Delete failed", "warning");
+          }
+        })
+      }
+
+    });
+  } else {
+    swal({
+      title: "Please choose payment to delete!",
+      timer: 1240,
+      showConfirmButton: false,
+      type: "error"
+    });
+  }
+};
