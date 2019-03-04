@@ -150,7 +150,6 @@ $scope.delete = function () {
           }
         })
       }
-
     });
   } else {
     swal({
