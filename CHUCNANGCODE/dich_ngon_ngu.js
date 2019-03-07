@@ -64,6 +64,14 @@ title: $filter("translate")("Are_you_sure"),
       confirmButtonColor: "#DD6B55",
         confirmButtonText: $filter("translate")("Yes_delete_it"),
           closeOnConfirm: false
+swal({
+  title: $filter("translate")("CANCEL_CONFIRM_RESERVATION_BOOKING"),
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: $filter("translate")("YES_CANCEL_IT"),
+  closeOnConfirm: false
+}
 
 
 swal({
