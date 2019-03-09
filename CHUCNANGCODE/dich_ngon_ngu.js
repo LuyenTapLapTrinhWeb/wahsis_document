@@ -172,3 +172,34 @@ $scope.delete = function () {
 /* thong bao va tu dong tat */
 swal({ title: $filter("translate")("SUCCESS"), text: $filter("translate")("Save_Success"), timer: 2000, type: "success" });
 swal({ title: $filter("translate")("ERROR"), text: $filter("translate")("Save_Error"), timer: 2000, type: "error" });
+
+
+swal({
+  title: $filter("translate")("warning"),
+  text: $filter("translate")("CANCEL_CONFIRM_RESERVATION_BOOKING"),
+  type: "warning",
+  timer: 2000,
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: $filter("translate")("YES_CANCEL_IT"),
+  closeOnConfirm: false
+}, function () {
+  window.onkeydown = previousWindowKeyDown;
+  $scope.sourceTemp = {
+    source_id: $scope.item.source_id
+  };
+  var dataCancelReservation = JSON.stringify({
+    company: $scope.companyTemp,
+    apartment_sales_status: $scope.sourceTemp
+  });
+  // console.log(dataCancelReservation);
+  UtilityService.getListObjectWithParam($scope.tableApartmentSaleStatus, 'delete', dataCancelReservation).success(function (response) {
+    if (response.err === 0) {
+      swal({ title: $filter("translate")("SUCCESS"), text: $filter("translate")("CANCEL_RESERVATION_SUCCESSFULLY"), timer: 3000, type: "success" });
+      $uibModalInstance.close();
+      soket_io_notify_data_change();
+    } else {
+      swal({ title: $filter("translate")("ERROR"), text: $filter("translate")("CANCEL_RESERVATION_FAILED"), timer: 3000, type: "error" });
+    }
+  });
+});
