@@ -1,10 +1,3 @@
-/* hien thi tren popup view  ngay hien tai*/
-var date = new Date();
-var fromDateReservation = date;
-$scope.reservation.effective_date = $filter('date')(fromDateReservation, 'yyyy-MM-dd');
-/* dd - mm - yyyy*/
-let effective_date = UtilityCheckFormatService.change_date_to_save($scope.reservation.effective_date);
-
 /**FIX CAI BUG HIEN THI NGAY THANG */
 $scope.format_date = "dd-MM-yyyy"
 $scope.created_date = $filter("date")(new Date(new Date().getFullYear(), 0, 1), $scope.format_date);
@@ -34,6 +27,7 @@ $('#exchange_rate1').datepicker({
 
 $scope.blur_exchange_date = function () {
     $timeout(function () {
+
         $scope.created_date = $('#exchange_rate').val();
         $scope.to_date = $('#exchange_rate1').val();
     }, 250);
@@ -41,8 +35,8 @@ $scope.blur_exchange_date = function () {
 
 
 // search condition
+// =====================================================================================
 $scope.search = function () {
-    // =====================================================================================
     // "created_date": "",
     if ($scope.created_date !== undefined && $scope.created_date !== "") {
         if (utility.check_date($scope.created_date) === false) {
@@ -87,11 +81,37 @@ $scope.search = function () {
         }
     }
 };
-$scope.kieungay = function (data) {
-    if (data === "" || data === null || data === undefined || (data !== "" && data.split(' ')[0] === "1900-01-01")) {
-        return ""
+
+/** EDIT*/
+
+
+/**FIX CAI BUG GIAO DIEN HIEN THI DU LIEU */
+
+$scope.kieu_ngay_gio = function (value) {
+    if (
+        value !== "" &&
+        value !== null &&
+        value !== undefined &&
+        value.split(" ")[0] !== "1900-01-01"
+    ) {
+        var v1 = value.split(" ")[0];
+        v1 = UtilityCheckFormatService.getdefaultFormat(v1, format_date);
+        return v1;
+    } else {
+        return "";
     }
-    data1 = data.split(' ')[0];
-    data2 = data.split(' ')[1];
-    return data1.split('-')[2] + "/" + data1.split('-')[1] + "/" + data1.split('-')[0]
 };
+
+if (item.employees_dependent_id === 0) {
+
+
+} else {
+    if (item.non_tax !== null && item.non_tax !== undefined) {
+        $scope.it.non_tax === 1 ? true : false;
+    } if (item.is_emergency !== null && item.is_emergency !== undefined) {
+        $scope.it.is_emergency === 1 ? true : false;
+    }
+    $scope.it.start_date = $scope.kieu_ngay_gio($scope.it.start_date);
+    $scope.it.end_date = $scope.kieu_ngay_gio($scope.it.start_date);
+    $scope.it.date_of_birth = $scope.kieu_ngay_gio($scope.it.date_of_birth);
+}

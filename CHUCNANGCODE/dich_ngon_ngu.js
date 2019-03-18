@@ -172,7 +172,7 @@ $scope.delete = function () {
 /* thong bao va tu dong tat */
 swal({ title: $filter("translate")("SUCCESS"), text: $filter("translate")("Save_Success"), timer: 2000, type: "success" });
 swal({ title: $filter("translate")("ERROR"), text: $filter("translate")("Save_Error"), timer: 2000, type: "error" });
-
+swal({ title: $filter("translate")("Notice"), text: $filter("translate")("SELECTED_UNDEFINED"), timer: 2000, type: "error" });
 
 swal({
   title: $filter("translate")("warning"),
