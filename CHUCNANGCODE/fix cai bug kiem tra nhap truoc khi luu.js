@@ -66,3 +66,51 @@ function kiemtranhaptruockhisave_contract(request_url_add) {
     }
 }
 === null || === undefined
+
+function kiemtranhaptruockhiluu_apartment_sales_bank_interest(apartment_sales_bank_interest) {
+    if (!apartment_sales_bank_interest.room_id) {
+        console.error("apartment_sales_bank_interest.room_id", period_object.room_id);
+        return false;
+    } else if (apartment_sales_contract.apartment_sales_contract_id) {
+        console.error("apartment_sales_bank_interest.apartment_sales_contract_id", period_object.apartment_sales_contract_id);
+        return false;
+    } else if (apartment_sales_contract.apartment_sales_deposit_id) {
+        console.error("apartment_sales_bank_interest.apartment_sales_deposit_id", period_object.apartment_sales_deposit_id);
+        return false;
+    } else if (apartment_sales_contract.payment_circle) {
+        console.error("apartment_sales_bank_interest.payment_circle", period_object.payment_circle);
+        return false;
+    } else if (apartment_sales_contract.payment_date) {
+        console.error("apartment_sales_bank_interest.payment_date", period_object.payment_date);
+        return false;
+    } else if (apartment_sales_contract.total_amount) {
+        console.error("apartment_sales_bank_interest.total_amount", period_object.total_amount);
+        return false;
+    } else if (apartment_sales_contract.payment_amount) {
+        console.error("apartment_sales_bank_interest.payment_amount", period_object.payment_amount);
+        return false;
+    } else if (apartment_sales_contract.remain_amount) {
+        console.error("apartment_sales_bank_interest.remain_amount", period_object.remain_amount);
+        return false;
+    } else if (apartment_sales_contract.number_of_day) {
+        console.error("apartment_sales_bank_interest.number_of_day", period_object.number_of_day);
+        return false;
+    } else if (apartment_sales_contract.interest_type) {
+        console.error("apartment_sales_bank_interest.interest_type", period_object.interest_type);
+        return false;
+    } else if (apartment_sales_contract.interest_value) {
+        console.error("apartment_sales_bank_interest.interest_value", period_object.interest_value);
+        return false;
+    } else if (apartment_sales_contract.late_fees) {
+        console.error("apartment_sales_bank_interest.late_fees", period_object.late_fees);
+        return false;
+    } else if (apartment_sales_contract.created_by_id) {
+        console.error("apartment_sales_bank_interest.created_by_id", period_object.created_by_id);
+        return false;
+    } else if (apartment_sales_contract.craeted_by_name) {
+        console.error("apartment_sales_bank_interest.craeted_by_name", period_object.craeted_by_name);
+        return false;
+    } else {
+        return true;
+    }
+}
