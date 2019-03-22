@@ -203,3 +203,5 @@ swal({
     }
   });
 });
+
+Notify('Error.', 'top-right', '5000', 'red', 'fa-check', true);
