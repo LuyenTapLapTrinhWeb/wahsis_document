@@ -205,3 +205,23 @@ swal({
 });
 
 Notify('Error.', 'top-right', '5000', 'red', 'fa-check', true);
+
+/* dong' khong load resolve */
+$scope.close = function () {
+  $uibModalInstance.dismiss();
+}
+/* dong load resolve */
+$scope.close = function () {
+  $uibModalInstance.close();
+}
+/* danh sách chọn dịch theo ngon ngữ */
+$scope.status_list = [{
+  value: -1,
+  name: $translate.instant("WAITING_APPROVAL")
+}, {
+  value: 1,
+  name: $translate.instant("DEPOSIT_APARTMENT")
+}, {
+  value: 2,
+  name: $translate.instant("CANCEL")
+}];
