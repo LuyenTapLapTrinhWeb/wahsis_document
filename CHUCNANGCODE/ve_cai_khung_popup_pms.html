@@ -23,3 +23,27 @@
             <button type="button" class="btn btn-white" ng-click="cancel()">{{"CLOSE"|translate}}</button>
         </div>
     </div>
+    function openPopupRoomInfo(id, loai, ser) {
+        if (loai === 0) {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'tienphuoc/map_location/room_info.view.html',
+                controller: TP_map_location_apartmentInfoController,
+                windowClass: "animated fadeInDown",
+                dragable: true,
+                size: 'lg',
+                locked: true,
+                backdrop: "static",
+                resolve: {
+                    id: function () {
+                        return id;
+                    },
+                    item: function () {
+                        return ser;
+                    }
+                }
+            }).result.then(function () {
+
+
+            });
+        }
+    }
