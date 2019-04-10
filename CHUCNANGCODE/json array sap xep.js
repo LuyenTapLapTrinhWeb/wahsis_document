@@ -15,7 +15,7 @@ function uniq_nhanvien_dadangky_phan_biet(dup_nhan_vien_list) {
 mang_so_gio_hien_thi = mang_so_gio_hien_thi.filter(function (a) {
     return !doi_sang_mang_so_gio_hien_thi.includes(a);
 });
-SortByName();
+SortByName(array);
 // luoi grid hien thi
 $scope.gridOptions_menuPMSGuest = {
     data: "config_value",
