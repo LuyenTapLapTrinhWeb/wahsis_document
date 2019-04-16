@@ -1,49 +1,51 @@
 <div class="inmodal">
-        <div class="modal-header">
-            <h4 class="modal-title">{{"Data_information"|translate}}</h4>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <form class="form-horizontal ng-pristine ng-invalid" name="frm">
-                    <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>
-                                {{ "Group_ID"| translate }}
-                            </label>
-                        </div>
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                            <p ng-required="true" type="text" ng-disabled="true" class="lbl_like_input" id="ItemName" style=" margin-bottom: 10px;">{{it.group_id}}</p>
-                        </div>
+    <div class="modal-header">
+        <h4 class="modal-title">{{"Data_information"|translate}}</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <form class="form-horizontal ng-pristine ng-invalid" name="frm">
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label>
+                            {{ "Group_ID"| translate }}
+                        </label>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" ng-click="ok()" ng-disabled="frm.$invalid">{{"SAVE"|translate}}</button>
-            <button type="button" class="btn btn-white" ng-click="cancel()">{{"CLOSE"|translate}}</button>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <p ng-required="true" type="text" ng-disabled="true" class="lbl_like_input" id="ItemName"
+                            style=" margin-bottom: 10px;">{{it.group_id}}</p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    function openPopupRoomInfo(id, loai, ser) {
-        if (loai === 0) {
-            var modalInstance = $uibModal.open({
-                templateUrl: 'tienphuoc/map_location/room_info.view.html',
-                controller: TP_map_location_apartmentInfoController,
-                windowClass: "animated fadeInDown",
-                dragable: true,
-                size: 'lg',
-                locked: true,
-                backdrop: "static",
-                resolve: {
-                    id: function () {
-                        return id;
-                    },
-                    item: function () {
-                        return ser;
-                    }
-                }
-            }).result.then(function () {
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="ok()"
+            ng-disabled="frm.$invalid">{{"SAVE"|translate}}</button>
+        <button type="button" class="btn btn-white" ng-click="cancel()">{{"CLOSE"|translate}}</button>
+    </div>
+</div>
+function openPopupRoomInfo(id, loai, ser) {
+if (loai === 0) {
+var modalInstance = $uibModal.open({
+templateUrl: 'tienphuoc/map_location/room_info.view.html',
+controller: TP_map_location_apartmentInfoController,
+windowClass: "animated fadeInDown",
+dragable: true,
+size: 'lg',
+locked: true,
+backdrop: "static",
+resolve: {
+id: function () {
+return id;
+},
+item: function () {
+return ser;
+}
+}
+}).result.then(function () {
 
 
-            });
-        }
-    }
+});
+}
+}
