@@ -86,4 +86,32 @@ let json_viewer = {
     "company": {
         "company_id": 54744
     }
-}
+} 
+var report_row = {
+    "Địa chỉ thường trú":   "address" 
+    "Mã vùng":   "area_code1" 
+    "Địa chỉ liên hệ":   "address_contact" 
+    "Nghề nghiệp":   "career_id" 
+    "Số tài khoản ngân hàng":   "bank_account_number" 
+    "ngân hàng":   "bank_name" 
+    "Loại khách hàng":  "client_type",
+    "Số điện thoại":   "phone" 
+    "Tên công ty":   "company_name" 
+    "Ngày Sinh":    "birthday" 
+    "Địa chỉ Email":   "email_address" 
+    "Họ và tên":   "first_name" 
+    "Sở thích":   "hobby" 
+    "Số CMND":   "identity_number" 
+    "Ngày cấp":    "date_identity" 
+    "Nơi cấp":   "issue_place" 
+    "Là khách của chủ đầu tư": utility.getNumber( "is_invesloper" 
+    "Là khách nội bộ": utility.getNumber( "is_internal" 
+    "Mã quốc gia":   "area_code" 
+    "Chức vụ":   "position_name" 
+    "Ghi chú":   "remark" 
+    "Nguồn khách hàng":   "source_name" 
+    "Mức thu nhập":   "salary" 
+    "Giới tính": utility.getNumber( "sex" 
+    "Mã số thuế":   "tax_code" 
+    "Mã bưu điện":   "zip_code" 
+};
