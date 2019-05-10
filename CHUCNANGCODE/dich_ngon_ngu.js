@@ -225,3 +225,17 @@ $scope.status_list = [{
   value: 2,
   name: $translate.instant("CANCEL")
 }];
+
+try {
+  $scope.wizard_screen_url = {
+    "step1_information": 'tienphuoc/map_location/popup_wizard_screen/infomation.html',
+    "step2_reservation": 'tienphuoc/map_location/popup_wizard_screen/reservation.html',
+    "step2_1_reservation": 'tienphuoc/map_location/popup_wizard_screen/reservation2_1.html',
+    "step3_deposit": 'tienphuoc/map_location/popup_wizard_screen/deposit.html',
+    "step3_1_deposit": 'tienphuoc/map_location/popup_wizard_screen/deposit3_1.html',
+    "step4_contract": 'tienphuoc/map_location/popup_wizard_screen/contract.html',
+    "step5_complete": 'tienphuoc/map_location/popup_wizard_screen/complete.html',
+  }
+} catch (error) {
+  swal($filter("translate")("warning"), e.message, "warning");
+}
