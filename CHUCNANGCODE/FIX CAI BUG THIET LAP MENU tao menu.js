@@ -1,5 +1,5 @@
 
------key 
+----- key
 pms_setting_log_database_pms_web
 ============================================
 -----config.js
@@ -26,14 +26,14 @@ pms_setting_log_database_pms_web
 <div id="language_translation" ng-controller="log_database_pms_web_ctrl">
 ============================================
 
------controller.js 
+-----controller.js
  /**FIX CÁI BUG TẠO MENU LEFT + SUBMENU */
  function createArrayLeftMenuNotificationLogdbpmsweb() {
     return [
       {
         id: "pms_setting_log_database_pms_web",
         value: $rootScope.loadmenu("pms_setting_log_database_pms_web"),
-        link: "/#/notification/log_database_pms_web",
+        link: "/#/noti_logdb/log_database_pms_web",
         user_guid_id: "pms_setting_log_database_pms_web",
         module_id: "pms"
       }
@@ -61,7 +61,7 @@ pms_setting_log_database_pms_web
 ============================================
 -----navigation.html
 <!-- /**
-Ghi chú: 
+Ghi chú:
 MAIN_MENU = notification = TOP MENU  Đã đăng ký trong file config
 MAIN_SUB_MENU = STATE CHA = notifications_logdbpmsweb = LEFT MENU Đã đăng ký trong file config
 SUB_MENU =  STATE cha(.)STATE CON = ui-sref="notifications_logdbpmsweb.log_database_pms_web" = SUB MENU Đã đăng ký trong file config
@@ -100,3 +100,36 @@ $rootScope.is_load_notification = false
 $rootScope.is_load_report = false
 $rootScope.is_load_approvals = false
 $rootScope.is_load_setting = false
+====================================================================================================================================================================================
+====================================================================================================================================================================================
+====================================================================================================================================================================================
+/** *KHÔNG CLICK ĐƯỢC TOP MENU */
+/* chú ý cách fix tất cả các loại bug menu trong các trường hợp sau */
+/* 1 là bị click vô menu không được do parent_node_top_menu(parent_state) được khai báo nhưng child_node lại không tuân theo */
+-----state cha xét lại url /**top menu*/
+.state("notifications_logdbpmsweb", {
+    abstract: true,
+    url: "/noti_logdb",
+    templateUrl: "views/common/content.html"
+  })
+-----state con xét lại url  /**top menu.left menu*/
+.state("notifications_logdbpmsweb.log_database_pms_web", {
+    url: "/log_database_pms_web",
+    templateUrl:"setting/notification/log_database_pms_web/log_database_pms_web.view.html",
+    data: { pageTitle: "Log Database PMS Web" },
+    resolve:{}
+}
+function createArrayLeftMenuNotificationLogdbpmsweb() {
+ let parent_node_top_menu = "/#/noti_logdb/";
+ let child_sub_left_menu_list = [];
+ child_sub_left_menu_list = [
+    {
+      id: "pms_setting_log_database_pms_web",
+      value: $rootScope.loadmenu("pms_setting_log_database_pms_web"),
+      link: parent_node_top_menu+"log_database_pms_web",
+      user_guid_id: "pms_setting_log_database_pms_web",
+      module_id: "pms"
+    }
+  ];
+  return child_sub_left_menu_list;
+}
