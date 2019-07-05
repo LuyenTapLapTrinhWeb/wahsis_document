@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    1 <span><b>is_vat 0 </b> {{roomsDetail.is_vat === 0}} <b>room_model 1</b>
+        {{roomsDetail.room_model===1}}
+        <b>{{roomsDetail.room_model === 1 && roomsDetail.is_vat === 0}}</b></span>
+    <p ng-if="roomsDetail.room_model === 1 && roomsDetail.is_vat === 0">
+        {{(utility.so_tra_ve_binh_thuong(roomsDetail.total_price) * 10 / 100) + roomsDetail.total_price}}
+    </p> <br>
+
+    2 <span><b>is_vat 1</b> {{roomsDetail.is_vat === 1}} <b>room_model 1</b>
+        {{roomsDetail.room_model===1}}
+        <b>{{roomsDetail.room_model === 1 && roomsDetail.is_vat === 1}}</b></span>
+    <p ng-if="roomsDetail.room_model === 1 && roomsDetail.is_vat === 1">
+        {{roomsDetail.total_price}} </p><br>
+
+    3 <span><b>is_vat 0</b> {{roomsDetail.is_vat === 0}} <b>room_model 2</b>
+        {{roomsDetail.room_model===2}}
+        <b>{{roomsDetail.room_model === 2 && roomsDetail.is_vat === 0}}</b></span>
+    <p ng-if="roomsDetail.room_model === 2 && roomsDetail.is_vat === 0">
+        {{roomsDetail.total_price * 10 / 100 + roomsDetail.total_price}} </p><br>
+
+    4 <span><b>is_vat 1</b> {{roomsDetail.is_vat === 1}}<b>room_model 2</b>
+        {{roomsDetail.room_model===2}}
+        <b>{{roomsDetail.room_model === 2 && roomsDetail.is_vat === 1}}</b></span>
+    <p ng-if="roomsDetail.room_model === 2 && roomsDetail.is_vat === 1">
+        {{roomsDetail.total_price}} </p> <br>
+
+</div>
