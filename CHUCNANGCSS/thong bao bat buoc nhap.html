@@ -1,4 +1,11 @@
+<!-- lv1 code check box place holder -->
 https://www.w3schools.com/code/tryit.asp?filename=G7865BGGAMRH
+<!-- lv2 css place holder -->
+https://www.w3schools.com/code/tryit.asp?filename=G790SIDIPT7I
+<!-- lv.3 angularjs place holder change by check box -->
+https://www.w3schools.com/code/tryit.asp?filename=G79CUBLSI19O
+<!-- lv.4 angularjs fa fa close place holder điều khiển thông báo bắt buộc nhập -->
+https://www.w3schools.com/code/tryit.asp?filename=G79GNI2WKBEF
 <!DOCTYPE html>
 <html>
 
@@ -123,4 +130,23 @@ https://www.w3schools.com/code/tryit.asp?filename=G7865BGGAMRH
             }
         });
     }
+</script>
+<script>
+    let text_data = $('#textbox1').val();
+    let status_checkbox = $('#checkbox1').checked
+    let trang_thai_placeholder = {
+        "no_check_no_data": !status_checkbox && !text_data ? true : false,
+        "no_check_have_data": !status_checkbox && text_data ? true : false,
+        "checked_no_data": status_checkbox && !text_data ? true : false,
+        "checked_have_data": status_checkbox && text_data ? true : false,
+    }
+    $('#checkbox1').change(function () {
+        if (trang_thai_placeholder.checked_have_data) {
+            $("#span_input_group_addon_check").css("display", "inline").fadeOut(400);
+            $('#textbox1').focus();
+        } else if (trang_thai_placeholder.checked_no_data) {
+            $("#span_input_group_addon_close").css("display", "inline").fadeOut(400);
+            $('#textbox1').blur();
+        }
+    });
 </script>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    /* Place Holder CSS */
+    c-red {
+        color: red
+    }
+
+    c-green {
+        color: green
+    }
+
+    c-yellow {
+        color: yellow
+    }
+
+    #fa_fa_check,
+    #fa_fa_close,
+    #fa_fa_check_circle,
+    #fa_fa_check_circle_o {
+        display: none
+    }
+
+    ::-webkit-input-placeholder {
+        color: red;
+        opacity: 0.5;
+        -webkit-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :-moz-placeholder {
+        color: #000;
+        opacity: 0.5;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    ::-moz-placeholder {
+        color: #000;
+        opacity: 0.5;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :-ms-input-placeholder {
+        color: #000;
+        opacity: 0.5;
+        -ms-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    /* Place Holder CSS for Focus */
+    :hover::-webkit-input-placeholder {
+        opacity: 0.75;
+        -webkit-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :hover:-moz-placeholder {
+        opacity: 0.75;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :hover::-moz-placeholder {
+        opacity: 0.75;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :hover:-ms-input-placeholder {
+        opacity: 0.75;
+        -ms-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    /* Place Holder CSS for Focus */
+    :focus::-webkit-input-placeholder {
+        opacity: 0;
+        -webkit-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :focus:-moz-placeholder {
+        opacity: 0;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :focus::-moz-placeholder {
+        opacity: 0;
+        -moz-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    :focus:-ms-input-placeholder {
+        opacity: 0;
+        -ms-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    /* Custom Input Style */
+    .niceform input,
+    .niceform textarea {
+        font-size: 16px;
+        padding: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 3px solid #bbb;
+        line-height: 20px;
+        text-indent: 5px;
+        width: 400px;
+        display: block;
+        clear: both;
+        margin-bottom: 5px;
+    }
+
+    .niceform textarea {
+        height: 100px;
+    }
+
+    .niceform button {
+        font-size: 16px;
+        padding: 6px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 0px solid #333;
+        line-height: 20px;
+        width: 200px;
+        display: block;
+        clear: both;
+        margin-bottom: 5px;
+        margin-left: 213px;
+        background-color: #666;
+        color: #CCC;
+        cursor: pointer;
+    }
+
+    .niceform button:hover,
+    .niceform button:focus {
+        outline: none;
+        background-color: #444;
+        color: #EEE;
+    }
+
+    .niceform input:hover,
+    .niceform textarea:hover {
+        outline: none;
+        border-color: #AAA;
+    }
+
+    .niceform input:focus,
+    .niceform textarea:focus {
+        outline: none;
+        border-color: #888;
+    }
+
+    /* Misc Styles */
+    body {
+        background-color: #DDD;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <div ng-controller="MyController">
+
+        <input type="checkbox" id="checkbox1" ng-model="status_checkbox" class="c-green"
+            ng-change="change_status_checkbox(status_checkbox, text_data)">
+        <input type="textbox" id="textbox1" ng-model="text_data" placeholder="input field required">
+        <span class="c-yellow" id="fa_fa_check"><i class="fa fa-check" aria-hidden="true"></i>No required!</span>
+
+        <span class="c-red" id="fa_fa_close"><i class="fa fa-close" aria-hidden="true"></i>Required!</span>
+        <span class="c-yellow" id="fa_fa_check_circle"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to
+            save!</span>
+        <span class="c-green" id="fa_fa_check_circle_o"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to
+            save!</span>
+
+        <p>Click in the input field to get focus.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script>
+        angular.module('myApp', [])
+            .controller('MyController', ['$scope', function ($scope) {
+                $scope.status_checkbox = false;
+                $scope.text_data = "";
+                $scope.trang_thai_placeholder = {};
+                $scope.change_status_checkbox = function (status_checkbox, text_data) {
+                    $scope.status_checkbox = status_checkbox;
+                    $scope.trang_thai_placeholder = {
+                        "no_checked_no_data": !status_checkbox && !text_data ? true : false,
+                        "no_checked_have_data": !status_checkbox && text_data ? true : false,
+                        "checked_no_data": status_checkbox && !text_data ? true : false,
+                        "checked_have_data": status_checkbox && text_data ? true : false,
+                    }
+                    $('#checkbox1').change(function () {
+                        if ($scope.trang_thai_placeholder.checked_no_data) {
+                            $("#fa_fa_close").css({ "display": "inline", "color": "red" }).fadeOut(1000);
+                            $('#textbox1').focus();
+                        } if ($scope.trang_thai_placeholder.no_checked_no_data) {
+                            $("#fa_fa_check").css({ "display": "inline", "color": "green" }).fadeOut(1000);
+                            $('#textbox1').focus();
+                        } if ($scope.trang_thai_placeholder.checked_have_data) {
+                            $("#fa_fa_check_circle_o").css({ "display": "inline", "color": "green" }).fadeOut(1000);
+                            $('#textbox1').focus();
+                        } if ($scope.trang_thai_placeholder.no_checked_have_data) {
+                            $("#fa_fa_check_circle").css({ "display": "inline", "color": "green" }).fadeOut(1000);
+                            $('#textbox1').focus();
+                        }
+                    });
+                }
+            }]);
+        angular.element(function () {
+            angular.bootstrap(document, ['myApp']);
+        });
+    </script>
+</body>
+
+</html>
