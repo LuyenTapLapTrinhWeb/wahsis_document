@@ -1,0 +1,126 @@
+https://www.w3schools.com/code/tryit.asp?filename=G7865BGGAMRH
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //set initial state.
+
+
+            $('#checkbox1').change(function () {
+                if (this.checked) {
+                    $("#span_hello").css("display", "inline").fadeOut(400);
+                    $('#textbox1').focus();
+                } else {
+                    $("#span_goodbye").css("display", "inline").fadeOut(400);
+                    $('#textbox1').blur();
+                }
+            });
+        });
+    </script>
+    <style>
+        span {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="textbox" id="textbox1">
+    <input type="checkbox" id="checkbox1">
+    <span id="span_hello">Nice to meet you!</span>
+    <span id="span_goodbye">Bye!</span>
+    <p>Click in the input field to get focus.</p>
+
+
+</body>
+
+</html>
+
+<div class="col-md-12" style="padding-right: 0px;padding-left: 0px">
+    <div class="row">
+        <div class="col-md-6" style="display: grid;">
+            <label>{{"IS_EVENT"|translate}}</label>
+            <input type="checkbox" id="is_event" name="is_event" style=" opacity: 1 !important;" icheck
+                ng-model="it.is_event" ng-true-value=1 ng-false-value=0 ng-change="change_check_is_event(it.is_event)">
+        </div>
+        <div class="col-md-6">
+            <label>{{"BOOKING_CODE_PREFIX"|translate}} <span class="c-red" ng-if="it.is_event === 1">*</span>
+            </label>
+            <div class="input-group">
+                <input type="text" id='booking_code_prefix' name="booking_code_prefix" class="form-control"
+                    ng-model="it.booking_code_prefix" ng-blur="blur_input_text_icon('booking_code_prefix')"
+                    required="it.is_event===1" placeholder="{{'ENTER_BOOKING_CODE_PREFIX'|translate}}">
+                <span class="input-group-addon" class="c-green">
+                    <i class="fa fa-check-circle c-green" aria-hidden="true" id="focus_icon_check"
+                        ng-if="it.is_event === 1 && it.booking_code_prefix"></i>
+                    <i class="fa fa-close c-red" aria-hidden="true" id="focus_icon_close"
+                        ng-if="it.is_event === 1 && !it.booking_code_prefix"></i>
+                </span>
+            </div>
+            <span id="span_booking_code_prefix" name="span_booking_code_prefix" class="c-green">
+                {{"WARNING_NO_DATA"|translate}}
+            </span>
+        </div>
+    </div>
+</div>
+<script>
+    $scope.change_check_is_event = function (check_is_event) {
+        if (check_is_event && !$scope.it.booking_code_prefix) {
+            $("#span_booking_code_prefix").css("display", "inline").fadeOut(1000);
+            $('#booking_code_prefix').focus(function () {
+                // if (focus_input_text_value) {
+                // $("#focus_icon_check").css("display", "inline").fadeToggle(200);
+                // } else {
+                // $("#focus_icon_close").css("display", "inline").fadeOut(200);
+                // }
+            });
+        }
+    }
+    $scope.change_input_text_icon = function (check_is_event, focus_input_text_id) {
+        // let focus_input_text_value = $("#" + focus_input_text_id).val()
+        if (check_is_event) {
+            // $("#span_booking_code_prefix").css("display", "inline").fadeOut(1000);
+            $('#booking_code_prefix').focus(function () {
+                // if (focus_input_text_value) {
+                // $("#focus_icon_check").css("display", "inline").fadeToggle(200);
+                // } else {
+                // $("#focus_icon_close").css("display", "inline").fadeToggle(200);
+                // }
+            });
+        } else {
+            // $("#span_booking_code_prefix").css("display", "inline").fadeOut(1000);
+            $('#booking_code_prefix').focus(function () {
+                // if (focus_input_text_value) {
+                // $("#focus_icon_check").css("display", "inline").fadeToggle(200);
+                // } else {
+                // $("#focus_icon_close").css("display", "inline").fadeToggle(200);
+                // }
+            });
+        }
+    }
+    $scope.focus_input_text_icon = function (focus_input_text_id) {
+        let focus_input_text_value = $("#" + focus_input_text_id).val()
+        $('#booking_code_prefix').focus(function () {
+            if (focus_input_text_value) {
+                $("#focus_icon_check").css("display", "inline").fadeToggle(200);
+            } else {
+                $("#focus_icon_close").css("display", "inline").fadeOut(200);
+            }
+        });
+    }
+    $scope.blur_input_text_icon = function (blur_input_text_id) {
+        let blur_id_placeholder = "#" + blur_input_text_id + '::placeholder';
+        let blur_input_text_value = $("#" + blur_input_text_id).val()
+        // let enter_booking_code_prefix_text = $filter("translate")("ENTER_BOOKING_CODE_PREFIX")
+        $("#" + blur_input_text_id).blur(function () {
+            if ($scope.it.is_event && !blur_input_text_value) {
+                // $(blur_id_placeholder).css("color", "red");
+                $("#span_booking_code_prefix").css("display", "inline").fadeOut(1000);
+            }
+        });
+    }
+</script>
