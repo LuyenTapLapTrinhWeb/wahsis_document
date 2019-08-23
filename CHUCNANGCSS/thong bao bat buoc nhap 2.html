@@ -25,8 +25,22 @@
         display: none
     }
 
-    ::-webkit-input-placeholder {
+    /* ::-webkit-input-placeholder {
         color: red;
+        opacity: 0.5;
+        -webkit-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    } */
+
+    .placeholder-red::-webkit-input-placeholder {
+        color: red;
+        opacity: 0.5;
+        -webkit-transition: opacity 0.35s ease-in-out;
+        transition: opacity 0.35s ease-in-out;
+    }
+
+    .placeholder-green::-webkit-input-placeholder {
+        color: green;
         opacity: 0.5;
         -webkit-transition: opacity 0.35s ease-in-out;
         transition: opacity 0.35s ease-in-out;
@@ -170,19 +184,14 @@
 
 <body>
     <div ng-controller="MyController">
-
         <input type="checkbox" id="checkbox1" ng-model="status_checkbox" class="c-green"
             ng-change="change_status_checkbox(status_checkbox, text_data)">
-        <input type="textbox" id="textbox1" ng-model="text_data" placeholder="input field required">
-        <span class="c-yellow" id="fa_fa_check"><i class="fa fa-check" aria-hidden="true"></i>No required!</span>
-
-        <span class="c-red" id="fa_fa_close"><i class="fa fa-close" aria-hidden="true"></i>Required!</span>
-        <span class="c-yellow" id="fa_fa_check_circle"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to
-            save!</span>
-        <span class="c-green" id="fa_fa_check_circle_o"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to
-            save!</span>
-
-        <p>Click in the input field to get focus.</p>
+        <input type="textbox" id="textbox1" ng-model="text_data" ng-attr-placeholder={{placeholder_text}}
+            ng-class="getPlaceholderStyle(status_checkbox)">
+        <span id="fa_fa_check"><i class="fa fa-check" aria-hidden="true"></i>No required!</span>
+        <span id="fa_fa_close"><i class="fa fa-close" aria-hidden="true"></i>Required!</span>
+        <span id="fa_fa_check_circle"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to save!</span>
+        <span id="fa_fa_check_circle_o"><i class="fa fa-check-circle" aria-hidden="true"></i>Allow to save!</span>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -197,31 +206,37 @@
 
     <script>
         angular.module('myApp', [])
-            .controller('MyController', ['$scope', function ($scope) {
+            .controller('MyController', ['$scope', "$filter", function ($scope, $filter) {
                 $scope.status_checkbox = false;
                 $scope.text_data = "";
                 $scope.trang_thai_placeholder = {};
+                $scope.placeholder_text = $filter("translate")("ENTER_BOOKING_PREFIX_CODE");/* green color no required no check */
+                $scope.getPlaceholderStyle = function (status_checkbox) {
+                    if (status_checkbox) {
+                        /* red */
+                        return 'placeholder-red'
+                    } else {
+                        /* green */
+                        return 'placeholder-green'
+                    }
+                }
                 $scope.change_status_checkbox = function (status_checkbox, text_data) {
                     $scope.status_checkbox = status_checkbox;
                     $scope.trang_thai_placeholder = {
-                        "no_checked_no_data": !status_checkbox && !text_data ? true : false,
-                        "no_checked_have_data": !status_checkbox && text_data ? true : false,
                         "checked_no_data": status_checkbox && !text_data ? true : false,
+                        "no_checked_no_data": !status_checkbox && !text_data ? true : false,
                         "checked_have_data": status_checkbox && text_data ? true : false,
+                        "no_checked_have_data": !status_checkbox && text_data ? true : false,
                     }
                     $('#checkbox1').change(function () {
                         if ($scope.trang_thai_placeholder.checked_no_data) {
-                            $("#fa_fa_close").css({ "display": "inline", "color": "red" }).fadeOut(1000);
-                            $('#textbox1').focus();
-                        } if ($scope.trang_thai_placeholder.no_checked_no_data) {
-                            $("#fa_fa_check").css({ "display": "inline", "color": "green" }).fadeOut(1000);
-                            $('#textbox1').focus();
-                        } if ($scope.trang_thai_placeholder.checked_have_data) {
-                            $("#fa_fa_check_circle_o").css({ "display": "inline", "color": "green" }).fadeOut(1000);
-                            $('#textbox1').focus();
-                        } if ($scope.trang_thai_placeholder.no_checked_have_data) {
-                            $("#fa_fa_check_circle").css({ "display": "inline", "color": "green" }).fadeOut(1000);
-                            $('#textbox1').focus();
+                            $("#fa_fa_close").css({ "display": "inline", "color": "red" }).fadeOut(100);
+                        } else if ($scope.trang_thai_placeholder.no_checked_no_data) {
+                            $("#fa_fa_check").css({ "display": "inline", "color": "green" }).fadeOut(100);
+                        } else if ($scope.trang_thai_placeholder.checked_have_data) {
+                            $("#fa_fa_check_circle_o").css({ "display": "inline", "color": "green" }).fadeOut(100);
+                        } else if ($scope.trang_thai_placeholder.no_checked_have_data) {
+                            $("#fa_fa_check_circle").css({ "display": "inline", "color": "green" }).fadeOut(100);
                         }
                     });
                 }
