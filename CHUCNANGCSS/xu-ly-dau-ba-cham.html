@@ -1,0 +1,36 @@
+<!-- =======================css cài ba chấm css lên trang html-->
+<style>
+    .spiner-example {
+        height: 100vh;
+        width: 100%;
+        padding-top: 23%;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        z-index: 10000;
+        background: black;
+        opacity: 0.6;
+    }
+</style>
+<!-- =======================html cài dấu ba chấm hiện lên html-->
+<!-- Wrapper-->
+<div id="language_translation" ng-controller="project_contract_controller">
+    <div class="spiner-example" ng-show="is_load">
+        <div class="sk-spinner sk-spinner-three-bounce">
+            <div class="sk-bounce1"></div>
+            <div class="sk-bounce2"></div>
+            <div class="sk-bounce3"></div>
+        </div>
+    </div>
+</div>
+<!-- =======================javascript cài công tắc đóng/ mở ba chấm-->
+<script>
+    $scope.get_list = function (json) {
+        /* =================== mở dấu ba chấm khi chưa gọi API */
+        $scope.is_load = true;
+        /* =================== đóng dấu ba chấm khi kết thúc API */
+        $timeout(function () {
+            $scope.is_load = false;
+        }, 1000)
+    }
+</script>
