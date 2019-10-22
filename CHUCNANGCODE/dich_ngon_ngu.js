@@ -29,7 +29,9 @@ var dich_ngon_ngu = {
   LDPW_CREATED_NEW_DATE: "New Data Date",
   LDPW_COMPARE_OLDNEW: "So sánh",
   LDPW_CREATED_OLDNEW_INPUTYET: "Ngày tạo dữ liệu cũ/mới chưa xác nhập",
-  no_translation
+  no_translation,
+  update_success: "Cập nhật thông tin thành công!",
+  UPDATE_SUCCESS: "Cập nhật thông tin thành công!",
 }
 swal($filter("translate")("WARNING"), e, "warning");
 var kiemtra_nhap_truockhi_luu = () => {
@@ -43,6 +45,12 @@ if (response.data.err === 0) {
   swal($filter("translate")("Save_Success"), $filter("translate")("Save_Success"), "success");
 } else {
   swal($filter("translate")("Save_Error"), $filter("translate")("Save_Error"), "warning");
+}
+if (response.data.err === 0) {
+  $uibModalInstance.close();
+  swal($filter("translate")("update_success"), $filter("translate")("update_success"), "success");
+} else {
+  swal($filter("translate")("update_failed"), $filter("translate")("update_failed"), "warning");
 }
 if (response.data.err === 0) {
   swal($filter("translate")("Delete_Success"), $filter("translate")("Delete_Success"), "success");

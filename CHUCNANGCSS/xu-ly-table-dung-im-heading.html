@@ -1,0 +1,24 @@
+<!-- HTML ngoai popup: table ghi them thuoc tinh dtoption va page_length-->
+<div class="ibox-content">
+    <div class="table-responsive" ng-include="data_integrations_url">
+        <table data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
+            class="table table-striped table-bordered table-hover">
+        </table>
+    </div>
+</div>
+<!-- HTML trong popup: table ghi them thuoc tinh dtoption va page_length-->
+<form>
+    <div class='col-md-12'>
+        <div class="row">
+            <div class="table-responsive">
+                <table data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
+                    class="table table-striped table-bordered table-hover">
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    /* trong controller.js viet them dtoption */
+    $scope.dtOptions = DTOptionsBuilder.newOptions().withOption('scrollY', 300).withOption('scrollX', true);
+    $scope.page_length = page_length;
+</script>
