@@ -1,0 +1,36 @@
+<style>
+    .container,
+    .row {
+        width: 100%;
+    }
+
+    .col {
+        width: 25%;
+        background-color: aqua;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        float: left;
+        height: 25px;
+    }
+
+    @media screen and (max-width: 720px) {
+        .col {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .col {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</div>

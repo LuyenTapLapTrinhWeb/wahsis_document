@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Preview Tool</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Lato";
+        }
+
+        #dropbox {
+            height: 350px;
+            width: 350px;
+            margin: 20px auto;
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+        }
+
+        #fileSelector {
+            display: none;
+        }
+
+        #dropbox.highlight {
+            border-color: purple;
+        }
+
+        #preview img {
+            width: 350px;
+            height: 350px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        button {
+            background-color: #e67e22;
+            border: 2px solid #cf6d17;
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image Preview</h1>
+    <div id="link_img_preview">
+
+        <p>You can enter the image URL here <input type="text" id='imgUrl' name="imgUrl"> <b>Or</b> <span><a
+                    id="btn_send_link" href="#">Default Link Image Preview</a></span></p>
+    </div>
+    <button type="button" onclick="loadImageFromUrl()">Confirm</button>
+    <div id="dropbox">
+        <form class="upload">
+            <input id='fileSelector' type="file" name="fileName" multiple accept="image/*"
+                onchange="handleFiles(this.files)">
+            <div id="preview">
+                <p>Or you can drag and drop a image here</p>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let link_img_url = `https://1.bp.blogspot.com/-x8EZz7avfqk/UswFyHb3GCI/AAAAAAAAF_E/ii-4AeCE5G0/s1600/1387957320-nu-pham-13.jpg`;
+            $("#btn_send_link").click(function () {
+                $("input#imgUrl").val(link_img_url);
+                loadImageFromUrl();
+            });
+        });
+        let dropbox = document.getElementById("dropbox");
+        ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
+            dropbox.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        ["dragenter", "dragover"].forEach(eventName => {
+            dropbox.addEventListener(eventName, highlight, false);
+        });
+        ["dragleave", "drop"].forEach(eventName => {
+            dropbox.addEventListener(eventName, unhighlight, false);
+        });
+
+        dropbox.addEventListener("drop", handleDrop, false);
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function highlight(e) {
+            dropbox.classList.add("highlight");
+        }
+
+        function unhighlight(e) {
+            dropbox.classList.remove("highlight");
+        }
+
+        function handleDrop(e) {
+            var dt = e.dataTransfer;
+            var files = dt.files;
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            [...files].forEach(previewFile);
+        }
+        function loadImageFromUrl() {
+            const url = document.getElementById("imgUrl").value;
+            addImage(url);
+        }
+
+        function addImage(src) {
+            if (src === "") {
+                alert("You should enter an image URL");
+                return;
+            }
+            let img = document.createElement("img");
+            img.src = src;
+            const parentNode = document.getElementById("preview");
+            if (parentNode.children[0] != null) {
+                parentNode.removeChild(parentNode.children[0]);
+            }
+            parentNode.appendChild(img);
+        }
+
+        function previewFile(file) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+                let img = document.createElement("img");
+                img.src = reader.result;
+                const parentNode = document.getElementById("preview");
+                if (parentNode.children[0] != null) {
+                    parentNode.removeChild(parentNode.children[0]);
+                }
+                parentNode.appendChild(img);
+            };
+        }
+
+    </script>
+</body>
+
+</html>
