@@ -1,0 +1,31 @@
+/* trường hợp có dữ liệu: Hiện thị cho người dùng */
+<table id='example' data-page-length='{{page_length}}' datatable="ng" dt-options="dtOptions"
+    class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-3" style="text-align: center;">{{'PERIOD_AMOUNT'|translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in apartment_sales_payment_period_list">
+            <!-- HTML xu ly thuoc tinh item.interest_cycle co thi hien ra cho nguoi dung -->
+            <td style="text-align: center;" ng-if="item.interest_cycle">{{item.interest_date}}</td>
+            <td style="text-align: center;" ng-if="!item.interest_cycle"></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    /* Trường hợp không có dữ liệu: (không có field interest_date trong câu detail) thì hiện thị trống trong danh sách hạn thanh toán
+    */
+    if (!timeline.interest_cycle) {
+        timeline.interest_cycle = 0;
+    }
+    if (!timeline.interest_date) {
+        timeline.interest_date = "";
+    }
+    /* luc tinh toan se tinh gia tri timeline.interest_cycle đang có dữ liệu */
+    if (status.deposit && step.contract && action.show) {
+        let payment_date_temp = UtilityCheckFormatService.change_date_to_save(timeline.payment_date).split("-");
+        timeline.interest_date = UtilityCheckFormatService.change_date_to_save($filter('date')(new Date(payment_date_temp[0], Number(payment_date_temp[1]) - 1, Number(payment_date_temp[2]) + timeline.interest_cycle), 'yyyy-MM-dd'))
+    }
+</script>
