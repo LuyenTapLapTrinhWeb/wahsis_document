@@ -1,5 +1,5 @@
 
------ key
+----- key - resouce id
 pms_setting_log_database_pms_web
 ============================================
 -----config.js
@@ -133,3 +133,7 @@ function createArrayLeftMenuNotificationLogdbpmsweb() {
   ];
   return child_sub_left_menu_list;
 }
+=======================================
+// Bước cuối cùng
+/* login phân quyền cho 2 resouce */
+/* thiết lập> phân quyền> phân quyền> tìm resource name > check all> save*/
