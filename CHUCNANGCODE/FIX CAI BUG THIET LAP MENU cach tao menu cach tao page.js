@@ -1,4 +1,9 @@
 
+
+------ parent id
+/* cách chọn parent_id của function list resource */
+/* chọn parent_id là 'báo cáo' khi thêm (left menu) vào báo cáo không phân biệt left menu cha là 'dự án' */
+
 ----- key - resouce id
 pms_setting_log_database_pms_web
 ============================================

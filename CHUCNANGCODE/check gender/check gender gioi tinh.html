@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label>{{"GENDER"|translate}}</label>
+    <select ng-model="customer.sex" ng-options="obj.value as obj.option for obj in gender" class="form-control">
+        <option value="">-- {{"CHOOSE_GENDER"|translate}} --</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>{{"GENDER"|translate}}</label>
+    <select ng-model="sex" ng-options="obj.value as obj.name for obj in gender_list" class="form-control">
+        <option value="">{{"CHOOSE_GENDER"|translate}}</option>
+    </select>
+</div>

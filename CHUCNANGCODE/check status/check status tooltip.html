@@ -1,0 +1,50 @@
+<!-- ---cách 1: cài đặt html tooltip angularjs -->
+<div class="form-group padding-right-0px">
+    <label>{{"SORT"|translate}}<span class="c-red">*</span></label>
+    <input type="number" min="0" class="form-control" ng-init="it.sort ? it.sort = it.sort : it.sort = 0"
+        ng-model="it.sort" ng-required="true">
+</div>
+<!-- --- cài đặt directive `check status tooltip.js` -->
+
+<div class="tooltip"><i class="fa fa-question-circle-o"></i>
+    <span class="tooltiptext">Tooltip text</span>
+</div>
+<!-- ======================================================================================================================================================================================= -->
+<!-- ======================================================================================================================================================================================= -->
+<!-- ======================================================================================================================================================================================= -->
+<!-- ======================================================================================================================================================================================= -->
+<!-- ======================================================================================================================================================================================= -->
+<!-- ======================================================================================================================================================================================= -->
+<!-- 2.1 cài đặt controller -->
+<script>
+    $scope.title = $filter('translate')('STATUS_ACTIVE');
+    $scope.tooltip_init = function (title) {
+        let title_default = $filter('translate')('STATUS_ACTIVE');
+        if (!title) {
+            title = title_default
+        }
+        let element = '[data-toggle="tooltip"]';
+        // $(element).tooltip();
+        $(element).attr({ 'title': title }).hover(function () {
+            // on mouseenter
+            $(element).tooltip('show');
+            // $("#fa_question_circle_o").addClass("tooltiptext")
+        }, function () {
+            // on mouseleave
+            $(element).tooltip('hide');
+            // $("#fa_question_circle_o").removeClass("tooltiptext")
+        });
+    }
+</script>
+<!-- 2.2 cài đặt html-->
+<div class="form-group padding-right-0px">
+    <label>{{"STATUS"|translate}}
+        <span ng-init="tooltip_init(title)" data-toggle="tooltip" data-placement="right">
+            <i class="fa fa-question-circle-o"></i>
+        </span>
+    </label>
+    <div>
+        <input type="checkbox" class="js-switch" ui-switch="{color:'#1AB394'}" ng-model="it.is_active" ng-true-value="1"
+            ng-false-value="0" />
+    </div>
+</div>
