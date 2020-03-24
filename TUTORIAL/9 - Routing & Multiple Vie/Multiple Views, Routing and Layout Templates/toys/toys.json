@@ -1,0 +1,20 @@
+[
+    {
+        "id": 14124,
+        "name": "con ga",
+        "age": 14,
+        "src": "toys/img/chicken.jpg"
+    },
+    {
+        "id": 211,
+        "name": "con vit",
+        "age": 13,
+        "src": "toys/img/duck.jpg"
+    },
+    {
+        "id": 3123,
+        "name": "con heo",
+        "age": 12,
+        "src": "toys/img/pig.jpg"
+    }
+]

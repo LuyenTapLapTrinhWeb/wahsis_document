@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                search:
+                <input type="text" ng-model="$ctrl.query">
+            </p>
+            <p>
+                sort:
+                <select name="orderBy" id="orderBy" ng-model="$ctrl.orderProp">
+                    <option value="name">Alphabet</option>
+                    <option value="age">Newest</option>
+                    <option value="-age">Oldest</option>
+                    <option value="unknow">Unknow</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Img</th>
+                </tr>
+                <tr ng-repeat="item in $ctrl.toys| filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                    <td>{{$index+1}}</td>
+                    <td><a href="#!/toys/{{item.id}}">{{item.name}}</a></td>
+                    <td class="thumb"><img ng-src="{{item.src}}" alt="{{item.src}}" class="thumbnail" width="200"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

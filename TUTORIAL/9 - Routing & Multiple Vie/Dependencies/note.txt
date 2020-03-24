@@ -1,0 +1,6 @@
+The routing functionality added in this step is provided by AngularJS in the ngRoute module, which is distributed separately from the core AngularJS framework.
+
+Since we are using npm to install client-side dependencies, this step updates the package.json configuration file to include the new dependency:
+
+The new dependency "angular-route": "1.7.x" tells npm to install a version of the angular-route module that is compatible with version 1.7.x of AngularJS. We must tell npm to download and install this dependency.
+
