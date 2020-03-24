@@ -1,0 +1,5 @@
+In the phoneList component's controller, remove the statement that sets the orderProp value and you'll see that AngularJS will temporarily add a new blank ("unknown") option to the drop-down list and the ordering will default to unordered/natural order.
+Add a {{$ctrl.orderProp}} binding into the phone-list.template.html template to display its current value as text.
+
+Reverse the sort order by adding a - symbol before the sorting value: <option value="-age">Oldest</option> After making this change, you'll notice that the drop-down list has a blank option selected and does not default to age anymore. Fix this by updating the orderProp value in phone-list.component.js to match the new value on the <option> element.
+

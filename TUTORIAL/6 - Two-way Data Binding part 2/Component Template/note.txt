@@ -1,0 +1,8 @@
+We made the following changes to the phone-list.template.html template:
+
+First, we added a <select> element bound to $ctrl.orderProp, so that our users can pick from the two provided sorting options.
+
+
+We then chained the filter filter with the orderBy filter to further process the input for the repeater. orderBy is a filter that takes an input array, copies it and reorders the copy which is then returned.
+AngularJS creates a two way data-binding between the select element and the $ctrl.orderProp model. $ctrl.orderProp is then used as the input for the orderBy filter.
+As we discussed in the section about data-binding and the repeater in step 5, whenever the model changes (for example because a user changes the order with the select drop-down menu), AngularJS's data-binding will cause the view to automatically update. No bloated DOM manipulation code is necessary!

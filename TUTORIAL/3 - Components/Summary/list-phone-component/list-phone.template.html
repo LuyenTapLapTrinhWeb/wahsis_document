@@ -1,0 +1,15 @@
+<h1>List Phones</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>snippet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in $scope.list_phone">
+            <td>{{item.name}}</td>
+            <td>{{item.snippet}}</td>
+        </tr>
+    </tbody>
+</table>

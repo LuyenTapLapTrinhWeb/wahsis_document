@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-controller="myController">
+        {{`${fistName} ${lastName}`}}
+    </div>
+    <my-ctrl-filter-component></my-ctrl-filter-component>
+
+    <script src="myModule/mymodule.module.js"></script>
+    <script src="greet/filter.function.js"></script>
+    <script src="greet/filter.controller.js"></script>
+    <script src="greet/filter.module.js"></script>
+
+    <script src="myapp.module.js"></script>
+</body>
+
+</html>

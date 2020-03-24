@@ -1,0 +1,5 @@
+Display the current value of the query model by adding a {{$ctrl.query}} binding into the phone-list.template.html template and see how it changes, when you type in the input box.
+
+You might also try to add the {{$ctrl.query}} binding to index.html. However, when you reload the page, you won't see the expected result. This is because the query model lives in the scope defined by the <phone-list> component.
+Component isolation at work!
+

@@ -1,0 +1,8 @@
+We added a standard HTML <input> tag and used AngularJS's filter function to process the input for the ngRepeat directive.
+
+By virtue of the ngModel directive, this lets a user enter search criteria and immediately see the effects of their search on the phone list. This new code demonstrates the following:
+
+Data-binding: This is one of the core features in AngularJS. When the page loads, AngularJS binds the value of the input box to the data model variable specified with ngModel and keeps the two in sync.
+In this code, the data that a user types into the input box (bound to $ctrl.query) is immediately available as a filter input in the list repeater (phone in $ctrl.phones | filter:$ctrl.query). When changes to the data model cause the repeater's input to change, the repeater efficiently updates the DOM to reflect the current state of the model.
+Use of the filter filter: The filter function uses the $ctrl.query value to create a new array that contains only those records that match the query.
+ngRepeat automatically updates the view in response to the changing number of phones returned by the filter filter. The process is completely transparent to the developer.
