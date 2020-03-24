@@ -1,0 +1,5 @@
+Since we have created two new files (core.module.js, checkmark.filter.js), we need to include them in our layout template.
+
+The syntax for using filters in AngularJS templates is as follows:
+
+{{expression | filter}}

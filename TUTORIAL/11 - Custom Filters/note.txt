@@ -1,0 +1,5 @@
+n this step you will learn how to create your own custom display filter.
+
+In the previous step, the details page displayed either "true" or "false" to indicate whether certain phone features were present or not.
+ In this step, we are using a custom filter to convert those text strings into glyphs: ✓ for "true", and ✘ for "false".
+Let's see what the filter code looks like.
