@@ -1,0 +1,8 @@
+Try to add a {{$ctrl.phoneId}} binding in the template string for the phone details view:
+
+when('/phones/:phoneId', {
+  template: '{{$ctrl.phoneId}} <phone-detail></phone-detail>'
+...
+You will see that nothing happens, even when you are in the phone details view. 
+This is because the phoneId model is visible only in the context set by the phoneDetail component. 
+Again, component isolation at work!
