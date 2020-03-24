@@ -8,3 +8,38 @@
         </span>
     </div>
 </div>
+
+<div class="input-group clockpicker">
+    <input type="text" class="form-control" value="09:30">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+<script type="text/javascript">
+    $('.clockpicker').clockpicker();
+</script>
+
+<!-- https://github.com/weareoutman/clockpicker -->
+<!-- Input group, just add class 'clockpicker', and optional data-* -->
+<div class="input-group clockpicker" data-placement="right" data-align="top" data-autoclose="true">
+    <input type="text" class="form-control" value="09:32">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+<script type="text/javascript">
+    $('.clockpicker').clockpicker()
+        .find('input').change(function () {
+            // TODO: time changed
+            console.log(this.value);
+        });
+    $('#demo-input').clockpicker({
+        autoclose: true
+    });
+
+    if (something) {
+        // Manual operations (after clockpicker is initialized).
+        $('#demo-input').clockpicker('show') // Or hide, remove ...
+            .clockpicker('toggleView', 'minutes');
+    }
+</script>
