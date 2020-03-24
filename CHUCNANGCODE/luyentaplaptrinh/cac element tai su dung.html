@@ -125,3 +125,12 @@
         </div>
     </div>
 </div>
+
+
+<!-- check ip add ress -->
+
+<div class="col-md-6">
+    <label>{{"IP_ADDRESS"|translate}}<span class="c-red">*</span></label>
+    <input type="text" autofocus class="form-control" ng-blur="ngBlurValidateIPaddress(it.ip_address)"
+           ng-model="it.ip_address" required="true">
+</div>

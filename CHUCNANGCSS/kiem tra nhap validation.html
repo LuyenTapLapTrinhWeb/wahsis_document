@@ -37,6 +37,7 @@
     <form name="myForm" ng-submit="ok()" novalidate>
         <!-- buoc 2.1 them ng-required="true" vao truong bat buoc nhập trong class modal-body> -->
         <div class="modal-body">
+            <!-- bước 2.2 thêm name properties cho thẻ input để có thể gọi được name của input bằng myForm -->
             <input autofocus="true" tabindex="1" type="text" class="form-control" ng-model="it.first_name"
                 ng-required="true">
         </div>

@@ -78,3 +78,10 @@ function kiemtranhaptruockhiluu_apartment_sales_bank_interest(apartment_sales_ba
         return true;
     }
 }
+$scope.validate = function (keypad_action) {
+    if (!utility.checkValue(keypad_action.device_id)) { swal($filter("translate")("Save_Error"), $filter("translate")("device_id"), "warning"); return false; }
+    else if (!utility.checkValue(keypad_action.device_area_id)) { swal($filter("translate")("Save_Error"), $filter("translate")("device_area_id"), "warning"); return false; }
+    else if (!utility.checkValue(keypad_action.device_type)) { swal($filter("translate")("Save_Error"), $filter("translate")("device_type"), "warning"); return false; }
+    else if (!utility.checkValue(keypad_action.action)) { swal($filter("translate")("Save_Error"), $filter("translate")("action"), "warning"); return false; }
+    else { return true; }
+}
