@@ -1,0 +1,12 @@
+Similar to the ngClick directive, which binds an AngularJS expression to the click event,
+there are built-in directives for all native events, such as dblclick, focus/blur, mouse and key events, etc.
+
+Let's add a new controller method to the phoneDetail component's controller:
+
+self.onDblclick = function onDblclick(imageUrl) {
+  alert('You double-clicked image: ' + imageUrl);
+};
+and add the following to the <img> element in phone-detail.template.html:
+
+<img ... ng-dblclick="$ctrl.onDblclick(img)" />
+Now, whenever you double-click on a thumbnail, an alert pops-up. Pretty annoying!

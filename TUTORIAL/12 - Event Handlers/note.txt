@@ -1,0 +1,9 @@
+In this step, you will add a clickable phone image swapper to the phone details page.
+
+The phone details view displays one large image of the current phone and several smaller thumbnail images.
+It would be great if we could replace the large image with any of the thumbnails just by clicking on the desired thumbnail image.
+Let's have a look at how we can do this with AngularJS.
+
+In the phoneDetail component's controller, we created the mainImageUrl model property and set its default value to the first phone image URL.
+
+We also created a setImage() method (to be used as event handler), that will change the value of mainImageUrl.
