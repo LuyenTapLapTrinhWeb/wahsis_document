@@ -1,0 +1,27 @@
+We can now simplify our component controllers (PhoneListController and PhoneDetailController) by factoring out the lower-level $http service,
+replacing it with the new Phone service.
+AngularJS's $resource service is easier to use than $http for interacting with data sources exposed as RESTful resources.
+It is also easier now to understand what the code in our controllers is doing.
+
+Notice how in PhoneListController we replaced:
+
+$http.get('phones/phones.json').then(function(response) {
+  self.phones = response.data;
+});
+with just:
+
+this.phones = Phone.query();
+
+This is a simple and declarative statement that we want to query for all phones.
+
+An important thing to notice in the code above is that we don't pass any callback functions,
+when invoking methods of our Phone service. Although it looks as if the results were returned synchronously,
+that is not the case at all. What is returned synchronously is a "future" — an object, which will be filled with data,
+when the XHR response is received. Because of the data-binding in AngularJS, we can use this future and bind it to our template.
+Then, when the data arrives, the view will be updated automatically.
+
+Sometimes,
+relying on the future object and data-binding alone is not sufficient to do everything we require,
+so in these cases,
+we can add a callback to process the server response.
+The phoneDetail component's controller illustrates this by setting the mainImageUrl in a callback.

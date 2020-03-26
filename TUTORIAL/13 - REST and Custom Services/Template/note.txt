@@ -1,0 +1,6 @@
+Our custom resource service will be defined in app/core/phone/phone.service.js,
+so we need to include this file and the associated .module.js file in our layout template.
+Additionally, 
+we also need to load the angular-resource.js file,
+which contains the ngResource module:
+

@@ -1,0 +1,6 @@
+In this step, we will change the way our application fetches data.
+
+We define a custom service that represents a RESTful client.
+Using this client we can make requests for data to the server in an easier way,
+without having to deal with the lower-level $http API,
+HTTP methods and URLs.

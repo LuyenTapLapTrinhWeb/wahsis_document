@@ -1,0 +1,15 @@
+We create our own service to provide access to the phone data on the server.
+We will put the service in its own module,
+under core,
+so we can explicitly declare its dependency on ngResource:
+
+We used the module API to register a custom service using a factory function.
+We passed in the name of the service — 'Phone' — and the factory function.
+The factory function is similar to a controller's constructor in that both can declare dependencies to be injected via function arguments.
+The Phone service declares a dependency on the $resource service, provided by the ngResource module.
+
+The $resource service makes it easy to create a RESTful client with just a few lines of code.
+This client can then be used in our application, instead of the lower-level $http service.
+
+We need to add the core.phone module as a dependency of the core module.
+
