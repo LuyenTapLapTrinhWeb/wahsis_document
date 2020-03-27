@@ -34,16 +34,16 @@
 <!-- buoc 1 Tao the form trong div class="inmodal"-->
 <div class="inmodal">
     <!-- buoc 2 Tao the form trong div class="inmodal"-->
-    <form name="myForm" ng-submit="ok()" novalidate>
+    <form name="frm" ng-submit="ok()" novalidate>
         <!-- buoc 2.1 them ng-required="true" vao truong bat buoc nhập trong class modal-body> -->
         <div class="modal-body">
-            <!-- bước 2.2 thêm name properties cho thẻ input để có thể gọi được name của input bằng myForm -->
+            <!-- bước 2.2 thêm name properties cho thẻ input để có thể gọi được name của input bằng frm -->
             <input autofocus="true" tabindex="1" type="text" class="form-control" ng-model="it.first_name"
                 ng-required="true">
         </div>
-        <!-- buoc 3 thêm thuoc tinh ng-disabled="myForm.$invalid" cho nut save trong class modal-footer -->
+        <!-- buoc 3 thêm thuoc tinh ng-disabled="frm.$invalid" cho nut save trong class modal-footer -->
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{"SAVE"|translate}}</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="frm.$invalid">{{"SAVE"|translate}}</button>
         </div>
     </form>
 </div>

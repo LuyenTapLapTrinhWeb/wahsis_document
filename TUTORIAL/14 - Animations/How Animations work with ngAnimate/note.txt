@@ -1,0 +1,4 @@
+To get an idea of how animations work with AngularJS, 
+you might want to read the Animations section of the Developer Guide first.
+
+https://docs.angularjs.org/guide/animations

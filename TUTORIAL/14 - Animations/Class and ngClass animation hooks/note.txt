@@ -1,0 +1,6 @@
+AngularJS also pays attention to CSS class changes on elements by triggering the add and remove hooks. 
+This means that if a CSS class is added to or removed from an element then an animation can be executed in between, 
+before the CSS class addition or removal is finalized. 
+(Keep in mind that AngularJS will only be able to capture class changes if an interpolated expression or the ng-class directive is used on the element.)
+
+The example below shows how to perform animations during class changes:

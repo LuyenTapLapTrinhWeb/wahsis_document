@@ -1,0 +1,8 @@
+In this step, 
+we will enhance our web application by adding CSS and JavaScript animations on top of the template code we created earlier.
+
+We now use the ngAnimate module to enable animations throughout the application.
+We also rely on built-in directives to automatically trigger hooks for animations to tap into.
+When an animation is found, 
+it will run along with the actual DOM operation that is being issued on the element at the given time 
+(e.g. inserting/removing nodes on ngRepeat or adding/removing classes on ngClass).
