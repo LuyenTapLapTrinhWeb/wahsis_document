@@ -1,0 +1,45 @@
+We will start off by adding CSS transition animations to our ngRepeat directive present on the phoneList component's template.
+    We need to add an extra CSS class to our repeated element,
+        in order to be able to hook into it with our CSS animation code.
+
+Did you notice the added phone-list-item CSS class?
+    This is all we need in our HTML code to get animations working.
+
+    Now for the actual CSS transition animation code:
+    <ul class="phones">
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+            class="thumbnail phone-list-item">
+            <a href="#!/phones/{{phone.id}}" class="thumb">
+            <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+            </a>
+            <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>
+As you can see, our phone-list-item CSS class is combined together with the animation hooks that occur when items are inserted into and removed from the list:
+
+The ng-enter class is applied to the element when a new phone is added to the list and rendered on the page.
+The ng-move class is applied to the element when a phone's relative position in the list changes.
+The ng-leave class is applied to the element when a phone is removed from the list.
+The phone list items are added and removed based on the data passed to the ngRepeat directive. For example,
+    if the filter data changes, the items will be animated in and out of the repeat list.
+
+Something important to note is that, when an animation occurs, two sets of CSS classes are added to the element:
+
+A "starting" class that represents the style at the beginning of the animation.
+An "active" class that represents the style at the end of the animation.
+The name of the starting class is the name of the event that is fired (like enter, move or leave) prefixed with ng-.
+    So an enter event will result in adding the ng-enter class.
+
+The active class name is derived from the starting class by appending an -active suffix.
+    This two-class CSS naming convention allows the developer to craft an animation, beginning to end.
+
+In the example above, animated elements are expanded from a height of 0px to 120px when they are added to the list and are collapsed
+    back down to 0px before being removed from the list.
+    There is also a catchy fade-in/fade-out effect that occurs at the same time.
+    All this is handled by the CSS transition declaration at the top of the CSS file.
+
+Although all modern browsers have good support for CSS transitions and CSS animations,
+    IE9 and earlier IE versions do not.
+    If you want animations that are backwards-compatible with older browsers,
+    consider using JavaScript-based animations, which are demonstrated below.
