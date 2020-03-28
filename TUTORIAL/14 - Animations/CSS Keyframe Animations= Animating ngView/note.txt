@@ -1,0 +1,10 @@
+Next, let's add an animation for transitions between route changes in ngView.
+
+Again, we need to prepare our HTML template by adding a new CSS class,
+    this time to the ng-view element. In order to gain more "expressive power" for our animations,
+    we will also wrap the [ng-view] element in a container element.
+
+We have applied a position: relative CSS style to the .view-container wrapper,
+    so that it is easier for us to manage the .view-frame element's positioning during the animation.
+
+With our preparation code in place, let's move on to the actual CSS styles for this transition animation.

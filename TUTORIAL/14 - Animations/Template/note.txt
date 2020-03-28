@@ -1,0 +1,12 @@
+In order to enable animations, we need to update index.html,
+    loading the necessary dependencies (angular-animate.js and jquery.js)
+    and the files that contain the CSS and JavaScript code used in CSS/JavaScript animations.
+The animation module, ngAnimate, contains the code necessary to make your application "animation aware".
+
+Important: Be sure to use jQuery version 2.1 or newer,
+    when using AngularJS 1.5 or newer; jQuery 1.x is not officially supported.
+In order for AngularJS to detect jQuery and take advantage of it,
+    make sure to include jquery.js before angular.js.
+
+Animations can now be created within the CSS code (app.animations.css) as well as the JavaScript code (app.animations.js).
+

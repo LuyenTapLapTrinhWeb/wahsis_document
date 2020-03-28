@@ -25,3 +25,6 @@ package.json:
 Now, we must tell npm to download and install these dependencies.
 
 npm install
+
+Now that our application is "animation aware", let's create some fancy animations!
+
