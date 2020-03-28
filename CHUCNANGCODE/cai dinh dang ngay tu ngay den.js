@@ -27,12 +27,8 @@ var fromDate = new Date(date.getFullYear(), date.getMonth(), 1);
 //ngay dau thang sau
 var toDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 console.log(fromDate, toDate);
-$scope.created_date = UtilityCheckFormatService.change_date_to_save(
-  $filter("date")(fromDate, "yyyy-MM-dd")
-);
-$scope.to_date = UtilityCheckFormatService.change_date_to_save(
-  $filter("date")(toDate, "yyyy-MM-dd")
-);
+$scope.from_date = UtilityCheckFormatService.change_date_to_save($filter("date")(fromDate, "yyyy-MM-dd"));
+$scope.to_date = UtilityCheckFormatService.change_date_to_save($filter("date")(toDate, "yyyy-MM-dd"));
 console.log($scope.from_date, $scope.to_date);
 
 // hàm định dạng ngày trên form search list
@@ -66,9 +62,9 @@ function ngay_tra_ve_binh_thuong(identify_created) {
   let ngay_chua_tra_ve_binh_thuong = identify_created;
   let ngay_tra_ve_binh_thuong = identify_created;
   if (ngay_chua_tra_ve_binh_thuong) {
-      ngay_chua_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.split("/");
-      ngay_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.join("-");
-      ngay_tra_ve_binh_thuong = utility.kieu_ngay_gio(utility.getString(ngay_tra_ve_binh_thuong), "yyyy-MM-dd");
-      return ngay_tra_ve_binh_thuong
+    ngay_chua_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.split("/");
+    ngay_tra_ve_binh_thuong = ngay_chua_tra_ve_binh_thuong.join("-");
+    ngay_tra_ve_binh_thuong = utility.kieu_ngay_gio(utility.getString(ngay_tra_ve_binh_thuong), "yyyy-MM-dd");
+    return ngay_tra_ve_binh_thuong
   }
 }
