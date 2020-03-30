@@ -1,0 +1,83 @@
+Let's add another animation to our application. On our phone-detail.template.html view, we have a nice thumbnail swapper. 
+    By clicking on the thumbnails listed on the page, 
+    the profile phone image changes. 
+    But how can we incorporate animations?
+
+Let's give it some thought first. 
+    Basically, when a user clicks on a thumbnail image, they are changing the state of the profile image to reflect the newly selected thumbnail image. 
+    The best way to specify state changes within HTML is to use classes. 
+    Much like before — when we used a CSS class to drive the animation — this time the animation will occur when the CSS class itself changes.
+
+Every time a phone thumbnail is selected, the state changes and the .selected CSS class is added to the matching profile image. 
+This will trigger the animation.
+
+We will start by tweaking our HTML code in phone-detail.template.html. Notice that we have changed the way we display our large image:
+
+
+You may be thinking that we are just going to create another CSS-based animation. 
+Although we could do that, 
+let's take the opportunity to learn how to create JavaScript-based animations with the .animation() module method.
+
+We are creating a custom animation by specifying the target elements via a CSS class selector (here .phone) and an animation factory function (here phoneAnimationFactory()). 
+    The factory function returns an object associating specific events (object keys) to animation callbacks (object values). 
+    The events correspond to DOM actions that ngAnimate recognizes and can hook into, such as addClass/removeClass/setClass, 
+        enter/move/leave and animate. The associated callbacks are called by ngAnimate at appropriate times.
+For more info on animation factories, check out the API Reference.
+
+In this case, we are interested in a class getting added to/removed from a .phone element, 
+    thus we specify callbacks for the addClass and removeClass events. 
+    When the selected class is added to an element (via the ngClass directive), 
+        the addClass JavaScript callback will be executed with element passed in as a parameter. 
+    The last parameter passed in is the done callback function. 
+    We call done() to let AngularJS know that our custom JavaScript animation has ended. 
+    The removeClass callback works the same way, but instead gets executed when a class is removed.
+
+Note that we are using jQuery's animate() helper to implement the animation. https://jquery.com/
+    jQuery isn't required to do JavaScript animations with AngularJS, 
+        but we use it here anyway in order to keep the example simple. 
+More info on jQuery.animate() can be found in the jQuery documentation. https://api.jquery.com/animate  
+
+Within the event callbacks, we create the animation by manipulating the DOM.
+In the code above, this is achieved using element.css() and element.animate().
+    As a result the new element is positioned with an offset of 500px and then both elements — the previous and the new — are animated together by shifting each one up by 500px. 
+The outcome is a conveyor-belt like animation. 
+After the animate() function has completed the animation,
+    it calls done to notify AngularJS.
+You may have noticed that each animation callback returns a function. 
+    This is an optional function, which (if provided) will be called when the animation ends, 
+        either because it ran to completion or because it was canceled (for example another animation took place on the same element). 
+A boolean parameter (wasCanceled) is passed to the function, 
+    letting the developer know if the animation was canceled or not. 
+        Use this function to do any necessary clean-up.
+
+
+Reverse the animation, so that the elements animate downwards.
+
+Make the animation run faster or slower, by passing a duration argument to .animate():
+
+element.css({...}).animate({...}, 1000 /* 1 second */, done);
+
+Make the animations "asymmetrical". For example, have the previous element fade out, while the new element zooms in:
+
+// animateIn()
+element.css({
+  display: 'block',
+  opacity: 1,
+  position: 'absolute',
+  width: 0,
+  height: 0,
+  top: 200,
+  left: 200
+}).animate({
+  width: 400,
+  height: 400,
+  top: 0,
+  left: 0
+}, done);
+
+// animateOut()
+element.animate({
+  opacity: 0
+}, done);
+Go crazy and come up with your own funky animations!
+
