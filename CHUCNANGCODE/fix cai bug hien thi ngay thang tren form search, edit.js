@@ -110,7 +110,6 @@ $scope.search = function () {
         if (utility.check_date_from_to($scope.birthday_from, $scope.birthday_to, "Birthday From", "Birthday To") === false)
             return;
         else {
-            debugger
             let birthday_from_array = UtilityCheckFormatService.change_date_to_save($scope.birthday_from)
             birthday_from_array = birthday_from_array.split("-")
             $scope.str_search.birthday_from = birthday_from_array.splice(0, 1); // Xóa 1 phần tử tại vị trí 0
