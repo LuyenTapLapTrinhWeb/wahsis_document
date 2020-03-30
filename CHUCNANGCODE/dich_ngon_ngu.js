@@ -70,6 +70,14 @@ swal($filter("translate")("Notice"), "Get time of receipt error", "error");
 
 swal($filter("translate")("Notice"), $filter("translate")("DO_NOT_FAST"), "error");
 try { } catch (e) { swal($filter("translate")("warning"), e.message + "\n" + e.stack, "warning"); } finally { }
+<<<<<<< HEAD
+swal({
+  title: $filter("translate")("delete_item"),
+  timer: 1240,
+  showConfirmButton: false,
+  type: "error"
+});
+=======
 if (response.data.err === 0) {
   $scope.load_list()
   $scope.selected = [];
@@ -77,6 +85,7 @@ if (response.data.err === 0) {
 } else {
   swal($filter("translate")("Delete_Error"), $filter("translate")("Delete_Error"), "warning");
 }
+>>>>>>> 1d43932e58cb1b387d8c0054c9540e96564f2d99
 
 title: $filter("translate")("Are_you_sure"),
   type: "warning",
@@ -99,7 +108,12 @@ swal({
   type: "warning",
   timer: 1240
 });
-
+swal({
+  title: $filter("translate")("edit_item"),
+  timer: 1240,
+  showConfirmButton: false,
+  type: "error"
+});
 swal("Warning!", $filter("translate")("Duplicate_input"), "warning");
 
 if ($scope.selected.length > 0) {
