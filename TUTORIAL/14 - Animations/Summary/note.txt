@@ -1,0 +1,4 @@
+Our application is now much more pleasant to use, thanks to the smooth transitions between pages and UI states.
+
+There you have it! We have created a web application in a relatively short amount of time. In the closing notes we will cover where to go from here.
+
