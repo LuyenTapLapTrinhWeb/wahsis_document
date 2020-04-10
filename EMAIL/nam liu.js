@@ -28,3 +28,9 @@ Hi Hoa
 Anh đã fix xong theo thao tác của em, em xem và check lại.
 
 Regards
+
+Hi Hoa, Kieu,
+
+Anh đã fix xong, Em giúp anh xem và check lại.
+
+Regards
