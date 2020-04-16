@@ -1,5 +1,6 @@
-﻿to: Nhan@wahsis.com
-cc: Hoang.Phan@wahsis.com,Hoa@wahsis.com, khiem.nguyen@wahsis.com, Larry@wahsis.com, Diep.thai@wahsis.com
+﻿to: nhan@wahsis.com
+cc: hoang.phan@wahsis.com,hoa@wahsis.com, khiem.nguyen@wahsis.com, larry@wahsis.com, diep.thai@wahsis.com
+cc: hoang.phan@wahsis.com,hoa@wahsis.com, phuc.tran@wahsis.com, larry@wahsis.com, diep.thai@wahsis.com
 Sok Kim Thanh báo cáo công việc hằng ngày
 
 
