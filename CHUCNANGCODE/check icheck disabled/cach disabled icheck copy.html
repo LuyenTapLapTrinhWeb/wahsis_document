@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enable/Disable Checkbox on Dropdown Selection - AngularJS Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController">
+
+        <p>
+            Select value from the dropdown list to disable or enable checkboxes
+        </p>
+
+        <select ng-model="item" ng-options="prod.name for prod in products" ng-change="updateCheckBox()" id="prod">
+
+            <option value="">-- Select --</option>
+        </select>
+
+        <p>
+            <!--By default, all checkboxes remains disable.-->
+            <input type="checkbox" name="offer" ng-disabled="!enableMe" id="chk1" /> Exchange Offer <br />
+            <input type="checkbox" name="offer" ng-disabled="!enableMe" id="chk2" /> Gift Voucher <br />
+            <input type="checkbox" name="offer" ng-disabled="!enableMe" id="chk3" /> Free UPS
+        </p>
+
+        <div id="div" style="font-size:110%;margin-top:10px;display:block;color:green;">{{msg}}</div>
+    </div>
+</body>
+
+<script>
+    angular.module("myApp", [])
+        .controller('myController', ['$scope', function ($scope) {
+
+            // CREATE A "products" OBJECT (JSON).
+            $scope.products = [
+                { 'name': 'HP' },
+                { 'name': 'IBM' },
+                { 'name': 'Lenovo' }
+            ];
+
+            $scope.updateCheckBox = function () {
+
+                // I HAVE SET CONDITION TO CHECK IF SELECTED PRODUCT IS "IBM", 
+                // THEN ENABLE ALL CHECKBOXES OR ELSE DISABLE ALL.
+
+                if ($scope.item != null) {
+                    if ($scope.item.name == "IBM") {
+                        $scope.enableMe = true; $scope.msg = "Checkboxes enabled";
+                    }
+                    else {
+                        $scope.enableMe = false; $scope.msg = "Checkboxes disabled";
+                    }
+                }
+                else {
+                    $scope.enableMe = false; $scope.msg = "Checkboxes disabled";
+                }
+            };
+        }]);
+</script>
+
+</html>
