@@ -90,37 +90,50 @@ $scope.validate = function (keypad_action) {
 function _false(error_object_name) {
     swal($filter("translate")("Save_Error"), $filter("translate")(error_object_name), "warning"); return false;
 }
-$scope.validate_owners_update_dt = function (owner) {
-    if (!utility.isNull(owner)) { return _false('owner') }
-    else if (!utility.isNull(owner.owner_id)) { return _false('owner_id') }
+$scope.validate_dt_owners_update = function (owner) {
+    /* Gioi thieu */
+    /* loai kiem tra so luong tieu chi dua theo field required bat buoc cua cau detail */
+    /* ========================================================================================= */
+
+    var typeofOnwerType = typeof (owner.owner_type);
+    var owner_type = typeofOnwerType === "string" ? Number(owner.owner_type) : owner.owner_type;
+
+    if (!utility.checkValueMediumLevel(owner)) { return _false('owner') }
+    else if (!utility.checkValueMediumLevel(owner.owner_id)) { return _false('owner_id') }
     else if (!utility.isNull(owner.owner_name)) { return _false('owner_name') }
     else if (!utility.isNull(owner.phone)) { return _false('phone') }
-    else if (!utility.isNull(owner.address)) { return _false('address') }
-    else if (!utility.isNull(owner.address_contact)) { return _false('address_contact') }
-    else if (!utility.isNull(owner.email)) { return _false('email') }
-    else if (!utility.isNull(owner.birthday)) { return _false('birthday') }
+    else if (!utility.checkValueMediumLevel(owner.address)) { return _false('address') }
+    else if (!utility.checkValueMediumLevel(owner.address_contact)) { return _false('address_contact') }
+    else if (!utility.checkValueMediumLevel(owner.email)) { return _false('email') }
+    else if (!utility.checkValueMediumLevel(owner.birthday)) { return _false('birthday') }
     else if (!utility.isNull(owner.country_id)) { return _false('country_id') }
-    else if (!utility.isNull(owner.city)) { return _false('city') }
-    else if (!utility.isNull(owner.sex)) { return _false('sex') }
-    else if (!utility.isNull(owner.status)) { return _false('status') }
-    else if (!utility.isNull(owner.created_date)) { return _false('created_date') }
-    else if (!utility.isNull(owner.code)) { return _false('code') }
-    else if (!utility.isNull(owner.identity_type)) { return _false('identity_type') }
-    else if (!utility.isNull(owner.identity_number)) { return _false('identity_number') }
-    else if (!utility.isNull(owner.identity_image_path)) { return _false('identity_image_path') }
-    else if (!utility.isNull(owner.identify_created)) { return _false('identify_created') }
-    else if (!utility.isNull(owner.identify_place)) { return _false('identify_place') }
-    else if (!utility.isNull(owner.is_default)) { return _false('is_default') }
-    else if (!utility.isNull(owner.company_name)) { return _false('company_name') }
-    else if (!utility.isNull(owner.company_address)) { return _false('company_address') }
-    else if (!utility.isNull(owner.company_vat_address)) { return _false('company_vat_address') }
-    else if (!utility.isNull(owner.company_zip_code)) { return _false('company_zip_code') }
-    else if (!utility.isNull(owner.company_tax_code)) { return _false('company_tax_code') }
-    else if (!utility.isNull(owner.company_area_code)) { return _false('company_area_code') }
-    else if (!utility.isNull(owner.company_cell_phone)) { return _false('company_cell_phone') }
-    else if (!utility.isNull(owner.company_phone)) { return _false('company_phone') }
-    else if (!utility.isNull(owner.company_fax)) { return _false('company_fax') }
-    else if (!utility.isNull(owner.company_website)) { return _false('company_website') }
-    else if (!utility.isNull(owner.owner_type)) { return _false('owner_type') }
+    else if (!utility.checkValueMediumLevel(owner.city)) { return _false('city') }
+    else if (!utility.checkValueMediumLevel(owner.sex)) { return _false('sex') }
+    else if (!utility.checkValueMediumLevel(owner.status)) { return _false('status') }
+    else if (!utility.checkValueMediumLevel(owner.created_date)) { return _false('created_date') }
+    else if (!utility.checkValueMediumLevel(owner.code)) { return _false('code') }
+    else if (!utility.checkValueMediumLevel(owner.identity_type)) { return _false('identity_type') }
+    else if (!utility.checkValueMediumLevel(owner.identity_number)) { return _false('identity_number') }
+    else if (!utility.checkValueMediumLevel(owner.identity_image_path)) { return _false('identity_image_path') }
+    else if (!utility.checkValueMediumLevel(owner.identify_created)) { return _false('identify_created') }
+    else if (!utility.checkValueMediumLevel(owner.identify_place)) { return _false('identify_place') }
+    else if (!utility.checkValueMediumLevel(owner.is_default)) { return _false('is_default') }
+    /* buoc 1 */
+    /* field required bat buoc thi check theo 4 tieu chi */
+    /* ========================================================================================= */
+    else if (owner_type === 2 ? !utility.isNull(owner.company_name) : !utility.checkValueMediumLevel(owner.company_name)) { return _false('company_name') }
+    else if (owner_type === 2 ? !utility.isNull(owner.company_address) : !utility.checkValueMediumLevel(owner.company_address)) { return _false('company_address') }
+    else if (owner_type === 2 ? !utility.isNull(owner.company_phone) : !utility.checkValueMediumLevel(owner.company_phone)) { return _false('company_phone') }
+    /* buoc 2 */
+    /* field required khong bat buoc thi check theo 3 tieu chi */
+    /* ========================================================================================= */
+    else if (!utility.checkValueMediumLevel(owner.company_vat_address)) { return _false('company_vat_address') }
+    else if (!utility.checkValueMediumLevel(owner.company_zip_code)) { return _false('company_zip_code') }
+    else if (!utility.checkValueMediumLevel(owner.company_tax_code)) { return _false('company_tax_code') }
+    else if (!utility.checkValueMediumLevel(owner.company_area_code)) { return _false('company_area_code') }
+    else if (!utility.checkValueMediumLevel(owner.company_cell_phone)) { return _false('company_cell_phone') }
+    else if (!utility.checkValueMediumLevel(owner.company_fax)) { return _false('company_fax') }
+    else if (!utility.checkValueMediumLevel(owner.company_website)) { return _false('company_website') }
+    else if (!utility.checkValueMediumLevel(owner.owner_type)) { return _false('owner_type') }
     else { return true; }
-}
+};

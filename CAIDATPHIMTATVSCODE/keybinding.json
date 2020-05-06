@@ -1,5 +1,15 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to overwrite the defaults
 [
+    {
+        "key": "alt+e",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
     {
         "key": "alt+q",
         "command": "editor.action.blockComment",
@@ -11,13 +21,23 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "alt+e",
-        "command": "editor.action.commentLine",
+        "key": "alt+f",
+        "command": "editor.action.formatDocument",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+/",
-        "command": "-editor.action.commentLine",
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+w",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
@@ -31,6 +51,16 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
+        "key": "shift+alt+s",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
         "key": "alt+s",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
@@ -38,6 +68,16 @@
     {
         "key": "alt+down",
         "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+x",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
@@ -49,53 +89,79 @@
         "command": "editor.action.transformToLowercase"
     },
     {
-        "key": "shift+alt+x",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+f",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "-editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+enter",
-        "command": "colonize.newline",
+        "key": "shift+alt+d",
+        "command": "editor.debug.action.toggleBreakpoint",
         "when": "editorTextFocus"
     },
     {
-        "key": "alt+enter",
-        "command": "-colonize.newline",
+        "key": "f9",
+        "command": "-editor.debug.action.toggleBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+2",
+        "command": "editor.action.addCursorsToBottom"
+    },
+    {
+        "key": "shift+alt+1",
+        "command": "editor.action.addCursorsToTop"
+    },
+    {
+        "key": "alt+1",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+2",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+i",
+        "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
     },
     {
         "key": "shift+alt+w",
-        "command": "editor.action.copyLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "command": "editor.debug.action.selectionToWatch"
     },
     {
-        "key": "shift+alt+up",
-        "command": "-editor.action.copyLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "key": "shift+f9",
+        "command": "editor.debug.action.toggleInlineBreakpoint",
+        "when": "editorTextFocus"
     },
     {
-        "key": "shift+alt+s",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "key": "shift+f9",
+        "command": "-editor.debug.action.toggleInlineBreakpoint",
+        "when": "editorTextFocus"
     },
     {
-        "key": "shift+alt+down",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "key": "alt+t",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
+    },
+    {
+        "key": "shift+alt+w",
+        "command": "editor.emmet.action.expandAbbreviation",
+        "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.emmet.action.expandAbbreviation",
+        "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
     }
 ]
