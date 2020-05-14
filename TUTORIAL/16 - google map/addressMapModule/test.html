@@ -1,0 +1,11 @@
+<div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" id="map"
+    class="col-md-4 col-sm-4 col-xs-12 marginBot5">
+    <!-- <ng-map id="center" center="[{{$ctrl.latlng}}]" zoom="17" on-click="getpos($event)">
+                <marker id="position" position="[{{$ctrl.latlng}}]" on-dragend="getpos($event)"
+                    animation="Animation.BOUNCE" animation="DROP" draggable="true"></marker>
+            </ng-map> -->
+    <ng-map id="center" center="[106.6995599, 10.7393159]" zoom="17" on-click="getpos($event)">
+        <marker id="position" position="[106.6995599, 10.7393159]" on-dragend="getpos($event)"
+            animation="Animation.BOUNCE" animation="DROP" draggable="true"></marker>
+    </ng-map>
+</div>
