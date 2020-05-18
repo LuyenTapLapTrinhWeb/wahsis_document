@@ -1,0 +1,115 @@
+<div class="col-md-12" style="height: auto;">
+    <!-- <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 marginBot5">
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary btn-sm"
+                    ng-click="clearAddressMap()">{{"CLEAR"|translate}}</button>
+            </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"NAME_ADDRESS"|translate}}<span class="c-red"></span></label>
+                <!-- <input type="text" class="form-control" placeholder='{{"ENTER_NAME_ADDRESS"|translate}}'
+                    ng-model="apartment.name_address" ng-maxlength="512"> -->
+                <select chosen id="states" class="chosen-select width100" ng-model="apartment.building_id"
+                    id="districtID" ng-change="change_buildings(apartment.building_id)" ng-init="change_buildings(0)"
+                    ng-options="obj.building_id as obj.name_address for obj in buildings_list">
+                    <option disabled value="">{{"CHOOSE_NAME_ADDRESS"|translate}}
+                    </option>
+                    <!-- <option disabled></option> -->
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"BUILDINGS"|translate}}<span class="c-red"></span></label>
+                <input type="text" class="form-control" placeholder='{{"ENTER_BUILDINGS"|translate}}'
+                    ng-model="apartment.building" ng-maxlength="512">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"DOANH_NGHIEP_COMPANY_NAME"|translate}}<span class="c-red"></span></label>
+                <textarea name="doanh_nghiep_company_name" id="doanh_nghiep_company_name" class="form-control" rows="3"
+                    ng-blur="change_company_name(apartment.company_name)" ng-model="apartment.company_name"
+                    placeholder='{{"ENTER_DOANH_NGHIEP_COMPANY_NAME"|translate}}'></textarea>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"ROOM_ADDRESS"|translate}}
+                    <span class="c-red"></span>
+                </label>
+                <input type="text" class="form-control" placeholder='{{"ENTER_ROOM_ADDRESS"|translate}}'
+                    ng-focus="apartment.room_address==''" ng-blur="loadNewRoomAddress(apartment.room_address)"
+                    ng-enter="loadNewRoomAddress(apartment.room_address)" ng-model="apartment.room_address"
+                    ng-maxlength="512">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"LATITUDE"|translate}}<span class="c-red"></span></label>
+                <input type="text" class="form-control" placeholder='{{"ENTER_LATITUDE"|translate}}'
+                    onKeyPress='return InputNumberOne1(this, event);'
+                    ng-change="loadNewLongLat(apartment.longitude, apartment.latitude)" ng-model="apartment.latitude"
+                    ng-maxlength="512">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 marginBot5">
+            <div class="form-group">
+                <label>{{"LONGITUDE"|translate}}<span class="c-red"></span></label>
+                <input type="text" class="form-control" placeholder='{{"ENTER_LONGITUDE"|translate}}'
+                    onKeyPress='return InputNumberOne1(this, event);'
+                    ng-change="loadNewLongLat(apartment.longitude, apartment.latitude)" ng-model="apartment.longitude"
+                    ng-maxlength="512">
+            </div>
+        </div>
+        <div class='col-md-4 col-sm-4 col-xs-12 marginBot5'>
+            <div class="form-group">
+                <label>{{"COUNTRY1"|translate}}</label>
+                <select chosen id="states" class="chosen-select width100" ng-change="change_country()"
+                    ng-model="apartment.country_id"
+                    ng-options="obj.master_data_id as obj.master_data_name for obj in country_list">
+                    <option disabled value="">{{"CHOOSE_COUNTRY"|translate}}
+                    </option>
+                    <option disabled></option>
+                </select>
+            </div>
+        </div>
+        <div class='col-md-4 col-sm-4 col-xs-12 marginBot5'>
+            <div class="form-group">
+                <label>{{"PROVICE_CITY"|translate}}</label>
+                <select chosen id="states" class="chosen-select width100" ng-change="change_province()" id="provinceID"
+                    ng-model="apartment.state_province_id"
+                    ng-options="obj.master_data_id as obj.master_data_name for obj in province_list">
+                    <option disabled value="">{{"CHOOSE_PROVINCE_CITY"|translate}}
+                    </option>
+                    <option disabled></option>
+                </select>
+            </div>
+        </div>
+        <div class='col-md-4 col-sm-4 col-xs-12 marginBot5'>
+            <div class="form-group">
+                <label>{{"DISTRICT"|translate}}</label>
+                <select chosen id="states" class="chosen-select width100" ng-model="apartment.city_dictrict_id"
+                    id="districtID" ng-change="change_district()"
+                    ng-options="obj.master_data_id as obj.master_data_name for obj in district_list">
+                    <option disabled value="">{{"CHOOSE_DISTRICT"|translate}}
+                    </option>
+                    <option disabled></option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 marginBot5" map-lazy-load="https://maps.google.com/maps/api/js"
+            map-lazy-load-params="{{googleMapsUrl}}" id="map">
+            <ng-map id="center" center="[{{apartment.latitude}},{{apartment.longitude}}]" zoom="17"
+                on-click="getpos($event)">
+                <marker ng-if="apartment.latitude && apartment.longitude" id="position"
+                    position="[{{apartment.latitude}},{{apartment.longitude}}]" on-dragend="getpos($event)"
+                    animation="Animation.BOUNCE" animation="DROP" draggable="true"></marker>
+            </ng-map>
+        </div>
+    </div>
+</div>
