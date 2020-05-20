@@ -47,3 +47,55 @@
         </div>
     </form>
 </div>
+
+
+<!-- form select text input text number -->
+
+<link href="../../css/style_form.css" rel="stylesheet" type="text/css" />
+<link href="css/style_form_view.css" rel="stylesheet" type="text/css" />
+<!-- cach kiem tra nhap tren html -->
+<!-- buoc 1 Tao the form trong div class="inmodal"-->
+<div class="inmodal">
+    <!-- buoc 2 Tao the form trong div class="inmodal"-->
+    <div class="modal-header">
+        <h4 class="modal-title">{{"DEVICE_KEYPAD"|translate}} </h4>
+    </div>
+    <!-- buoc 2.1 them ng-required="true" vao truong bat buoc nhập trong class modal-body> -->
+    <div class="modal-body">
+        <form name="frm" novalidate>
+            <div class="row">
+                <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                    <div class="form-group">
+                        <label>{{"KEYPAD_TYPE_ID"|translate}}<span class="c-red">*</span></label>
+                        <select ng-model="it.type" class="form-control" ng-init="it.type?it.type=it.type:it.type=1"
+                            ng-options="obj.keypad_type_id as obj.keypad_type_name for obj in keypad_type_list"
+                            ng-change='change_keypad_type_id()' ng-required="true">
+                            <option value="" disabled="true">{{"CHOOSE_KEYPAD_TYPE_ID"|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                    <div class="form-group">
+                        <label>{{"KEYPAD_NAME"|translate}}<span class="c-red">*</span></label>
+                        <input type="text" class="form-control" ng-blur='change_keypad_type_id()' ng-model="it.name"
+                            ng-attr-placeholder="{{'ENTER_KEYPAD_NAME'|translate}}" ng-required="true">
+                    </div>
+                </div>
+                <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                    <div class="form-group">
+                        <label>{{"CRESTRON_NET_ID"|translate}}<span class="c-red">*</span></label>
+                        <input type="number" min="0"
+                            ng-init="it.crestron_net_id?it.crestron_net_id=it.crestron_net_id:it.crestron_net_id = 0"
+                            class="form-control" ng-model="it.crestron_net_id"
+                            ng-attr-placeholder="{{'ENTER_CRESTRON_NET_ID'|translate}}" ng-required="true">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- buoc 3 thêm thuoc tinh ng-disabled="frm.$invalid" cho nut save trong class modal-footer -->
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()" ng-disabled="frm.$invalid">{{"SAVE"|translate}}</button>
+        <button class="btn btn-white" ng-click="close()">{{"CLOSE"|translate}}</button>
+    </div>
+</div>
