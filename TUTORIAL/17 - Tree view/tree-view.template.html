@@ -1,0 +1,17 @@
+<style>
+    .demo_tree {
+        overflow-x: auto;
+        border: 1px solid silver;
+        min-height: 100px;
+        height: 200px;
+    }
+</style>
+<div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+    <div class="form-group">
+        <label>{{"BLE_DEVICE_LOCATION_NAME"|translate}}<span class="c-red">*</span></label>
+        <input type="text" class="form-control" ng-model="it.location_name" id="q" ng-change="search_location()"
+            ng-attr-placeholder="{{'ENTER_BLE_DEVICE_LOCATION_NAME'|translate}}" ng-required="false">
+        <div id="container" class="demo_tree" ng-click="update_location()">
+        </div>
+    </div>
+</div>
