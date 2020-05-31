@@ -1,0 +1,197 @@
+<link href="../../css/style_form.css" rel="stylesheet" type="text/css" />
+<link href="css/style_form_view.css" rel="stylesheet" type="text/css" />
+<!-- cach kiem tra nhap tren html -->
+<!-- buoc 1 Tao the form trong div class="inmodal"-->
+<div class="inmodal">
+    <!-- buoc 2 Tao the form trong div class="inmodal"-->
+    <div class="modal-header">
+        <h4 class="modal-title" ng-if="it.ble_device_id===0">
+            {{"GENERATE_HOUSE_NUMBER_AND_COORDINATES_ADD"|translate}} </h4>
+        <h4 class="modal-title" ng-if="!(it.ble_device_id===0)">
+            {{"GENERATE_HOUSE_NUMBER_AND_COORDINATES_UPDATE"|translate}} </h4>
+    </div>
+    <!-- buoc 2.1 them ng-required="true" vao truong bat buoc nhập trong class modal-body> -->
+    <div class="modal-body">
+        <div class="row">
+            <form name="frm" novalidate>
+                <div class="row">
+                    <div class='col-md-12 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="pull-right">
+                            <button class="btn btn-primary" ng-click="generate()"
+                                ng-disabled="frm.$invalid || !is_show_generate_table">{{"GENERATE"|translate}}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-md-12 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"ROOM_ADDRESS"|translate}}
+                                <span class="c-red">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder='{{"ENTER_ROOM_ADDRESS"|translate}}'
+                                ng-focus="it.room_address==''" ng-blur="loadNewRoomAddress(it.room_address)"
+                                ng-enter="loadNewRoomAddress(it.room_address)"
+                                ng-click="loadNewRoomAddress(it.room_address)" ng-model="it.room_address"
+                                ng-maxlength="512" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"HOUSE_NUMBER"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control" placeholder='{{"ENTER_HOUSE_NUMBER"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);'
+                                ng-change="change_house_number(it.house_number, it.last_house_number)"
+                                ng-click="change_house_number(it.house_number, it.last_house_number)"
+                                ng-enter="change_house_number(it.house_number, it.last_house_number)"
+                                ng-model="it.house_number" ng-maxlength="512" required>
+                        </div>
+                    </div>
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"LATITUDE_OF_HOUSE_NUMBER"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control"
+                                placeholder='{{"ENTER_LATITUDE_OF_HOUSE_NUMBER"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);' ng-change="loadNewLongLat()"
+                                ng-click="loadNewLongLat()" ng-enter="loadNewLongLat()"
+                                ng-model="it.latitude_of_house_number" ng-maxlength="512" required>
+                        </div>
+                    </div>
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"LONGITUDE_OF_HOUSE_NUMBER"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control"
+                                placeholder='{{"ENTER_LONGITUDE_OF_HOUSE_NUMBER"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);' ng-change="loadNewLongLat()"
+                                ng-click="loadNewLongLat()" ng-enter="loadNewLongLat()"
+                                ng-model="it.longitude_of_house_number" ng-maxlength="512" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"LAST_HOUSE_NUMBER"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control"
+                                placeholder='{{"ENTER_LAST_HOUSE_NUMBER"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);'
+                                ng-change="change_house_number(it.house_number, it.last_house_number)"
+                                ng-click="change_house_number(it.house_number, it.last_house_number)"
+                                ng-enter="change_house_number(it.house_number, it.last_house_number)"
+                                ng-model="it.last_house_number" ng-maxlength="512" required>
+                            <span ng-pristine="message_error" class="c-red">{{message_error}}</span>
+                        </div>
+                    </div>
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"LATITUDE_OF_LAST_HOUSE_NUMBERS"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control"
+                                placeholder='{{"ENTER_LATITUDE_OF_LAST_HOUSE_NUMBERS"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);' ng-change="loadNewLongLat()"
+                                ng-click="loadNewLongLat()" ng-enter="loadNewLongLat()"
+                                ng-model="it.latitude_of_last_house_numbers" ng-maxlength="512" required>
+                        </div>
+                    </div>
+                    <div class='col-md-4 col-sm-6 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"LONGITUDE_OF_LAST_HOUSE_NUMBERS"|translate}}<span class="c-red">*</span></label>
+                            <input type="text" class="form-control"
+                                placeholder='{{"ENTER_LONGITUDE_OF_LAST_HOUSE_NUMBERS"|translate}}'
+                                onKeyPress='return InputNumberOne1(this, event);' ng-change="loadNewLongLat()"
+                                ng-click="loadNewLongLat()" ng-model="it.longitude_of_last_house_numbers"
+                                ng-maxlength="512" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-md-12 col-sm-12 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"SUMMARY_TABLE"|translate}}<span class="c-red">*</span></label>
+                            <button type="button" class="btn btn-primary" ng-click="show_summary_table()"
+                                ng-disabled="frm.$invalid">{{"SHOW"|translate}}</button>
+                            <button type="button" class="btn btn-primary" ng-click="hide_summary_table()"
+                                ng-disabled="!is_show_summary_table">{{"HIDE"|translate}}</button>
+                            <div class="table-responsive" ng-if="is_show_summary_table">
+                                <table class="table table-hover table-dark table-striped table-bordered">
+                                    <tr>
+                                        <th>{{"ATTRIBUTE_NAME"|translate}}</th>
+                                        <th>Giá Trị</th>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"TOTAL_HOUSE_NUMBER"|translate}}</th>
+                                        <td>{{total_house_number}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"TOTAL_HOUSE_NUMBER_BETWEEN_TOP_AND_BOTTOM"|translate}}</th>
+                                        <td ng-if="total_house_number">{{total_house_number - 2}}</td>
+                                        <td ng-if="!total_house_number"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"COORDINATES_HOUSE_NUMBER"|translate}}</th>
+                                        <td>{{coordinates_house_number}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"COORDINATES_LAST_HOUSE_NUMBER"|translate}}</th>
+                                        <td>{{coordinates_last_house_number}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"TOTAL_DISTANCE_OF_A_RANGE"|translate}}</th>
+                                        <td>{{total_distance_of_a_range}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"DISTANCE_OF_A_RANGE_LATITUDE"|translate}}</th>
+                                        <td>{{distance_of_a_range_latitude}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{"DISTANCE_OF_A_RANGE_LONGITUDE"|translate}}</th>
+                                        <td>{{distance_of_a_range_longitude}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-md-12 col-sm-12 col-xs-12 marginBot5'>
+                        <div class="form-group">
+                            <label>{{"TOTAL_HOUSE_NUMBER_BETWEEN_TOP_AND_BOTTOM_LIST"|translate}}<span
+                                    class="c-red">*</span></label>
+                            <button type="button" class="btn btn-primary" ng-click="show_generate_table()"
+                                ng-disabled="frm.$invalid">{{"SHOW"|translate}}</button>
+                            <button type="button" class="btn btn-primary" ng-click="hide_generate_table()"
+                                ng-disabled="!is_show_generate_table">{{"HIDE"|translate}}</button>
+                            <div class="table-responsive" ng-show="is_show_generate_table">
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="white-space: nowrap">{{"STT"|translate}}</th>
+                                            <th style="white-space: nowrap">{{"ROOM_ADDRESS"|translate}}</th>
+                                            <th style="white-space: nowrap">{{"LATITUDE"|translate}}</th>
+                                            <th style="white-space: nowrap">{{"LONGITUDE"|translate}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in total_house_number_list track by $index"
+                                            id="room_address_{{item.room_address_id}}"
+                                            ng-click="room_address_click(item.room_address_id, item)"
+                                            ng-dblclick="room_address_dbclick(item.room_address_id, item)">
+                                            <td style="white-space: nowrap">{{$index+1}}</td>
+                                            <td style="white-space: nowrap">{{item.room_address}}</td>
+                                            <td style="white-space: nowrap">{{item.latitude}}</td>
+                                            <td style="white-space: nowrap">{{item.longitude}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- buoc 3 thêm thuoc tinh ng-disabled="frm.$invalid" cho nut save trong class modal-footer -->
+    <div class="modal-footer">
+        <button class="btn btn-white" ng-click="close()">{{"CLOSE"|translate}}</button>
+    </div>
+</div>
